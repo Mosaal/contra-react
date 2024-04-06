@@ -30,7 +30,6 @@ export const BUTTON_COLORS: Record<ButtonVariant, string> = {
 export default function Button({
   block,
   raised,
-  disabled,
   size = "normal",
   variant = "primary",
   leftIcon,
@@ -68,7 +67,6 @@ export default function Button({
 
   return (
     <button
-      disabled={disabled}
       className={buttonClassName}
       onMouseUp={handleMouseUp}
       onMouseDown={handleMouseDown}

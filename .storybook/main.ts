@@ -71,4 +71,5 @@ const config: StorybookConfig = {
     return config;
   },
 };
+
 export default config;

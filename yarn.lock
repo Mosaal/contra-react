@@ -7677,6 +7677,11 @@ url@^0.11.0:
     punycode "^1.4.1"
     qs "^6.11.2"
 
+use-controlled-state@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/use-controlled-state/-/use-controlled-state-0.0.3.tgz#4e490f1815cf5a21051cdc303ae69e5f603fdc09"
+  integrity sha512-c+JJjOMXevjDdNqDF0OLtGhvu+IQySDqgaglkr7ilBHrq25/xfEGh3pTOoOlX9tcOAowTK6OlgsLgA9qQkxahw==
+
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"

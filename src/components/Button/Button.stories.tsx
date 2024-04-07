@@ -91,3 +91,10 @@ export const WithBothIcons: Story = {
     rightIcon: <RightChevronIcon />,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    children: "Disabled",
+  },
+};

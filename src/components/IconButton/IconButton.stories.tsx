@@ -73,3 +73,10 @@ export const Large: Story = {
     children: <PlusIcon className="text-10" />,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: <PlusIcon />,
+    disabled: true,
+  },
+};

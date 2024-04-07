@@ -1,8 +1,8 @@
-import { useCallback, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 
 import type { ButtonProps, ButtonSize, ButtonVariant } from "./Button.types";
 
-import { useJoinClassNames } from "@/utils";
+import { useCn } from "@/utils";
 
 const BUTTON_SHADOWS: Record<ButtonSize, string> = {
   small: "shadow-contra-button-small",
@@ -27,20 +27,25 @@ export const BUTTON_COLORS: Record<ButtonVariant, string> = {
     "border-contra-black text-contra-black bg-contra-yellow disabled:border-contra-black-300 disabled:text-contra-black-300 disabled:bg-contra-yellow-100",
 };
 
-export default function Button({
-  block = false,
-  raised = false,
-  size = "normal",
-  variant = "primary",
-  leftIcon = null,
-  rightIcon = null,
-  className,
-  children,
-  ...props
-}: ButtonProps) {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
+  {
+    block = false,
+    raised = false,
+    size = "normal",
+    variant = "primary",
+    leftIcon = null,
+    rightIcon = null,
+    className,
+    onMouseUp,
+    onMouseDown,
+    children,
+    ...props
+  },
+  ref,
+) {
   const [isRaised, setIsRaised] = useState<boolean>(!!raised);
 
-  const buttonClassName = useJoinClassNames(
+  const buttonClassName = useCn(
     "border-0.5 shadow-contra-black disabled:shadow-contra-black-300 appearance-none font-extrabold transition disabled:cursor-not-allowed",
     BUTTON_SIZES[size],
     BUTTON_COLORS[variant],
@@ -51,22 +56,23 @@ export default function Button({
 
   const handleMouseUp = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
       if (raised) setIsRaised(true);
+      onMouseUp?.(e);
     },
-    [raised],
+    [raised, onMouseUp],
   );
 
   const handleMouseDown = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
       if (raised) setIsRaised(false);
+      onMouseDown?.(e);
     },
-    [raised],
+    [raised, onMouseDown],
   );
 
   return (
     <button
+      ref={ref}
       className={buttonClassName}
       onMouseUp={handleMouseUp}
       onMouseDown={handleMouseDown}
@@ -79,4 +85,6 @@ export default function Button({
       </div>
     </button>
   );
-}
+});
+
+export default Button;

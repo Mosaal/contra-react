@@ -6,3 +6,4 @@ export * from "./ToggleSwitch";
 export * from "./Input";
 export * from "./PasswordInput";
 export * from "./Indicator";
+export * from "./Tag";

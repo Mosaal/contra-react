@@ -28,12 +28,12 @@ export const BUTTON_COLORS: Record<ButtonVariant, string> = {
 };
 
 export default function Button({
-  block,
-  raised,
+  block = false,
+  raised = false,
   size = "normal",
   variant = "primary",
-  leftIcon,
-  rightIcon,
+  leftIcon = null,
+  rightIcon = null,
   className,
   children,
   ...props
@@ -54,7 +54,7 @@ export default function Button({
       e.preventDefault();
       if (raised) setIsRaised(true);
     },
-    [],
+    [raised],
   );
 
   const handleMouseDown = useCallback(
@@ -62,7 +62,7 @@ export default function Button({
       e.preventDefault();
       if (raised) setIsRaised(false);
     },
-    [],
+    [raised],
   );
 
   return (

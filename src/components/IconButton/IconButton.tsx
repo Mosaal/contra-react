@@ -18,7 +18,7 @@ const ICON_BUTTON_SIZES: Record<ButtonSize, string> = {
 };
 
 export default function IconButton({
-  raised,
+  raised = false,
   size = "normal",
   variant = "primary",
   className,
@@ -40,7 +40,7 @@ export default function IconButton({
       e.preventDefault();
       if (raised) setIsRaised(true);
     },
-    [],
+    [raised],
   );
 
   const handleMouseDown = useCallback(
@@ -48,7 +48,7 @@ export default function IconButton({
       e.preventDefault();
       if (raised) setIsRaised(false);
     },
-    [],
+    [raised],
   );
 
   return (

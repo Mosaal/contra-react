@@ -2,7 +2,7 @@ export type ButtonSize = "small" | "normal" | "large";
 
 export type ButtonVariant = "primary" | "secondary" | "tertiary" | "quaternary";
 
-export type ButtonBaseProps = React.ComponentProps<"button">;
+export type ButtonBaseProps = React.ComponentPropsWithoutRef<"button">;
 
 export interface ButtonProps extends ButtonBaseProps {
   block?: boolean;

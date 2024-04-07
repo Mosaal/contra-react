@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import RadioButton from "./RadioButton";
+import Checkbox from "./Checkbox";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta: Meta<typeof RadioButton> = {
-  title: "RadioButton",
-  component: RadioButton,
+const meta: Meta<typeof Checkbox> = {
+  title: "Checkbox",
+  component: Checkbox,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",

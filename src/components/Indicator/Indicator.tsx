@@ -2,14 +2,14 @@ import { forwardRef, useMemo } from "react";
 
 import type {
   IndicatorProps,
-  VerticalPosition,
-  HorizontalPosition,
+  IndicatorVerticalPosition,
+  IndicatorHorizontalPosition,
 } from "./Indicator.types";
 
 import { useCn } from "@/utils";
 
 const INDICATOR_POSITIONS: Record<
-  VerticalPosition | HorizontalPosition,
+  IndicatorVerticalPosition | IndicatorHorizontalPosition,
   string
 > = {
   top: "top-0",
@@ -19,7 +19,7 @@ const INDICATOR_POSITIONS: Record<
 };
 
 const INDICATOR_TRANSLATIONS: Record<
-  VerticalPosition | HorizontalPosition,
+  IndicatorVerticalPosition | IndicatorHorizontalPosition,
   string
 > = {
   top: "-translate-y-1/2",
@@ -33,7 +33,11 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function (
   ref,
 ) {
   const [vertical, horizontal] = useMemo(
-    () => position.split("-") as [VerticalPosition, HorizontalPosition],
+    () =>
+      position.split("-") as [
+        IndicatorVerticalPosition,
+        IndicatorHorizontalPosition,
+      ],
     [position],
   );
 

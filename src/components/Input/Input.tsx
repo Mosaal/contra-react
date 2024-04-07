@@ -23,7 +23,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
     disabled ? "text-contra-black-300" : "text-contra-black",
   );
   const inputClassName = useCn(
-    "appearance-none py-3 rounded-4 leading-7 font-medium border-0.5 border-contra-black disabled:border-contra-black-300 text-contra-black disabled:text-contra-black-300 placeholder:text-contra-black-700 disabled:placeholder:text-contra-black-300 bg-contra-white disabled:cursor-not-allowed text-5.25",
+    "appearance-none py-3 rounded-4 text-5.25 leading-7 font-medium border-0.5 border-contra-black disabled:border-contra-black-300 text-contra-black disabled:text-contra-black-300 placeholder:text-contra-black-700 disabled:placeholder:text-contra-black-300 bg-contra-white disabled:cursor-not-allowed",
     leftIcon ? "pl-12.5" : "pl-5.5",
     rightIcon ? "pr-12.5" : "pr-5.5",
   );

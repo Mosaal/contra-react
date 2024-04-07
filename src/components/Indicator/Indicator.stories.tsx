@@ -1,0 +1,62 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import Indicator from "./Indicator";
+
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const meta: Meta<typeof Indicator> = {
+  title: "Indicator",
+  component: Indicator,
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+    layout: "centered",
+  },
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ["autodocs"],
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+const Square = () => <div className="w-20 h-20 rounded-3 bg-contra-green" />;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Unlabeled: Story = {
+  args: {
+    children: <Square />,
+  },
+};
+
+export const Labeled: Story = {
+  args: {
+    label: "99+",
+    children: <Square />,
+  },
+};
+
+export const TopLeft: Story = {
+  args: {
+    position: "top-left",
+    children: <Square />,
+  },
+};
+
+export const TopRight: Story = {
+  args: {
+    position: "top-right",
+    children: <Square />,
+  },
+};
+
+export const BottomLeft: Story = {
+  args: {
+    position: "bottom-left",
+    children: <Square />,
+  },
+};
+
+export const BottomRight: Story = {
+  args: {
+    position: "bottom-right",
+    children: <Square />,
+  },
+};

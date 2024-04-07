@@ -1,6 +1,6 @@
-export type CheckProps = React.ComponentPropsWithoutRef<"svg">;
+export type EyeProps = React.ComponentPropsWithoutRef<"svg">;
 
-export default function Check(props: CheckProps) {
+export default function Eye(props: EyeProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,8 @@ export default function Check(props: CheckProps) {
       strokeLinejoin="round"
       {...props}
     >
-      <polyline points="20 6 9 17 4 12" />
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
     </svg>
   );
 }

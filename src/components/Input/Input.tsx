@@ -21,9 +21,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
   const iconClassName = useCn(
     "absolute top-1/2 -translate-y-1/2",
     disabled ? "text-contra-black-300" : "text-contra-black",
-    !disabled && (onLeftIconClick || onRightIconClick)
-      ? "pointer-events-auto cursor-pointer"
-      : "pointer-events-none",
   );
   const inputClassName = useCn(
     "appearance-none py-3 rounded-4 leading-7 font-medium border-0.5 border-contra-black disabled:border-contra-black-300 text-contra-black disabled:text-contra-black-300 placeholder:text-contra-black-700 disabled:placeholder:text-contra-black-300 bg-contra-white disabled:cursor-not-allowed text-5.25",
@@ -40,33 +37,35 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
       e.preventDefault();
       clickHandler?.();
     },
-    [],
+    [disabled],
   );
 
   const renderIcon = useCallback(
-    (icon: React.ReactNode, position: "left" | "right") => (
+    (
+      icon: React.ReactNode,
+      position: "left" | "right",
+      clickHandler?: () => void,
+    ) => (
       <div
         className={cn(
           iconClassName,
           position === "left" ? "left-4" : "right-4",
+          !disabled && clickHandler
+            ? "pointer-events-auto cursor-pointer"
+            : "pointer-events-none",
         )}
-        onClick={(e) =>
-          handleClickIcon(
-            e,
-            position === "left" ? onLeftIconClick : onRightIconClick,
-          )
-        }
+        onClick={(e) => handleClickIcon(e, clickHandler)}
       >
         {icon}
       </div>
     ),
-    [iconClassName, onLeftIconClick, onRightIconClick, handleClickIcon],
+    [disabled, iconClassName, handleClickIcon],
   );
 
   return (
     <label htmlFor={inputId}>
       <div className="inline-flex relative">
-        {leftIcon && renderIcon(leftIcon, "left")}
+        {leftIcon && renderIcon(leftIcon, "left", onLeftIconClick)}
         <input
           type="text"
           ref={ref}
@@ -75,7 +74,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
           className={inputClassName}
           {...props}
         />
-        {rightIcon && renderIcon(rightIcon, "right")}
+        {rightIcon && renderIcon(rightIcon, "right", onRightIconClick)}
       </div>
     </label>
   );

@@ -76,7 +76,7 @@ export const Large: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: <PlusIcon />,
     disabled: true,
+    children: <PlusIcon />,
   },
 };

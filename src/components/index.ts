@@ -5,3 +5,4 @@ export * from "./Checkbox";
 export * from "./ToggleSwitch";
 export * from "./Input";
 export * from "./PasswordInput";
+export * from "./Indicator";

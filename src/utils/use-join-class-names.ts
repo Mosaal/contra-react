@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { extendTailwindMerge } from "tailwind-merge";
-import { clsx, type ClassValue } from "clsx";
+import { cx, type CxOptions } from "class-variance-authority";
 
 const fontSize: string[] = [];
 for (let i = 0; i <= 640; i++) {
@@ -18,10 +18,10 @@ const twMerge = extendTailwindMerge({
   },
 });
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+export function cn(...inputs: CxOptions) {
+  return twMerge(cx(inputs));
 }
 
-export function useCn(...inputs: ClassValue[]) {
+export function useCn(...inputs: CxOptions) {
   return useMemo(() => cn(inputs), [inputs]);
 }

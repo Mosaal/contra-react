@@ -23,8 +23,11 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
     disabled ? "border-contra-black-300" : "border-contra-black",
     checked ? "left-6" : "left-0",
   );
+  // @TODO: raised prop to all elements
+  // @TODO: pin input
   const dotClassName = useCn(
-    "w-4 h-4 rounded-full border-0.5 bg-transparent",
+    "w-4 h-4 rounded-full border-0.5",
+    checked ? "bg-contra-yellow" : "bg-contra-black-200",
     disabled ? "border-contra-black-300" : "border-contra-black",
   );
 

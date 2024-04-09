@@ -1,3 +1,4 @@
+export * from "./Btn"; // NOTE: just an example of how CVA works. Remove later
 export * from "./Button";
 export * from "./IconButton";
 export * from "./RadioButton";

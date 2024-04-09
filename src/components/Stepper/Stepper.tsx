@@ -4,7 +4,7 @@ import type { StepperProps } from "./Stepper.types";
 
 import { Plus, Minus } from "@/icons";
 
-import { useCn, useInputId } from "@/utils";
+import { cn, useCn, useInputId } from "@/utils";
 
 const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
   {
@@ -90,18 +90,32 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
   const renderOutsideSingle = () => {
     return (
       <label htmlFor={inputId} className="flex flex-row items-center gap-x-3">
-        <span className="text-9 leading-10 font-extrabold text-contra-black">
+        <span
+          className={cn(
+            "font-extrabold text-contra-black",
+            size === "small" ? "text-6 leading-7" : "text-9 leading-10",
+          )}
+        >
           {label || "Add"}
         </span>
         <button
-          className="appearance-none w-12 h-12 rounded-4 border-0.5 border-contra-black text-contra-black bg-contra-yellow flex items-center justify-center"
+          className={cn(
+            "appearance-none border-0.5 border-contra-black text-contra-black bg-contra-yellow flex items-center justify-center",
+            size === "small" ? "w-9 h-9 rounded-3" : "w-12 h-12 rounded-4",
+          )}
           onClick={direction === "positive" ? handleIncrement : handleDecrement}
         >
           {(direction === "positive" && (
-            <Plus strokeWidth={4} className="w-6 h-6" />
+            <Plus
+              strokeWidth={4}
+              className={size === "small" ? "w-4 h-4" : "w-6 h-6"}
+            />
           )) ||
             (direction === "negative" && (
-              <Minus strokeWidth={4} className="w-6 h-6" />
+              <Minus
+                strokeWidth={4}
+                className={size === "small" ? "w-4 h-4" : "w-6 h-6"}
+              />
             ))}
         </button>
         <input

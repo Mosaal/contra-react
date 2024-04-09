@@ -12,6 +12,10 @@ export interface StepperProps {
   name?: string;
   label?: string;
   size?: StepperSize;
+  min?: number;
+  max?: number;
+  value?: number;
+  initialValue?: number;
   // variant?: StepperVariant;
   steps: "single" | "double";
   type: "inside" | "outside";

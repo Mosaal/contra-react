@@ -25,8 +25,24 @@ export const OutsideSingle: Story = {
   },
 };
 
+export const SmallOutsideSingle: Story = {
+  args: {
+    size: "small",
+    type: "outside",
+    steps: "single",
+  },
+};
+
 export const OutsideDouble: Story = {
   args: {
+    type: "outside",
+    steps: "double",
+  },
+};
+
+export const SmallOutsideDouble: Story = {
+  args: {
+    size: "small",
     type: "outside",
     steps: "double",
   },
@@ -39,8 +55,24 @@ export const InsideSingle: Story = {
   },
 };
 
+export const SmallInsideSingle: Story = {
+  args: {
+    size: "small",
+    type: "inside",
+    steps: "single",
+  },
+};
+
 export const InsideDouble: Story = {
   args: {
+    type: "inside",
+    steps: "double",
+  },
+};
+
+export const SmallInsideDouble: Story = {
+  args: {
+    size: "small",
     type: "inside",
     steps: "double",
   },

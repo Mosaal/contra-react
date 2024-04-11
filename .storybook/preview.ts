@@ -1,6 +1,6 @@
-import "../src/index.css";
-
 import type { Preview } from "@storybook/react";
+
+import "../lib/index.css";
 
 import {
   withThemeByClassName,
@@ -12,16 +12,16 @@ const preview: Preview = {
     withThemeByClassName({
       defaultTheme: "light",
       themes: {
-        light: "light",
         dark: "dark",
+        light: "light",
       },
     }),
     withThemeByDataAttribute({
       defaultTheme: "light",
       attributeName: "data-mode",
       themes: {
-        light: "light",
         dark: "dark",
+        light: "light",
       },
     }),
   ],

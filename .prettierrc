@@ -1,6 +1,8 @@
 {
   "semi": true,
-  "singleQuote": false,
   "tabWidth": 2,
-  "trailingComma": "all"
+  "singleQuote": false,
+  "trailingComma": "all",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["twMerge", "cva", "cx"]
 }

@@ -2,7 +2,7 @@ import type { VariantProps } from "class-variance-authority";
 
 import { buttonCva } from "./Button.styles";
 
-export type ButtonBaseProps = React.ComponentProps<"button">;
+export type ButtonBaseProps = React.ComponentPropsWithoutRef<"button">;
 
 export type ButtonVariantProps = VariantProps<typeof buttonCva>;
 

@@ -3,6 +3,8 @@ import { forwardRef, useCallback, useState } from "react";
 import { buttonCva } from "./Button.styles";
 import type { ButtonProps } from "./Button.types";
 
+import { cn } from "@/utils";
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
   {
     block = false,
@@ -40,13 +42,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
   return (
     <button
       ref={ref}
-      className={buttonCva({
-        block,
-        raised: isRaised,
-        size,
-        variant,
-        className,
-      })}
+      className={cn(
+        buttonCva({
+          block,
+          raised: isRaised,
+          size,
+          variant,
+          className,
+        }),
+      )}
       onMouseUp={handleMouseUp}
       onMouseDown={handleMouseDown}
       {...props}

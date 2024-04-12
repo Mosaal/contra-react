@@ -74,6 +74,13 @@ export const Large: Story = {
   },
 };
 
+export const Raised: Story = {
+  args: {
+    raised: true,
+    children: <PlusIcon />,
+  },
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true,

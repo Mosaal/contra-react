@@ -70,6 +70,23 @@ export const NormalLarge: Story = {
   },
 };
 
+export const Block: Story = {
+  args: {
+    block: true,
+    children: "Block",
+  },
+  parameters: {
+    layout: "padded",
+  },
+};
+
+export const Raised: Story = {
+  args: {
+    raised: true,
+    children: "Raised",
+  },
+};
+
 export const WithLeftIcon: Story = {
   args: {
     children: "Button",

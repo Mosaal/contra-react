@@ -1,14 +1,16 @@
-export type ButtonSize = "small" | "normal" | "large";
+import type { VariantProps } from "class-variance-authority";
 
-export type ButtonVariant = "primary" | "secondary" | "tertiary" | "quaternary";
+import { buttonCva } from "./Button.styles";
 
-export type ButtonBaseProps = React.ComponentPropsWithoutRef<"button">;
+export type ButtonBaseProps = React.ComponentProps<"button">;
 
-export interface ButtonProps extends ButtonBaseProps {
-  block?: boolean;
-  raised?: boolean;
-  size?: ButtonSize;
-  variant?: ButtonVariant;
+export type ButtonVariantProps = VariantProps<typeof buttonCva>;
+
+export type ButtonSize = NonNullable<ButtonProps["size"]>;
+
+export type ButtonVariant = NonNullable<ButtonProps["variant"]>;
+
+export interface ButtonProps extends ButtonBaseProps, ButtonVariantProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }

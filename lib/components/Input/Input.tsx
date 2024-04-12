@@ -1,8 +1,9 @@
 import { forwardRef, useCallback } from "react";
 
+import { inputCva, inputIconCva } from "./Input.styles";
 import type { InputProps } from "./Input.types";
 
-import { cn, useCn, useInputId } from "@/utils";
+import { cn, useInputId } from "@/utils";
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function (
   {
@@ -17,16 +18,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
   ref,
 ) {
   const inputId = useInputId("input", id);
-
-  const iconClassName = useCn(
-    "absolute top-1/2 -translate-y-1/2",
-    disabled ? "text-contra-black-300" : "text-contra-black",
-  );
-  const inputClassName = useCn(
-    "appearance-none py-3 rounded-4 text-5.25 leading-7 font-medium border-0.5 border-contra-black disabled:border-contra-black-300 text-contra-black disabled:text-contra-black-300 placeholder:text-contra-black-700 disabled:placeholder:text-contra-black-300 bg-contra-white disabled:cursor-not-allowed",
-    leftIcon ? "pl-12.5" : "pl-5.5",
-    rightIcon ? "pr-12.5" : "pr-5.5",
-  );
 
   const handleClickIcon = useCallback(
     (
@@ -48,30 +39,30 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
     ) => (
       <div
         className={cn(
-          iconClassName,
-          position === "left" ? "left-4" : "right-4",
-          !disabled && clickHandler
-            ? "pointer-events-auto cursor-pointer"
-            : "pointer-events-none",
+          inputIconCva({ disabled, position, clickable: !!clickHandler }),
         )}
         onClick={(e) => handleClickIcon(e, clickHandler)}
       >
         {icon}
       </div>
     ),
-    [disabled, iconClassName, handleClickIcon],
+    [disabled, handleClickIcon],
   );
 
   return (
     <label htmlFor={inputId}>
-      <div className="inline-flex relative">
+      <div className="relative inline-flex">
         {leftIcon && renderIcon(leftIcon, "left", onLeftIconClick)}
         <input
           type="text"
           ref={ref}
           id={inputId}
           disabled={disabled}
-          className={inputClassName}
+          className={cn(
+            inputCva(),
+            leftIcon ? "pl-12.5" : "pl-5.5",
+            rightIcon ? "pr-12.5" : "pr-5.5",
+          )}
           {...props}
         />
         {rightIcon && renderIcon(rightIcon, "right", onRightIconClick)}

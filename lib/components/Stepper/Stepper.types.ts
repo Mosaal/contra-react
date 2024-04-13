@@ -5,21 +5,21 @@ export type StepperBaseProps = Omit<
 
 export type StepperSize = "small" | "normal";
 
-// export type StepperVariant = "inside" | "outside";
+export type StepperVariant = "single" | "double";
+
+export type StepperContainer = "inside" | "outside";
 
 export interface StepperProps {
   id?: string;
   name?: string;
   label?: string;
   size?: StepperSize;
-  min?: number;
-  max?: number;
-  value?: number;
-  initialValue?: number;
-  // variant?: StepperVariant;
-  steps: "single" | "double";
-  type: "inside" | "outside";
-  direction: "negative" | "positive";
+  variant?: StepperVariant;
+  container?: StepperContainer;
+  // min?: number;
+  // max?: number;
+  // value?: number;
+  // initialValue?: number;
   onDecrement?: (value: number) => void;
   onIncrement?: (value: number) => void;
 }

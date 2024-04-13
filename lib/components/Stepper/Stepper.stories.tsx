@@ -18,62 +18,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const OutsideSingle: Story = {
+export const Single: Story = {
   args: {
-    type: "outside",
-    steps: "single",
+    variant: "single",
   },
 };
-
-export const SmallOutsideSingle: Story = {
+export const Double: Story = {
   args: {
-    size: "small",
-    type: "outside",
-    steps: "single",
-  },
-};
-
-export const OutsideDouble: Story = {
-  args: {
-    type: "outside",
-    steps: "double",
-  },
-};
-
-export const SmallOutsideDouble: Story = {
-  args: {
-    size: "small",
-    type: "outside",
-    steps: "double",
-  },
-};
-
-export const InsideSingle: Story = {
-  args: {
-    type: "inside",
-    steps: "single",
-  },
-};
-
-export const SmallInsideSingle: Story = {
-  args: {
-    size: "small",
-    type: "inside",
-    steps: "single",
-  },
-};
-
-export const InsideDouble: Story = {
-  args: {
-    type: "inside",
-    steps: "double",
-  },
-};
-
-export const SmallInsideDouble: Story = {
-  args: {
-    size: "small",
-    type: "inside",
-    steps: "double",
+    variant: "double",
   },
 };

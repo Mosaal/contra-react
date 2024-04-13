@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 
 import type { StepperProps } from "./Stepper.types";
 
@@ -11,176 +11,176 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     id,
     name,
     label,
-    size = "normal",
-    steps = "single",
-    type = "outside",
-    direction = "positive",
+    variant = "single",
+    // steps = "single",
+    // type = "outside",
+    // direction = "positive",
     onDecrement,
     onIncrement,
     ...props
   },
-  // ref,
+  ref,
 ) {
   const inputId = useInputId("stepper", id);
+  // @TODO: should be controlled state
   const [value, setValue] = useState<number>(0);
-  // const Component = variant === "outside" ? StepperOutside : StepperInside;
 
-  const handleDecrement = () => {
+  const handleDecrement = useCallback(() => {
     setValue(value - 1);
     onDecrement?.(value - 1);
-  };
+  }, [value, onDecrement]);
 
-  const handleIncrement = () => {
+  const handleIncrement = useCallback(() => {
     setValue(value + 1);
     onIncrement?.(value + 1);
-  };
+  }, [value, onIncrement]);
 
-  const renderInsideSingle = () => {
+  const renderInput = useCallback(
+    () => (
+      <input
+        hidden
+        type="number"
+        className="hidden"
+        ref={ref}
+        name={name}
+        id={inputId}
+        value={value}
+      />
+    ),
+    [inputId, name, ref, value],
+  );
+
+  return variant === "single" ? (
+    <StepperSingle id={inputId} label={label} {...props}>
+      {renderInput()}
+    </StepperSingle>
+  ) : (
+    <StepperDouble id={inputId} label={label || value.toString()} {...props}>
+      {renderInput()}
+    </StepperDouble>
+  );
+});
+
+interface StepperSingleProps
+  extends Omit<
+    React.PropsWithChildren<StepperProps>,
+    "variant" | "onDecrement" | "onIncrement"
+  > {
+  onChange?: (value: number) => void;
+}
+
+function StepperSingle({ id, label, container, children }: StepperSingleProps) {
+  const renderInsideContainer = () => {
     return (
-      <label
-        htmlFor={inputId}
-        className="flex flex-row items-center overflow-hidden rounded-4 border-0.5 border-contra-black"
-      >
-        <span className="bg-contra-yellow py-2 pl-5.5 pr-3.5 text-6 font-extrabold leading-7 text-contra-black">
+      <div className="flex flex-row items-center overflow-hidden rounded-4 border-0.5 border-contra-black text-contra-black">
+        <label
+          htmlFor={id}
+          className="bg-contra-yellow py-2 pl-5.5 pr-3.5 text-6 font-extrabold leading-7"
+        >
           {label || "Add"}
-        </span>
+        </label>
         <button
-          className="bg-contra-white py-2.5 pl-2 pr-2.25"
-          onClick={handleIncrement}
+          type="button"
+          className="bg-contra-white py-2.5 pl-2 pr-2.5"
+          // onClick={handleIncrement}
         >
           <Plus strokeWidth={4} className="h-6 w-6" />
         </button>
-        <input
-          hidden
-          type="number"
-          id={inputId}
-          name={name}
-          value={value}
-          {...props}
-        />
-      </label>
+        {children}
+      </div>
     );
   };
 
-  const renderInsideDouble = () => {
+  const renderOutsideContainer = () => {
     return (
-      <label
-        htmlFor={inputId}
-        className="flex flex-row items-center overflow-hidden rounded-4 border-0.5 border-contra-black"
-      >
+      <div className="flex flex-row items-center gap-x-3 text-contra-black">
+        <label htmlFor={id} className="text-9 font-extrabold leading-10">
+          {label || "Add"}
+        </label>
         <button
-          className="bg-contra-white py-2.5 pl-2.25 pr-2"
-          onClick={handleDecrement}
+          type="button"
+          className="flex h-12 w-12 items-center justify-center rounded-4 border-0.5 border-contra-black bg-contra-yellow"
+          // onClick={handleIncrement}
+        >
+          <Plus strokeWidth={4} className="h-6 w-6" />
+        </button>
+        {children}
+      </div>
+    );
+  };
+
+  return container === "inside"
+    ? renderInsideContainer()
+    : renderOutsideContainer();
+}
+
+interface StepperDoubleProps
+  extends Omit<
+    React.PropsWithChildren<StepperProps>,
+    "variant" | "onDecrement" | "onIncrement"
+  > {
+  onChange?: (value: number) => void;
+}
+
+function StepperDouble({ id, label, container, children }: StepperDoubleProps) {
+  const renderInsideContainer = () => {
+    return (
+      <div className="flex flex-row items-center overflow-hidden rounded-4 border-0.5 border-contra-black text-contra-black">
+        <button
+          type="button"
+          className="bg-contra-white py-2.5 pl-2.5 pr-2"
+          // onClick={handleDecrement}
         >
           <Minus strokeWidth={4} className="h-6 w-6" />
         </button>
-        <span className="w-12 bg-contra-yellow py-2 text-center text-6 font-extrabold leading-7 text-contra-black">
-          {label || value}
-        </span>
+        <label
+          htmlFor={id}
+          className="inline-flex min-w-12 items-center justify-center self-stretch bg-contra-yellow text-6 font-extrabold leading-7"
+        >
+          {label}
+        </label>
         <button
-          className="bg-contra-white py-2.5 pl-2 pr-2.25"
-          onClick={handleIncrement}
+          type="button"
+          className="bg-contra-white py-2.5 pl-2 pr-2.5"
+          // onClick={handleIncrement}
         >
           <Plus strokeWidth={4} className="h-6 w-6" />
         </button>
-      </label>
+        {children}
+      </div>
     );
   };
 
-  const renderOutsideSingle = () => {
+  const renderOutsideContainer = () => {
     return (
-      <label htmlFor={inputId} className="flex flex-row items-center gap-x-3">
-        <span
-          className={cn(
-            "font-extrabold text-contra-black",
-            size === "small" ? "text-6 leading-7" : "text-9 leading-10",
-          )}
-        >
-          {label || "Add"}
-        </span>
-        <button
-          className={cn(
-            "flex appearance-none items-center justify-center border-0.5 border-contra-black bg-contra-yellow text-contra-black",
-            size === "small" ? "h-9 w-9 rounded-3" : "h-12 w-12 rounded-4",
-          )}
-          onClick={direction === "positive" ? handleIncrement : handleDecrement}
-        >
-          {(direction === "positive" && (
-            <Plus
-              strokeWidth={4}
-              className={size === "small" ? "h-4 w-4" : "h-6 w-6"}
-            />
-          )) ||
-            (direction === "negative" && (
-              <Minus
-                strokeWidth={4}
-                className={size === "small" ? "h-4 w-4" : "h-6 w-6"}
-              />
-            ))}
-        </button>
-        <input
-          hidden
-          type="number"
-          id={inputId}
-          name={name}
-          value={value}
-          {...props}
-        />
-      </label>
-    );
-  };
-
-  const renderOutsideDouble = () => {
-    return (
-      <label htmlFor={inputId} className="flex flex-row items-center gap-x-3">
-        <span className="text-9 font-extrabold leading-10 text-contra-black">
-          {label || value}
-        </span>
-        <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center gap-x-3 text-contra-black">
+        <label htmlFor={id} className="text-9 font-extrabold leading-10">
+          {label}
+        </label>
+        <div className="flex flex-row flex-nowrap items-center overflow-hidden">
           <button
-            className="flex h-12 w-12 appearance-none items-center justify-center rounded-l-4 border-y-0.5 border-l-0.5 border-r-0.25 border-contra-black bg-contra-yellow text-contra-black"
-            onClick={handleDecrement}
+            type="button"
+            className="flex h-12 w-12 items-center justify-center rounded-l-4 border-y-0.5 border-l-0.5 border-r-0.25 border-contra-black bg-contra-yellow"
+            // onClick={handleDecrement}
           >
             <Minus strokeWidth={4} className="h-6 w-6" />
           </button>
           <button
-            className="flex h-12 w-12 appearance-none items-center justify-center rounded-r-4 border-y-0.5 border-l-0.25 border-r-0.5 border-contra-black bg-contra-yellow text-contra-black"
-            onClick={handleIncrement}
+            type="button"
+            className="flex h-12 w-12 items-center justify-center rounded-r-4 border-y-0.5 border-l-0.25 border-r-0.5 border-contra-black bg-contra-yellow"
+            // onClick={handleIncrement}
           >
             <Plus strokeWidth={4} className="h-6 w-6" />
           </button>
         </div>
-        <input
-          hidden
-          type="number"
-          id={inputId}
-          name={name}
-          value={value}
-          {...props}
-        />
-      </label>
+        {children}
+      </div>
     );
   };
 
-  if (type === "outside")
-    return steps === "single" ? renderOutsideSingle() : renderOutsideDouble();
-  return steps === "single" ? renderInsideSingle() : renderInsideDouble();
-});
-
-// function StepperInside({
-//   id,
-//   label,
-//   size,
-//   className,
-//   ...props
-// }: Omit<StepperProps, "variant">) {}
-
-// function StepperOutside({
-//   id,
-//   label,
-//   size,
-//   className,
-//   ...props
-// }: Omit<StepperProps, "variant">) {}
+  return container === "inside"
+    ? renderInsideContainer()
+    : renderOutsideContainer();
+}
 
 export default Stepper;

@@ -1,13 +1,13 @@
+import type { VariantProps } from "class-variance-authority";
+
+import { indicatorCva } from "./Indicator.styles";
+
 export type IndicatorBaseProps = React.ComponentPropsWithoutRef<"div">;
 
-export type IndicatorVerticalPosition = "top" | "bottom";
+export type IndicatorVariantProps = VariantProps<typeof indicatorCva>;
 
-export type IndicatorHorizontalPosition = "left" | "right";
-
-export type IndicatorPosition =
-  `${IndicatorVerticalPosition}-${IndicatorHorizontalPosition}`;
-
-export interface IndicatorProps extends IndicatorBaseProps {
+export interface IndicatorProps
+  extends IndicatorBaseProps,
+    IndicatorVariantProps {
   label?: string;
-  position?: IndicatorPosition;
 }

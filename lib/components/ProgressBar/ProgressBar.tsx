@@ -1,19 +1,21 @@
+import assert from "assert";
 import { forwardRef } from "react";
 
+import { progressBarCva, progressBarWrapperCva } from "./ProgressBar.styles";
 import type { ProgressBarProps } from "./ProgressBar.types";
+
+import { cn } from "@/utils";
 
 const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(function (
   { value, ...props },
   ref,
 ) {
+  assert(value >= 0, "The ProgressBar value must be between 0 and 1");
+  assert(value <= 1, "The ProgressBar value must be between 0 and 1");
   return (
-    <div
-      ref={ref}
-      className="w-full h-3 rounded-2.5 border-0.5 border-contra-black bg-transparent overflow-hidden"
-      {...props}
-    >
+    <div ref={ref} className={cn(progressBarWrapperCva())} {...props}>
       <div
-        className="h-full transition-[width] bg-contra-yellow"
+        className={cn(progressBarCva())}
         style={{ width: `${value * 100}%` }}
       />
     </div>

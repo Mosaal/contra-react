@@ -8,3 +8,4 @@ export * from "./PasswordInput";
 export * from "./Indicator";
 export * from "./Tag";
 export * from "./ProgressBar";
+export * from "./SegmentedControl";

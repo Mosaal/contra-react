@@ -1,7 +1,12 @@
+import type { VariantProps } from "class-variance-authority";
+
+import { tagCva } from "./Tag.styles";
+
 export type TagBaseProps = React.ComponentPropsWithoutRef<"div">;
 
-export interface TagProps extends TagBaseProps {
+export type TagVariantProps = VariantProps<typeof tagCva>;
+
+export interface TagProps extends TagBaseProps, TagVariantProps {
   label: string;
-  active?: boolean;
   onDeactivate?: React.MouseEventHandler<SVGSVGElement>;
 }

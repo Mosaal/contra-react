@@ -1,9 +1,12 @@
+import type { InputProps } from "../Input";
+
 export type PasswordInputBaseProps = Omit<
   React.ComponentPropsWithoutRef<"input">,
   "type"
 >;
 
-export interface PasswordInputProps extends PasswordInputBaseProps {
+export interface PasswordInputProps
+  extends Omit<InputProps, "rightIcon" | "onRightIconClick"> {
   leftIcon?: React.ReactNode;
   onLeftIconClick?: () => void;
 }

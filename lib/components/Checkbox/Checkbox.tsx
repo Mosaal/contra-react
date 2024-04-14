@@ -13,7 +13,15 @@ import { Check } from "@/icons";
 import { cn, useInputId } from "@/utils";
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
-  { id, label, labelPosition = "right", disabled, checked, ...props },
+  {
+    id,
+    label,
+    raised = false,
+    labelPosition = "right",
+    checked,
+    disabled,
+    ...props
+  },
   ref,
 ) {
   const inputId = useInputId("checkbox", id);
@@ -33,7 +41,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
           id={inputId}
           checked={checked}
           disabled={disabled}
-          className={cn(checkboxCva())}
+          className={cn(checkboxCva({ raised }))}
           {...props}
         />
         {checked && <Check className={cn(checkboxIconCva({ disabled }))} />}

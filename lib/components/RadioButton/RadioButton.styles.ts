@@ -1,7 +1,18 @@
 import { cva } from "class-variance-authority";
 
 export const radioButtonCva = cva(
-  "h-8 w-8 cursor-pointer appearance-none rounded-full border-0.5 border-contra-black bg-contra-blue-100 transition checked:bg-contra-white disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200",
+  "h-8 w-8 cursor-pointer appearance-none rounded-full border-0.5 border-contra-black bg-contra-blue-100 transition checked:bg-contra-white disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300",
+  {
+    variants: {
+      raised: {
+        true: "shadow-contra-button-small",
+        false: "shadow-none",
+      },
+    },
+    defaultVariants: {
+      raised: false,
+    },
+  },
 );
 
 export const radioButtonWrapperCva = cva(

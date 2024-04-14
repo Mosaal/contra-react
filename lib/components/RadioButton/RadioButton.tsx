@@ -11,7 +11,15 @@ import type { RadioButtonProps } from "./RadioButton.types";
 import { cn, useInputId } from "@/utils";
 
 const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
-  { id, label, labelPosition = "right", disabled, checked, ...props },
+  {
+    id,
+    label,
+    raised = false,
+    labelPosition = "right",
+    checked,
+    disabled,
+    ...props
+  },
   ref,
 ) {
   const inputId = useInputId("radio", id);
@@ -36,7 +44,7 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
           id={inputId}
           checked={checked}
           disabled={disabled}
-          className={cn(radioButtonCva())}
+          className={cn(radioButtonCva({ raised }))}
           {...props}
         />
         {checked && <div className={cn(radioButtonDotCva({ disabled }))} />}

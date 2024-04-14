@@ -34,3 +34,25 @@ export const Full: Story = {
     value: 1,
   },
 };
+
+export const Raised: Story = {
+  args: {
+    raised: true,
+    value: 0.5,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    value: 0.5,
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    value: 0.5,
+  },
+};

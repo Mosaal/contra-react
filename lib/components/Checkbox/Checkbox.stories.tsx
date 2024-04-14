@@ -40,24 +40,39 @@ export const WithRightLabel: Story = {
   },
 };
 
+export const Raised: Story = {
+  args: {
+    raised: true,
+    label: "Raised",
+  },
+};
+
 export const Checked: Story = {
   args: {
-    label: "Checked",
     checked: true,
+    label: "Checked",
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "Disabled",
     disabled: true,
+    label: "Disabled",
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    label: "Raised & Disabled",
   },
 };
 
 export const CheckedDisabled: Story = {
   args: {
-    label: "Checked & Disabled",
     checked: true,
     disabled: true,
+    label: "Checked & Disabled",
   },
 };

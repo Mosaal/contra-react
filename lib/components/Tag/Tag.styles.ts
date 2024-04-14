@@ -8,9 +8,14 @@ export const tagCva = cva(
         true: "bg-contra-pink-800",
         false: "bg-contra-white",
       },
+      raised: {
+        true: "shadow-contra-button-small",
+        false: "shadow-none",
+      },
     },
     defaultVariants: {
       active: false,
+      raised: false,
     },
   },
 );

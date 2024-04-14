@@ -39,10 +39,25 @@ export const WithValue: Story = {
   },
 };
 
+export const Raised: Story = {
+  args: {
+    raised: true,
+    placeholder: "Raised",
+  },
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true,
     placeholder: "Disabled",
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    placeholder: "Raised & Disabled",
   },
 };
 

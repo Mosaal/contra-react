@@ -39,24 +39,39 @@ export const WithBothLabels: Story = {
   },
 };
 
+export const Raised: Story = {
+  args: {
+    raised: true,
+    rightLabel: "Checked",
+  },
+};
+
 export const Checked: Story = {
   args: {
-    leftLabel: "Checked",
     checked: true,
+    rightLabel: "Checked",
   },
 };
 
 export const Disabled: Story = {
   args: {
-    leftLabel: "Disabled",
     disabled: true,
+    rightLabel: "Disabled",
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    rightLabel: "Raised & Disabled",
   },
 };
 
 export const CheckedDisabled: Story = {
   args: {
-    leftLabel: "Checked & Disabled",
     checked: true,
     disabled: true,
+    rightLabel: "Checked & Disabled",
   },
 };

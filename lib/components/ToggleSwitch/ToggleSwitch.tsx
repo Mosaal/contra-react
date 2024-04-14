@@ -12,7 +12,7 @@ import type { ToggleSwitchProps } from "./ToggleSwitch.types";
 import { cn, useInputId } from "@/utils";
 
 const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
-  { id, leftLabel, rightLabel, disabled, checked, ...props },
+  { id, raised = false, leftLabel, rightLabel, checked, disabled, ...props },
   ref,
 ) {
   const inputId = useInputId("toggle", id);
@@ -37,7 +37,7 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
           id={inputId}
           checked={checked}
           disabled={disabled}
-          className={cn(toggleSwitchCva())}
+          className={cn(toggleSwitchCva({ raised }))}
           {...props}
         />
         <div className={cn(toggleSwitchToggleCva({ checked, disabled }))}>

@@ -33,8 +33,7 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function (
         {label}
         {active && (
           <X
-            strokeWidth={4}
-            className="h-4 w-4 cursor-pointer"
+            className="stroke-4 h-4 w-4 cursor-pointer"
             onClick={onDeactivate}
           />
         )}

@@ -43,7 +43,7 @@ export const checkboxLabelCva = cva("text-4.25 font-extrabold leading-6", {
 });
 
 export const checkboxIconCva = cva(
-  "absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition",
+  "stroke-3 pointer-events-none absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition",
   {
     variants: {
       disabled: {

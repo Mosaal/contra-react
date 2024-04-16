@@ -8,7 +8,7 @@ import {
 } from "./RadioButton.styles";
 import type { RadioButtonProps } from "./RadioButton.types";
 
-import { cn, useInputId } from "@/utils";
+import { cn, useInputId, useInputState } from "@/utils";
 
 const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
   {
@@ -17,12 +17,21 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
     raised = false,
     labelPosition = "right",
     checked,
+    defaultChecked,
     disabled,
+    onChange,
     ...props
   },
   ref,
 ) {
   const inputId = useInputId("radio", id);
+  const [isChecked, setIsChecked] = useInputState({
+    value: checked,
+    defaultValue: defaultChecked,
+    finalValue: false,
+    type: "checkbox",
+    onChange,
+  });
 
   const renderLabel = useCallback(
     () => (
@@ -42,12 +51,13 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
           type="radio"
           ref={ref}
           id={inputId}
-          checked={checked}
+          checked={isChecked}
           disabled={disabled}
           className={cn(radioButtonCva({ raised }))}
+          onChange={setIsChecked}
           {...props}
         />
-        {checked && <div className={cn(radioButtonDotCva({ disabled }))} />}
+        {isChecked && <div className={cn(radioButtonDotCva({ disabled }))} />}
       </div>
       {label && labelPosition === "right" && renderLabel()}
     </label>

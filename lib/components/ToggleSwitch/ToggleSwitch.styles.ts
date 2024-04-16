@@ -62,26 +62,29 @@ export const toggleSwitchToggleCva = cva(
   },
 );
 
-export const toggleSwitchToggleDotCva = cva("h-4 w-4 rounded-full border-0.5", {
-  variants: {
-    checked: {
-      true: "bg-contra-yellow",
-      false: "bg-contra-black-200",
+export const toggleSwitchToggleDotCva = cva(
+  "h-4 w-4 rounded-full border-0.5 transition",
+  {
+    variants: {
+      checked: {
+        true: "bg-contra-yellow",
+        false: "bg-contra-black-200",
+      },
+      disabled: {
+        true: "border-contra-black-300",
+        false: "border-contra-black",
+      },
     },
-    disabled: {
-      true: "border-contra-black-300",
-      false: "border-contra-black",
+    compoundVariants: [
+      {
+        checked: true,
+        disabled: true,
+        className: "bg-contra-yellow-100",
+      },
+    ],
+    defaultVariants: {
+      checked: false,
+      disabled: false,
     },
   },
-  compoundVariants: [
-    {
-      checked: true,
-      disabled: true,
-      className: "bg-contra-yellow-100",
-    },
-  ],
-  defaultVariants: {
-    checked: false,
-    disabled: false,
-  },
-});
+);

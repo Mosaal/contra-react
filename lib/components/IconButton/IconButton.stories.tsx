@@ -87,3 +87,11 @@ export const Disabled: Story = {
     children: <PlusIcon />,
   },
 };
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    children: <PlusIcon />,
+  },
+};

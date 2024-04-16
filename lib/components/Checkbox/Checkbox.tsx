@@ -10,7 +10,7 @@ import type { CheckboxProps } from "./Checkbox.types";
 
 import { Check } from "@/icons";
 
-import { cn, useInputId } from "@/utils";
+import { cn, useInputId, useInputState } from "@/utils";
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
   {
@@ -19,12 +19,21 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     raised = false,
     labelPosition = "right",
     checked,
+    defaultChecked,
     disabled,
+    onChange,
     ...props
   },
   ref,
 ) {
   const inputId = useInputId("checkbox", id);
+  const [isChecked, setIsChecked] = useInputState({
+    value: checked,
+    defaultValue: defaultChecked,
+    finalValue: false,
+    type: "checkbox",
+    onChange,
+  });
 
   const renderLabel = useCallback(
     () => <span className={cn(checkboxLabelCva({ disabled }))}>{label}</span>,
@@ -39,12 +48,13 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
           type="checkbox"
           ref={ref}
           id={inputId}
-          checked={checked}
+          checked={isChecked}
           disabled={disabled}
           className={cn(checkboxCva({ raised }))}
+          onChange={setIsChecked}
           {...props}
         />
-        {checked && <Check className={cn(checkboxIconCva({ disabled }))} />}
+        {isChecked && <Check className={cn(checkboxIconCva({ disabled }))} />}
       </div>
       {label && labelPosition === "right" && renderLabel()}
     </label>

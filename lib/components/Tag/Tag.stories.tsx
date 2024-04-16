@@ -37,7 +37,6 @@ export const Raised: Story = {
   args: {
     raised: true,
     label: "Raised",
-    onDeactivate: fn(),
   },
 };
 

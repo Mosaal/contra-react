@@ -1,3 +1,4 @@
+import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import RadioButton from "./RadioButton";
@@ -12,6 +13,8 @@ const meta: Meta<typeof RadioButton> = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  args: { onChange: fn() },
 };
 
 export default meta;
@@ -51,6 +54,13 @@ export const Checked: Story = {
   args: {
     checked: true,
     label: "Checked",
+  },
+};
+
+export const DefaultChecked: Story = {
+  args: {
+    defaultChecked: true,
+    label: "Default Checked",
   },
 };
 

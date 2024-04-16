@@ -66,6 +66,10 @@ export default {
       full: "100%",
     },
     extend: {
+      strokeWidth: {
+        3: 3,
+        4: 4,
+      },
       boxShadow: {
         "contra-button-small": `0 0.125rem 0 0 ${colors.contra.black.DEFAULT}`,
         "contra-button-normal": `0 0.25rem 0 0 ${colors.contra.black.DEFAULT}`,

@@ -115,3 +115,11 @@ export const Disabled: Story = {
     children: "Disabled",
   },
 };
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    children: "Raised & Disabled",
+  },
+};

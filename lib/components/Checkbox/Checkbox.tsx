@@ -10,7 +10,9 @@ import type { CheckboxProps } from "./Checkbox.types";
 
 import { Check } from "@/icons";
 
-import { cn, useInputId, useInputState } from "@/utils";
+import { useInputId, useInputState } from "@/hooks";
+
+import { cn } from "@/utils";
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
   {

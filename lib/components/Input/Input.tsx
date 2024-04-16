@@ -3,7 +3,9 @@ import { forwardRef, useCallback } from "react";
 import { inputCva, inputIconCva } from "./Input.styles";
 import type { InputProps } from "./Input.types";
 
-import { cn, useInputId } from "@/utils";
+import { useInputId } from "@/hooks";
+
+import { cn } from "@/utils";
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function (
   {

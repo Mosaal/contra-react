@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { extendTailwindMerge } from "tailwind-merge";
 import { cx, type CxOptions } from "class-variance-authority";
 
@@ -21,8 +20,4 @@ const twMerge = extendTailwindMerge({
 
 export function cn(...inputs: CxOptions) {
   return twMerge(cx(inputs));
-}
-
-export function useCn(...inputs: CxOptions) {
-  return useMemo(() => cn(inputs), [inputs]);
 }

@@ -8,7 +8,9 @@ import {
 } from "./RadioButton.styles";
 import type { RadioButtonProps } from "./RadioButton.types";
 
-import { cn, useInputId, useInputState } from "@/utils";
+import { useInputId, useInputState } from "@/hooks";
+
+import { cn } from "@/utils";
 
 const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
   {

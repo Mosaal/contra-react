@@ -6,7 +6,7 @@ import { Input } from "../Input";
 
 import { Eye, EyeOff } from "@/icons";
 
-import { useInputId } from "@/utils";
+import { useInputId } from "@/hooks";
 
 const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   function ({ id, ...props }, ref) {

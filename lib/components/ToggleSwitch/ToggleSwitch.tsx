@@ -9,7 +9,9 @@ import {
 } from "./ToggleSwitch.styles";
 import type { ToggleSwitchProps } from "./ToggleSwitch.types";
 
-import { cn, useInputId, useInputState } from "@/utils";
+import { useInputId, useInputState } from "@/hooks";
+
+import { cn } from "@/utils";
 
 const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
   {

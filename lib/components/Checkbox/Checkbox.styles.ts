@@ -26,8 +26,8 @@ export const checkboxWrapperCva = cva(
   {
     variants: {
       disabled: {
-        true: "text-contra-black-300",
-        false: "text-contra-black",
+        true: "cursor-not-allowed",
+        false: "cursor-pointer",
       },
     },
     defaultVariants: {
@@ -39,8 +39,8 @@ export const checkboxWrapperCva = cva(
 export const checkboxLabelCva = cva("text-4.25 font-extrabold leading-6", {
   variants: {
     disabled: {
-      true: "cursor-not-allowed",
-      false: "cursor-pointer",
+      true: "text-contra-black-300",
+      false: "text-contra-black",
     },
   },
   defaultVariants: {

@@ -19,6 +19,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     id,
     label,
     raised = false,
+    variant = "primary",
     labelPosition = "right",
     checked,
     defaultChecked,
@@ -52,11 +53,13 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
           id={inputId}
           checked={isChecked}
           disabled={disabled}
-          className={cn(checkboxCva({ raised }))}
+          className={cn(checkboxCva({ raised, variant }))}
           onChange={setIsChecked}
           {...props}
         />
-        {isChecked && <Check className={cn(checkboxIconCva({ disabled }))} />}
+        {isChecked && (
+          <Check className={cn(checkboxIconCva({ variant, disabled }))} />
+        )}
       </div>
       {label && labelPosition === "right" && renderLabel()}
     </label>

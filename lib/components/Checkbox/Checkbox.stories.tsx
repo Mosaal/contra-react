@@ -21,7 +21,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Unlabeled: Story = {};
+export const Primary: Story = {
+  args: {
+    variant: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+  },
+};
 
 export const Labeled: Story = {
   args: {
@@ -50,10 +60,19 @@ export const Raised: Story = {
   },
 };
 
-export const Checked: Story = {
+export const PimaryChecked: Story = {
   args: {
     checked: true,
-    label: "Checked",
+    variant: "primary",
+    label: "Primary Checked",
+  },
+};
+
+export const SecondaryChecked: Story = {
+  args: {
+    checked: true,
+    variant: "secondary",
+    label: "Secondary Checked",
   },
 };
 
@@ -64,10 +83,18 @@ export const DefaultChecked: Story = {
   },
 };
 
-export const Disabled: Story = {
+export const PrimaryDisabled: Story = {
   args: {
     disabled: true,
-    label: "Disabled",
+    label: "Primary Disabled",
+  },
+};
+
+export const SecondaryDisabled: Story = {
+  args: {
+    disabled: true,
+    variant: "secondary",
+    label: "Secondary Disabled",
   },
 };
 
@@ -79,10 +106,20 @@ export const RaisedDisabled: Story = {
   },
 };
 
-export const CheckedDisabled: Story = {
+export const PrimaryCheckedDisabled: Story = {
   args: {
     checked: true,
     disabled: true,
-    label: "Checked & Disabled",
+    variant: "primary",
+    label: "Primary & Checked & Disabled",
+  },
+};
+
+export const SecondaryCheckedDisabled: Story = {
+  args: {
+    checked: true,
+    disabled: true,
+    variant: "secondary",
+    label: "Secondary & Checked & Disabled",
   },
 };

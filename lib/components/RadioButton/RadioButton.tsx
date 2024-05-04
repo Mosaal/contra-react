@@ -3,10 +3,13 @@ import { forwardRef, useCallback } from "react";
 import {
   radioButtonCva,
   radioButtonDotCva,
+  radioButtonIconCva,
   radioButtonLabelCva,
   radioButtonWrapperCva,
 } from "./RadioButton.styles";
 import type { RadioButtonProps } from "./RadioButton.types";
+
+import { Check } from "@/icons";
 
 import { useInputId, useInputState } from "@/hooks";
 
@@ -17,6 +20,7 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
     id,
     label,
     raised = false,
+    variant = "primary",
     labelPosition = "right",
     checked,
     defaultChecked,
@@ -55,11 +59,16 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
           id={inputId}
           checked={isChecked}
           disabled={disabled}
-          className={cn(radioButtonCva({ raised }))}
+          className={cn(radioButtonCva({ raised, variant }))}
           onChange={setIsChecked}
           {...props}
         />
-        {isChecked && <div className={cn(radioButtonDotCva({ disabled }))} />}
+        {isChecked && variant === "primary" && (
+          <div className={cn(radioButtonDotCva({ disabled }))} />
+        )}
+        {isChecked && variant === "secondary" && (
+          <Check className={cn(radioButtonIconCva())} />
+        )}
       </div>
       {label && labelPosition === "right" && renderLabel()}
     </label>

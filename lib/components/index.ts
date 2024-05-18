@@ -9,3 +9,4 @@ export * from "./Indicator";
 export * from "./Tag";
 export * from "./ProgressBar";
 export * from "./Slider";
+export * from "./SegmentedControl";

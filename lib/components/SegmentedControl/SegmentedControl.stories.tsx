@@ -18,7 +18,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Unlabeled: Story = {
+export const Basic: Story = {
   args: {
     options: [
       { label: "Option#1", value: "option#1" },
@@ -53,8 +53,20 @@ export const Raised: Story = {
   },
 };
 
-export const AllDisabled: Story = {
+export const Disabled: Story = {
   args: {
+    disabled: true,
+    options: [
+      { label: "Option#1", value: "option#1" },
+      { label: "Option#2", value: "option#2" },
+      { label: "Option#3", value: "option#3" },
+    ],
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
     disabled: true,
     options: [
       { label: "Option#1", value: "option#1" },
@@ -70,6 +82,28 @@ export const SingleDisabled: Story = {
       { label: "Option#1", value: "option#1" },
       { label: "Option#2", value: "option#2" },
       { label: "Option#3", value: "option#3", disabled: true },
+    ],
+  },
+};
+
+export const WithValue: Story = {
+  args: {
+    value: "option#2",
+    options: [
+      { label: "Option#1", value: "option#1" },
+      { label: "Option#2", value: "option#2" },
+      { label: "Option#3", value: "option#3" },
+    ],
+  },
+};
+
+export const WithDefaultValue: Story = {
+  args: {
+    defaultValue: "option#2",
+    options: [
+      { label: "Option#1", value: "option#1" },
+      { label: "Option#2", value: "option#2" },
+      { label: "Option#3", value: "option#3" },
     ],
   },
 };

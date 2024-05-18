@@ -1,7 +1,7 @@
-import { SliderProps as RCSliderProps } from "rc-slider";
+import RCSlider from "rc-slider";
 
 export type SliderBaseProps = Omit<
-  RCSliderProps,
+  React.ComponentProps<typeof RCSlider>,
   "dots" | "dotStyle" | "activeDotStyle" | "marks" | "vertical"
 >;
 

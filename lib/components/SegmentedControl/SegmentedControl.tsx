@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef } from "react";
 
 import {
   segmentedControlCva,
@@ -6,38 +6,57 @@ import {
 } from "./SegmentedControl.styles";
 import type { SegmentedControlProps } from "./SegmentedControl.types";
 
+import { useControlledState } from "@/hooks";
+
 import { cn } from "@/utils";
 
-export default function SegmentedControl({
-  block = false,
-  raised = false,
-  disabled = false,
-  options,
-  className,
-  ...props
-}: SegmentedControlProps) {
-  const [value, setValue] = useState<string>(""); // @TODO: controlled state, if no initial value is given select the first by default
-  return (
-    <div
-      className={cn(
-        segmentedControlCva({ block, raised, disabled, className }),
-      )}
-      {...props}
-    >
-      {options.map((option, index) => (
-        <button
-          key={`option#${index}`}
-          type="button"
-          value={option.value}
-          disabled={disabled || option.disabled}
-          className={cn(
-            segmentedControlOptionCva({ selected: value === option.value }),
-          )}
-          onClick={() => setValue(option.value)}
-        >
-          {option.label}
-        </button>
-      ))}
-    </div>
-  );
-}
+const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
+  function (
+    {
+      value,
+      defaultValue,
+      block = false,
+      raised = false,
+      disabled = false,
+      options,
+      className,
+      onChange,
+      ...props
+    },
+    ref,
+  ) {
+    const [cValue, setCValue] = useControlledState({
+      value,
+      defaultValue,
+      finalValue: options?.[0].value ?? "",
+      onChange,
+    });
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          segmentedControlCva({ block, raised, disabled, className }),
+        )}
+        {...props}
+      >
+        {options.map((option, index) => (
+          <button
+            key={`segmented-control-option#${index}`}
+            type="button"
+            value={option.value}
+            disabled={disabled || option.disabled}
+            className={cn(
+              segmentedControlOptionCva({ selected: cValue === option.value }),
+            )}
+            onClick={() => setCValue(option.value)}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+    );
+  },
+);
+
+export default SegmentedControl;

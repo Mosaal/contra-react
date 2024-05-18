@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const segmentedControlCva = cva(
-  "relative inline-flex flex-row items-center overflow-hidden rounded-6.5 border-0.5 border-contra-black bg-contra-white text-5.25 leading-7",
+  "inline-flex flex-row items-center overflow-hidden rounded-6.5 border-0.5 border-contra-black bg-contra-white text-5.25 leading-7",
   {
     variants: {
       block: {
@@ -15,8 +15,17 @@ export const segmentedControlCva = cva(
         true: "cursor-not-allowed border-contra-black-300",
       },
     },
+    compoundVariants: [
+      {
+        raised: true,
+        disabled: true,
+        className: "shadow-contra-black-300",
+      },
+    ],
     defaultVariants: {
       block: false,
+      raised: false,
+      disabled: false,
     },
   },
 );
@@ -26,7 +35,7 @@ export const segmentedControlOptionCva = cva(
   {
     variants: {
       selected: {
-        true: "bg-contra-green font-extrabold text-contra-white disabled:bg-contra-green-800 disabled:text-contra-white",
+        true: "bg-contra-green text-contra-white disabled:bg-contra-green-800 disabled:text-contra-white",
       },
     },
     defaultVariants: {

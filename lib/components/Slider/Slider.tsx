@@ -1,55 +1,26 @@
-import { forwardRef, useEffect } from "react";
+import RCSlider from "rc-slider";
+import "rc-slider/assets/index.css";
 
-import { sliderCva } from "./Slider.styles";
-import type { SliderProps } from "./Slider.types";
+import { handleStyle, railStyle, trackStyle } from "./Slider.styles";
+import { SliderProps } from "./Slider.types";
 
-import { useInputId, useInputState } from "@/hooks";
-
-import { cn } from "@/utils";
-
-import "./index.css";
-
-const Slider = forwardRef<HTMLInputElement, SliderProps>(function (
-  {
-    id,
-    raised = false,
-    max,
-    value,
-    defaultValue,
-    disabled,
-    onChange,
-    className,
-    ...props
-  },
-  ref,
-) {
-  const inputId = useInputId("slider", id);
-  const [cValue, setCValue] = useInputState({
-    value,
-    defaultValue,
-    finalValue: 0,
-    onChange,
-  });
-
-  useEffect(() => {
-    const slider = document.getElementById(inputId) as HTMLInputElement;
-    const progress = (cValue / (max ? Number(max) : 100)) * 100;
-    slider.style.setProperty("--tw-gradient-from-position", `${progress}%`);
-    slider.style.setProperty("--tw-gradient-to-position", `${progress}%`);
-  }, [cValue, max, inputId]);
-
+export default function Slider({
+  raised = false,
+  disabled,
+  ...props
+}: SliderProps) {
   return (
-    <input
-      type="range"
-      ref={ref}
-      id={inputId}
-      value={cValue}
+    <RCSlider
       disabled={disabled}
-      className={cn("contra-slider", sliderCva({ raised, className }))}
-      onChange={setCValue}
+      dotStyle={{ display: "none" }}
+      activeDotStyle={{ display: "none" }}
+      style={{ backgroundColor: "transparent" }}
+      styles={{
+        track: trackStyle(disabled),
+        rail: railStyle(raised, disabled),
+        handle: handleStyle(disabled),
+      }}
       {...props}
     />
   );
-});
-
-export default Slider;
+}

@@ -8,6 +8,7 @@ const meta: Meta<typeof Slider> = {
   component: Slider,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+    layout: "padded",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
@@ -19,22 +20,15 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Basic: Story = {};
 
-export const WithValue: Story = {
+export const Range: Story = {
   args: {
-    value: 50,
-  },
-};
-
-export const WithDefaultValue: Story = {
-  args: {
-    defaultValue: 50,
+    range: true,
   },
 };
 
 export const Raised: Story = {
   args: {
     raised: true,
-    defaultValue: 50,
   },
 };
 
@@ -49,6 +43,18 @@ export const RaisedDisabled: Story = {
   args: {
     raised: true,
     disabled: true,
+    defaultValue: 50,
+  },
+};
+
+export const WithValue: Story = {
+  args: {
+    value: 50,
+  },
+};
+
+export const WithDefaultValue: Story = {
+  args: {
     defaultValue: 50,
   },
 };

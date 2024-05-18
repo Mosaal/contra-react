@@ -1,3 +1,4 @@
+import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import RadioButton from "./RadioButton";
@@ -12,6 +13,8 @@ const meta: Meta<typeof RadioButton> = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  args: { onChange: fn() },
 };
 
 export default meta;
@@ -19,6 +22,18 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Unlabeled: Story = {};
+
+export const Primary: Story = {
+  args: {
+    variant: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+  },
+};
 
 export const Labeled: Story = {
   args: {
@@ -40,24 +55,73 @@ export const WithRightLabel: Story = {
   },
 };
 
-export const Checked: Story = {
+export const Raised: Story = {
   args: {
-    label: "Checked",
-    checked: true,
+    raised: true,
+    label: "Raised",
   },
 };
 
-export const Disabled: Story = {
+export const PimaryChecked: Story = {
   args: {
-    label: "Disabled",
-    disabled: true,
+    checked: true,
+    variant: "primary",
+    label: "Primary Checked",
   },
 };
 
-export const CheckedDisabled: Story = {
+export const SecondaryChecked: Story = {
   args: {
-    label: "Checked & Disabled",
+    checked: true,
+    variant: "secondary",
+    label: "Secondary Checked",
+  },
+};
+
+export const DefaultChecked: Story = {
+  args: {
+    defaultChecked: true,
+    label: "Default Checked",
+  },
+};
+
+export const PrimaryDisabled: Story = {
+  args: {
+    disabled: true,
+    label: "Primary Disabled",
+  },
+};
+
+export const SecondaryDisabled: Story = {
+  args: {
+    disabled: true,
+    variant: "secondary",
+    label: "Secondary Disabled",
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    label: "Raised & Disabled",
+  },
+};
+
+export const PrimaryCheckedDisabled: Story = {
+  args: {
     checked: true,
     disabled: true,
+    variant: "primary",
+    label: "Primary & Checked & Disabled",
+  },
+};
+
+export const SecondaryCheckedDisabled: Story = {
+  args: {
+    checked: true,
+    disabled: true,
+    variant: "secondary",
+    label: "Secondary & Checked & Disabled",
   },
 };

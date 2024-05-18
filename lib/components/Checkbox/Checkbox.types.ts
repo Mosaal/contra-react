@@ -2,12 +2,12 @@ import type { VariantProps } from "class-variance-authority";
 
 import { checkboxCva } from "./Checkbox.styles";
 
-export type CheckboxVariantProps = VariantProps<typeof checkboxCva>;
-
 export type CheckboxBaseProps = Omit<
   React.ComponentPropsWithoutRef<"input">,
   "type"
 >;
+
+export type CheckboxVariantProps = VariantProps<typeof checkboxCva>;
 
 export interface CheckboxProps extends CheckboxBaseProps, CheckboxVariantProps {
   label?: string;

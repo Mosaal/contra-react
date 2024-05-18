@@ -1,3 +1,4 @@
+import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import ToggleSwitch from "./ToggleSwitch";
@@ -12,6 +13,8 @@ const meta: Meta<typeof ToggleSwitch> = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  args: { onChange: fn() },
 };
 
 export default meta;
@@ -39,24 +42,46 @@ export const WithBothLabels: Story = {
   },
 };
 
+export const Raised: Story = {
+  args: {
+    raised: true,
+    rightLabel: "Raised",
+  },
+};
+
 export const Checked: Story = {
   args: {
-    leftLabel: "Checked",
     checked: true,
+    rightLabel: "Checked",
+  },
+};
+
+export const DefaultChecked: Story = {
+  args: {
+    defaultChecked: true,
+    rightLabel: "Default Checked",
   },
 };
 
 export const Disabled: Story = {
   args: {
-    leftLabel: "Disabled",
     disabled: true,
+    rightLabel: "Disabled",
+  },
+};
+
+export const RaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    rightLabel: "Raised & Disabled",
   },
 };
 
 export const CheckedDisabled: Story = {
   args: {
-    leftLabel: "Checked & Disabled",
     checked: true,
     disabled: true,
+    rightLabel: "Checked & Disabled",
   },
 };

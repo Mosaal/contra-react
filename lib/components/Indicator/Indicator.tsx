@@ -6,14 +6,14 @@ import { indicatorCva, indicatorWrapperCva } from "./Indicator.styles";
 import { cn } from "@/utils";
 
 const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function (
-  { label, position = "top-right", children, ...props },
+  { label, raised = false, position = "top-right", children, ...props },
   ref,
 ) {
   return (
     <div ref={ref} className="relative inline-block" {...props}>
       {children}
       <div className={cn(indicatorWrapperCva({ position }))}>
-        <div className={cn(indicatorCva({ position }))}>{label}</div>
+        <div className={cn(indicatorCva({ raised, position }))}>{label}</div>
       </div>
     </div>
   );

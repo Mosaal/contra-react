@@ -6,7 +6,7 @@ import { Input } from "../Input";
 
 import { Eye, EyeOff } from "@/icons";
 
-import { useInputId } from "@/utils";
+import { useInputId } from "@/hooks";
 
 const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   function ({ id, ...props }, ref) {
@@ -19,7 +19,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         ref={ref}
         id={inputId}
         type={isVisible ? "text" : "password"}
-        rightIcon={<EyeIcon className="w-6 h-6" />}
+        rightIcon={<EyeIcon className="h-6 w-6" />}
         onRightIconClick={() => setIsVisible(!isVisible)}
         {...props}
       />

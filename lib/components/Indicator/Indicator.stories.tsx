@@ -17,7 +17,7 @@ const meta: Meta<typeof Indicator> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Square = () => <div className="w-20 h-20 rounded-3 bg-contra-green" />;
+const Square = () => <div className="h-20 w-20 rounded-3 bg-contra-green" />;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Unlabeled: Story = {
@@ -26,8 +26,23 @@ export const Unlabeled: Story = {
   },
 };
 
+export const Raised: Story = {
+  args: {
+    raised: true,
+    children: <Square />,
+  },
+};
+
 export const Labeled: Story = {
   args: {
+    label: "99+",
+    children: <Square />,
+  },
+};
+
+export const RaisedLabeled: Story = {
+  args: {
+    raised: true,
     label: "99+",
     children: <Square />,
   },

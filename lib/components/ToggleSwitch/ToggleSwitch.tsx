@@ -9,13 +9,32 @@ import {
 } from "./ToggleSwitch.styles";
 import type { ToggleSwitchProps } from "./ToggleSwitch.types";
 
-import { cn, useInputId } from "@/utils";
+import { useInputId, useInputState } from "@/hooks";
+
+import { cn } from "@/utils";
 
 const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
-  { id, leftLabel, rightLabel, disabled, checked, ...props },
+  {
+    id,
+    raised = false,
+    leftLabel,
+    rightLabel,
+    checked,
+    defaultChecked,
+    disabled,
+    onChange,
+    ...props
+  },
   ref,
 ) {
   const inputId = useInputId("toggle", id);
+  const [isChecked, setIsChecked] = useInputState({
+    value: checked,
+    defaultValue: defaultChecked,
+    finalValue: false,
+    type: "checkbox",
+    onChange,
+  });
 
   const renderLabel = useCallback(
     (label: string) => (
@@ -35,14 +54,21 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
           type="checkbox"
           ref={ref}
           id={inputId}
-          checked={checked}
+          checked={isChecked}
           disabled={disabled}
-          className={cn(toggleSwitchCva())}
+          className={cn(toggleSwitchCva({ raised }))}
+          onChange={setIsChecked}
           {...props}
         />
-        <div className={cn(toggleSwitchToggleCva({ checked, disabled }))}>
+        <div
+          className={cn(
+            toggleSwitchToggleCva({ checked: isChecked, disabled }),
+          )}
+        >
           <div
-            className={cn(toggleSwitchToggleDotCva({ checked, disabled }))}
+            className={cn(
+              toggleSwitchToggleDotCva({ checked: isChecked, disabled }),
+            )}
           />
         </div>
       </div>

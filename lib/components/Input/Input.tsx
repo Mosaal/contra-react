@@ -3,11 +3,14 @@ import { forwardRef, useCallback } from "react";
 import { inputCva, inputIconCva } from "./Input.styles";
 import type { InputProps } from "./Input.types";
 
-import { cn, useInputId } from "@/utils";
+import { useInputId } from "@/hooks";
+
+import { cn } from "@/utils";
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function (
   {
     id,
+    raised = false,
     disabled,
     leftIcon,
     rightIcon,
@@ -59,7 +62,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
           id={inputId}
           disabled={disabled}
           className={cn(
-            inputCva(),
+            inputCva({ raised }),
             leftIcon ? "pl-12.5" : "pl-5.5",
             rightIcon ? "pr-12.5" : "pr-5.5",
           )}

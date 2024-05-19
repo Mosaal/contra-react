@@ -1,10 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --contra-white: #ffffff;
+
+    --contra-blue-100: #e9e7fc;
+    --contra-blue-800: #8094ff;
+    --contra-blue: #1947e5;
+
+    --contra-pink-200: #fff3f8;
+    --contra-pink-800: #ffc7de;
+    --contra-pink: #ff89bb;
+
+    --contra-yellow-100: #fff4cc;
+    --contra-yellow-800: #ffd465;
+    --contra-yellow: #ffbd12;
+
+    --contra-green-100: #d6fcf7;
+    --contra-green-800: #61e4c5;
+    --contra-green: #00c6ae;
+
+    --contra-red-100: #ffe8e8;
+    --contra-red-800: #ff9692;
+    --contra-red: #f95a2c;
+
+    --contra-black-100: #f4f5f7;
+    --contra-black-200: #eeeff4;
+    --contra-black-300: #9fa4b4;
+    --contra-black-700: #969bab;
+    --contra-black-800: #474a57;
+    --contra-black: #18191f;
+  }
+
   * {
     font-family: "Montserrat", sans-serif;
   }

@@ -1,25 +1,18 @@
-export type StepperBaseProps = Omit<
-  React.ComponentPropsWithoutRef<"input">,
-  "type"
->;
+import type { VariantProps } from "class-variance-authority";
 
-export type StepperSize = "small" | "normal";
+import { stepperContainerCva } from "./Stepper.styles";
 
-export type StepperVariant = "single" | "double";
+export type StepperVariantProps = VariantProps<typeof stepperContainerCva>;
 
-export type StepperContainer = "inside" | "outside";
-
-export interface StepperProps {
+export interface StepperProps extends StepperVariantProps {
   id?: string;
   name?: string;
-  label?: string;
-  size?: StepperSize;
-  variant?: StepperVariant;
-  container?: StepperContainer;
-  // min?: number;
-  // max?: number;
-  // value?: number;
-  // initialValue?: number;
-  onDecrement?: (value: number) => void;
-  onIncrement?: (value: number) => void;
+  className?: string;
+  label?: React.ReactNode;
+  min?: number;
+  max?: number;
+  value?: number;
+  defaultValue?: number;
+  action?: "increment" | "decrement";
+  onChange?: (value: number) => void;
 }

@@ -6,3 +6,7 @@ export * from "./EyeOff";
 export { default as EyeOff } from "./EyeOff";
 export * from "./X";
 export { default as X } from "./X";
+export * from "./Plus";
+export { default as Plus } from "./Plus";
+export * from "./Minus";
+export { default as Minus } from "./Minus";

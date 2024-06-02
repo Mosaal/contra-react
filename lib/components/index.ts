@@ -11,3 +11,4 @@ export * from "./ProgressBar";
 export * from "./Slider";
 export * from "./SegmentedControl";
 export * from "./Stepper";
+export * from "./Counter";

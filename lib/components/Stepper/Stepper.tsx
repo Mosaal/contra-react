@@ -1,6 +1,7 @@
 import { forwardRef, useCallback } from "react";
 
 import {
+  stepperIconCva,
   stepperLabelCva,
   stepperButtonCva,
   stepperContainerCva,
@@ -42,10 +43,10 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       setCValue(
-        (action === "increment" && max
+        (action === "increment" && typeof max !== "undefined"
           ? Math.min(cValue + 1, max)
           : cValue + 1) ||
-          (action === "decrement" && min
+          (action === "decrement" && typeof min !== "undefined"
             ? Math.max(cValue - 1, min)
             : cValue - 1),
       );
@@ -67,10 +68,7 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
         className={cn(stepperButtonCva({ variant, size }))}
         onClick={handleChange}
       >
-        <Icon
-          strokeWidth={4}
-          className={size === "normal" ? "h-6 w-6" : "h-4.5 w-4.5"}
-        />
+        <Icon className={cn(stepperIconCva({ size }))} />
       </button>
       <input
         hidden

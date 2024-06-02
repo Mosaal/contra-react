@@ -1,6 +1,12 @@
 import React, { forwardRef, useCallback } from "react";
 
-import { counterContainerCva } from "./Counter.styles";
+import {
+  counterIconCva,
+  counterLabelCva,
+  counterContainerCva,
+  counterLeftButtonCva,
+  counterRightButtonCva,
+} from "./Counter.styles";
 import { CounterProps } from "./Counter.types";
 
 import { Minus, Plus } from "@/icons";
@@ -35,7 +41,9 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
   const handleDecrement = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      setCValue(min ? Math.max(cValue - 1, min) : cValue - 1);
+      setCValue(
+        typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
+      );
     },
     [min, cValue, setCValue],
   );
@@ -43,7 +51,9 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
   const handleIncrement = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      setCValue(max ? Math.min(cValue + 1, max) : cValue + 1);
+      setCValue(
+        typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
+      );
     },
     [max, cValue, setCValue],
   );
@@ -51,28 +61,31 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
   const renderNormalVariant = useCallback(
     () => (
       <React.Fragment>
-        <label htmlFor={inputId} className="text-9 font-extrabold leading-10">
+        <label
+          htmlFor={inputId}
+          className={cn(counterLabelCva({ variant, size }))}
+        >
           {cValue}
         </label>
         <div className="flex flex-row flex-nowrap items-center overflow-hidden">
           <button
             type="button"
-            className="flex h-12 w-12 items-center justify-center rounded-l-4 border-y-0.5 border-l-0.5 border-r-0.25 border-contra-black bg-contra-yellow"
+            className={cn(counterLeftButtonCva({ variant, size }))}
             onClick={handleDecrement}
           >
-            <Minus strokeWidth={4} className="h-6 w-6" />
+            <Minus className={cn(counterIconCva({ size }))} />
           </button>
           <button
             type="button"
-            className="flex h-12 w-12 items-center justify-center rounded-r-4 border-y-0.5 border-l-0.25 border-r-0.5 border-contra-black bg-contra-yellow"
+            className={cn(counterRightButtonCva({ variant, size }))}
             onClick={handleIncrement}
           >
-            <Plus strokeWidth={4} className="h-6 w-6" />
+            <Plus className={cn(counterIconCva({ size }))} />
           </button>
         </div>
       </React.Fragment>
     ),
-    [inputId, cValue, handleDecrement, handleIncrement],
+    [inputId, variant, size, cValue, handleDecrement, handleIncrement],
   );
 
   const renderContainedVariant = useCallback(
@@ -80,27 +93,27 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
       <React.Fragment>
         <button
           type="button"
-          className="bg-contra-white py-2.5 pl-2.5 pr-2"
+          className={cn(counterLeftButtonCva({ variant, size }))}
           onClick={handleDecrement}
         >
-          <Minus strokeWidth={4} className="h-6 w-6" />
+          <Minus className={cn(counterIconCva({ size }))} />
         </button>
         <label
           htmlFor={inputId}
-          className="inline-flex min-w-12 items-center justify-center self-stretch bg-contra-yellow text-6 font-extrabold leading-7"
+          className={cn(counterLabelCva({ variant, size }))}
         >
           {cValue}
         </label>
         <button
           type="button"
-          className="bg-contra-white py-2.5 pl-2 pr-2.5"
+          className={cn(counterRightButtonCva({ variant, size }))}
           onClick={handleIncrement}
         >
-          <Plus strokeWidth={4} className="h-6 w-6" />
+          <Plus className={cn(counterIconCva({ size }))} />
         </button>
       </React.Fragment>
     ),
-    [inputId, cValue, handleDecrement, handleIncrement],
+    [inputId, variant, size, cValue, handleDecrement, handleIncrement],
   );
 
   return (

@@ -48,3 +48,35 @@ export const SmallContained: Story = {
     variant: "contained",
   },
 };
+
+export const NormalWithValue: Story = {
+  args: {
+    value: 10,
+    size: "normal",
+    variant: "normal",
+  },
+};
+
+export const NormalWithDefaultValue: Story = {
+  args: {
+    defaultValue: 10,
+    size: "normal",
+    variant: "normal",
+  },
+};
+
+export const ContainedWithValue: Story = {
+  args: {
+    value: 10,
+    size: "normal",
+    variant: "contained",
+  },
+};
+
+export const ContainedWithDefaultValue: Story = {
+  args: {
+    defaultValue: 10,
+    size: "normal",
+    variant: "contained",
+  },
+};

@@ -97,3 +97,15 @@ export const stepperButtonCva = cva("flex items-center justify-center", {
     size: "normal",
   },
 });
+
+export const stepperIconCva = cva("stroke-4", {
+  variants: {
+    size: {
+      small: "h-4.5 w-4.5",
+      normal: "h-6 w-6",
+    },
+  },
+  defaultVariants: {
+    size: "normal",
+  },
+});

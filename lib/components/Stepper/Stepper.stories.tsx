@@ -68,3 +68,39 @@ export const ContainedDecrement: Story = {
     action: "decrement",
   },
 };
+
+export const NormalRaised: Story = {
+  args: {
+    raised: true,
+    size: "normal",
+    variant: "normal",
+    action: "increment",
+  },
+};
+
+export const SmallNormalRaised: Story = {
+  args: {
+    raised: true,
+    size: "small",
+    variant: "normal",
+    action: "increment",
+  },
+};
+
+export const ContainedRaised: Story = {
+  args: {
+    raised: true,
+    size: "normal",
+    variant: "contained",
+    action: "increment",
+  },
+};
+
+export const SmallContainedRaised: Story = {
+  args: {
+    raised: true,
+    size: "small",
+    variant: "contained",
+    action: "increment",
+  },
+};

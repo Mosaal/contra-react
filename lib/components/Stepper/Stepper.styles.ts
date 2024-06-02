@@ -12,10 +12,27 @@ export const stepperContainerCva = cva(
         small: "rounded-3",
         normal: "rounded-4",
       },
+      raised: {
+        true: "",
+        false: "",
+      },
     },
+    compoundVariants: [
+      {
+        variant: "contained",
+        raised: true,
+        className: "shadow-contra-button-small",
+      },
+      {
+        variant: "contained",
+        raised: false,
+        className: "shadow-none",
+      },
+    ],
     defaultVariants: {
       variant: "normal",
       size: "normal",
+      raised: false,
     },
   },
 );
@@ -69,6 +86,10 @@ export const stepperButtonCva = cva("flex items-center justify-center", {
       small: "",
       normal: "",
     },
+    raised: {
+      true: "",
+      false: "",
+    },
   },
   compoundVariants: [
     {
@@ -91,10 +112,21 @@ export const stepperButtonCva = cva("flex items-center justify-center", {
       size: "small",
       className: "py-1.75 pl-1.25 pr-1.75",
     },
+    {
+      variant: "normal",
+      raised: true,
+      className: "shadow-contra-button-small",
+    },
+    {
+      variant: "normal",
+      raised: false,
+      className: "shadow-none",
+    },
   ],
   defaultVariants: {
     variant: "normal",
     size: "normal",
+    raised: false,
   },
 });
 

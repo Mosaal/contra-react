@@ -21,6 +21,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
     name,
     min,
     max,
+    raised = false,
     size = "normal",
     variant = "normal",
     value,
@@ -67,17 +68,17 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         >
           {cValue}
         </label>
-        <div className="flex flex-row flex-nowrap items-center overflow-hidden">
+        <div className="flex flex-row flex-nowrap items-center">
           <button
             type="button"
-            className={cn(counterLeftButtonCva({ variant, size }))}
+            className={cn(counterLeftButtonCva({ variant, size, raised }))}
             onClick={handleDecrement}
           >
             <Minus className={cn(counterIconCva({ size }))} />
           </button>
           <button
             type="button"
-            className={cn(counterRightButtonCva({ variant, size }))}
+            className={cn(counterRightButtonCva({ variant, size, raised }))}
             onClick={handleIncrement}
           >
             <Plus className={cn(counterIconCva({ size }))} />
@@ -85,7 +86,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         </div>
       </React.Fragment>
     ),
-    [inputId, variant, size, cValue, handleDecrement, handleIncrement],
+    [inputId, variant, size, raised, cValue, handleDecrement, handleIncrement],
   );
 
   const renderContainedVariant = useCallback(
@@ -93,7 +94,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
       <React.Fragment>
         <button
           type="button"
-          className={cn(counterLeftButtonCva({ variant, size }))}
+          className={cn(counterLeftButtonCva({ variant, size, raised }))}
           onClick={handleDecrement}
         >
           <Minus className={cn(counterIconCva({ size }))} />
@@ -106,18 +107,20 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         </label>
         <button
           type="button"
-          className={cn(counterRightButtonCva({ variant, size }))}
+          className={cn(counterRightButtonCva({ variant, size, raised }))}
           onClick={handleIncrement}
         >
           <Plus className={cn(counterIconCva({ size }))} />
         </button>
       </React.Fragment>
     ),
-    [inputId, variant, size, cValue, handleDecrement, handleIncrement],
+    [inputId, variant, size, raised, cValue, handleDecrement, handleIncrement],
   );
 
   return (
-    <div className={cn(counterContainerCva({ variant, size, className }))}>
+    <div
+      className={cn(counterContainerCva({ variant, size, raised, className }))}
+    >
       {variant === "normal" ? renderNormalVariant() : renderContainedVariant()}
       <input
         hidden

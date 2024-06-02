@@ -21,6 +21,7 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     label,
     min,
     max,
+    raised = false,
     size = "normal",
     variant = "normal",
     action = "increment",
@@ -56,7 +57,9 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
 
   const Icon = action === "increment" ? Plus : Minus;
   return (
-    <div className={cn(stepperContainerCva({ variant, size, className }))}>
+    <div
+      className={cn(stepperContainerCva({ variant, size, raised, className }))}
+    >
       <label
         htmlFor={inputId}
         className={cn(stepperLabelCva({ variant, size }))}
@@ -65,7 +68,7 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
       </label>
       <button
         type="button"
-        className={cn(stepperButtonCva({ variant, size }))}
+        className={cn(stepperButtonCva({ variant, raised, size }))}
         onClick={handleChange}
       >
         <Icon className={cn(stepperIconCva({ size }))} />

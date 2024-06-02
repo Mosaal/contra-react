@@ -80,3 +80,35 @@ export const ContainedWithDefaultValue: Story = {
     variant: "contained",
   },
 };
+
+export const NormalRaised: Story = {
+  args: {
+    raised: true,
+    size: "normal",
+    variant: "normal",
+  },
+};
+
+export const SmallNormalRaised: Story = {
+  args: {
+    raised: true,
+    size: "small",
+    variant: "normal",
+  },
+};
+
+export const ContainedRaised: Story = {
+  args: {
+    raised: true,
+    size: "normal",
+    variant: "contained",
+  },
+};
+
+export const SmallContainedRaised: Story = {
+  args: {
+    raised: true,
+    size: "small",
+    variant: "contained",
+  },
+};

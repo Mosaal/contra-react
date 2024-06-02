@@ -12,6 +12,10 @@ export const counterContainerCva = cva(
         small: "",
         normal: "",
       },
+      raised: {
+        true: "",
+        false: "",
+      },
     },
     compoundVariants: [
       {
@@ -23,6 +27,16 @@ export const counterContainerCva = cva(
         variant: "contained",
         size: "small",
         className: "rounded-3",
+      },
+      {
+        variant: "contained",
+        raised: true,
+        className: "shadow-contra-button-small",
+      },
+      {
+        variant: "contained",
+        raised: false,
+        className: "shadow-none",
       },
     ],
     defaultVariants: {
@@ -83,6 +97,10 @@ export const counterLeftButtonCva = cva("flex items-center justify-center", {
       small: "",
       normal: "",
     },
+    raised: {
+      true: "",
+      false: "",
+    },
   },
   compoundVariants: [
     {
@@ -105,6 +123,16 @@ export const counterLeftButtonCva = cva("flex items-center justify-center", {
       size: "small",
       className: "px-1.5 py-1.75",
     },
+    {
+      variant: "normal",
+      raised: true,
+      className: "shadow-contra-button-small",
+    },
+    {
+      variant: "normal",
+      raised: false,
+      className: "shadow-none",
+    },
   ],
   defaultVariants: {
     variant: "normal",
@@ -122,6 +150,10 @@ export const counterRightButtonCva = cva("flex items-center justify-center", {
     size: {
       small: "",
       normal: "",
+    },
+    raised: {
+      true: "",
+      false: "",
     },
   },
   compoundVariants: [
@@ -144,6 +176,16 @@ export const counterRightButtonCva = cva("flex items-center justify-center", {
       variant: "contained",
       size: "small",
       className: "px-1.5 py-1.75",
+    },
+    {
+      variant: "normal",
+      raised: true,
+      className: "shadow-contra-button-small",
+    },
+    {
+      variant: "normal",
+      raised: false,
+      className: "shadow-none",
     },
   ],
   defaultVariants: {

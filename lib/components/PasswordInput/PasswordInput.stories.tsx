@@ -2,6 +2,7 @@ import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import PasswordInput from "./PasswordInput";
+import { ChevronDown } from "@/icons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof PasswordInput> = {
@@ -19,10 +20,6 @@ const meta: Meta<typeof PasswordInput> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const LeftChevronIcon = ({ className }: { className?: string }) => (
-  <span className={className || "text-6"}>{"<"}</span>
-);
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Empty: Story = {};
@@ -71,14 +68,14 @@ export const DisabledWithValue: Story = {
 export const WithLeftIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <LeftChevronIcon />,
+    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
   },
 };
 
 export const WithClickableIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <LeftChevronIcon />,
+    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
     onLeftIconClick: fn(),
   },
 };

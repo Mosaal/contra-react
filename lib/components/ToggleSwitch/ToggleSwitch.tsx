@@ -22,6 +22,7 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
     checked,
     defaultChecked,
     disabled,
+    className,
     onChange,
     ...props
   },
@@ -56,7 +57,7 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
           id={inputId}
           checked={isChecked}
           disabled={disabled}
-          className={cn(toggleSwitchCva({ raised }))}
+          className={cn(toggleSwitchCva({ raised, className }))}
           onChange={setIsChecked}
           {...props}
         />

@@ -5,6 +5,7 @@ export * from "./Checkbox";
 export * from "./ToggleSwitch";
 export * from "./Input";
 export * from "./Select";
+export * from "./CodeInput";
 export * from "./PasswordInput";
 export * from "./Indicator";
 export * from "./Tag";

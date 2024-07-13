@@ -6,7 +6,4 @@ export type PasswordInputBaseProps = Omit<
 >;
 
 export interface PasswordInputProps
-  extends Omit<InputProps, "rightIcon" | "onRightIconClick"> {
-  leftIcon?: React.ReactNode;
-  onLeftIconClick?: () => void;
-}
+  extends Omit<InputProps, "rightIcon" | "onRightIconClick"> {}

@@ -14,6 +14,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
     disabled,
     leftIcon,
     rightIcon,
+    className,
     onLeftIconClick,
     onRightIconClick,
     ...props
@@ -53,8 +54,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
   );
 
   return (
-    <label htmlFor={inputId}>
-      <div className="relative inline-flex">
+    <label htmlFor={inputId} className="inline-block w-85">
+      <div className="relative inline-flex w-full">
         {leftIcon && renderIcon(leftIcon, "left", onLeftIconClick)}
         <input
           type="text"
@@ -62,9 +63,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
           id={inputId}
           disabled={disabled}
           className={cn(
-            inputCva({ raised }),
-            leftIcon ? "pl-12.5" : "pl-5.5",
-            rightIcon ? "pr-12.5" : "pr-5.5",
+            inputCva({ raised, className }),
+            leftIcon ? "pl-12.5" : "pl-3.5",
+            rightIcon ? "pr-12.5" : "pr-3.5",
           )}
           {...props}
         />

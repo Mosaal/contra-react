@@ -10,3 +10,5 @@ export * from "./Plus";
 export { default as Plus } from "./Plus";
 export * from "./Minus";
 export { default as Minus } from "./Minus";
+export * from "./ChevronDown";
+export { default as ChevronDown } from "./ChevronDown";

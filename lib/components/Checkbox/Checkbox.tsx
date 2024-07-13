@@ -24,6 +24,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     checked,
     defaultChecked,
     disabled,
+    className,
     onChange,
     ...props
   },
@@ -53,7 +54,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
           id={inputId}
           checked={isChecked}
           disabled={disabled}
-          className={cn(checkboxCva({ raised, variant }))}
+          className={cn(checkboxCva({ raised, variant, className }))}
           onChange={setIsChecked}
           {...props}
         />

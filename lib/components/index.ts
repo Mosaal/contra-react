@@ -4,6 +4,7 @@ export * from "./RadioButton";
 export * from "./Checkbox";
 export * from "./ToggleSwitch";
 export * from "./Input";
+export * from "./Select";
 export * from "./PasswordInput";
 export * from "./Indicator";
 export * from "./Tag";

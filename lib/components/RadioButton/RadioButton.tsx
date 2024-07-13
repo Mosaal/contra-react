@@ -25,6 +25,7 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
     checked,
     defaultChecked,
     disabled,
+    className,
     onChange,
     ...props
   },
@@ -59,7 +60,7 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
           id={inputId}
           checked={isChecked}
           disabled={disabled}
-          className={cn(radioButtonCva({ raised, variant }))}
+          className={cn(radioButtonCva({ raised, variant, className }))}
           onChange={setIsChecked}
           {...props}
         />

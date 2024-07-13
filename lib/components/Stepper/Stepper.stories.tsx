@@ -29,6 +29,15 @@ export const NormalIncrement: Story = {
   },
 };
 
+export const NormalIncrementDisabled: Story = {
+  args: {
+    disabled: true,
+    size: "normal",
+    variant: "normal",
+    action: "increment",
+  },
+};
+
 export const SmallNormalIncrement: Story = {
   args: {
     size: "small",
@@ -47,6 +56,15 @@ export const NormalDecrement: Story = {
 
 export const ContainedIncrement: Story = {
   args: {
+    size: "normal",
+    variant: "contained",
+    action: "increment",
+  },
+};
+
+export const ContainedIncrementDisabled: Story = {
+  args: {
+    disabled: true,
     size: "normal",
     variant: "contained",
     action: "increment",
@@ -78,6 +96,16 @@ export const NormalRaised: Story = {
   },
 };
 
+export const NormalRaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    size: "normal",
+    variant: "normal",
+    action: "increment",
+  },
+};
+
 export const SmallNormalRaised: Story = {
   args: {
     raised: true,
@@ -90,6 +118,16 @@ export const SmallNormalRaised: Story = {
 export const ContainedRaised: Story = {
   args: {
     raised: true,
+    size: "normal",
+    variant: "contained",
+    action: "increment",
+  },
+};
+
+export const ContainedRaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
     size: "normal",
     variant: "contained",
     action: "increment",

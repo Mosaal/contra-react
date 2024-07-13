@@ -25,6 +25,7 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     size = "normal",
     variant = "normal",
     action = "increment",
+    disabled = false,
     value,
     defaultValue,
     className,
@@ -43,31 +44,36 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
   const handleChange = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      setCValue(
-        (action === "increment" && typeof max !== "undefined"
-          ? Math.min(cValue + 1, max)
-          : cValue + 1) ||
-          (action === "decrement" && typeof min !== "undefined"
-            ? Math.max(cValue - 1, min)
-            : cValue - 1),
-      );
+      if (disabled) return;
+      if (action === "increment") {
+        setCValue(
+          typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
+        );
+      } else if (action === "decrement") {
+        setCValue(
+          typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
+        );
+      }
     },
-    [min, max, action, cValue, setCValue],
+    [min, max, action, disabled, cValue, setCValue],
   );
 
   const Icon = action === "increment" ? Plus : Minus;
   return (
     <div
-      className={cn(stepperContainerCva({ variant, size, raised, className }))}
+      className={cn(
+        stepperContainerCva({ variant, size, raised, disabled, className }),
+      )}
     >
       <label
         htmlFor={inputId}
-        className={cn(stepperLabelCva({ variant, size }))}
+        className={cn(stepperLabelCva({ variant, size, disabled }))}
       >
         {label || (action === "increment" ? "Add" : "Remove")}
       </label>
       <button
         type="button"
+        disabled={disabled}
         className={cn(stepperButtonCva({ variant, raised, size }))}
         onClick={handleChange}
       >
@@ -81,6 +87,7 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
         name={name}
         id={inputId}
         value={cValue}
+        disabled={disabled}
       />
     </div>
   );

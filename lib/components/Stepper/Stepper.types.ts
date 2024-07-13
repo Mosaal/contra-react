@@ -7,12 +7,13 @@ export type StepperVariantProps = VariantProps<typeof stepperContainerCva>;
 export interface StepperProps extends StepperVariantProps {
   id?: string;
   name?: string;
-  className?: string;
   label?: React.ReactNode;
   min?: number;
   max?: number;
   value?: number;
   defaultValue?: number;
+  className?: string;
+  disabled?: boolean;
   action?: "increment" | "decrement";
   onChange?: (value: number) => void;
 }

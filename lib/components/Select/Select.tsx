@@ -49,8 +49,6 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
     [disabled, onLeftIconClick],
   );
 
-  // missing pin code input
-  // missing brands for credit card
   return (
     <label htmlFor={inputId} className="inline-block w-85">
       <div className="relative inline-flex w-full">

@@ -72,6 +72,16 @@ export const Disabled: Story = {
   },
 };
 
+export const SingleOptionDisabled: Story = {
+  args: {
+    placeholder: "Click to select...",
+    options: [
+      ...options.slice(0, 3),
+      { value: "option#4", label: "Option #4", disabled: true },
+    ],
+  },
+};
+
 export const RaisedDisabled: Story = {
   args: {
     options,

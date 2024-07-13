@@ -14,3 +14,4 @@ export * from "./SegmentedControl";
 export * from "./Stepper";
 export * from "./Counter";
 export * from "./CreditCard";
+export * from "./Card";

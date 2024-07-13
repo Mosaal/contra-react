@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback } from "react";
+import React, { forwardRef } from "react";
 
 import {
   counterIconCva,
@@ -40,30 +40,24 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
     onChange,
   });
 
-  const handleDecrement = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      if (disabled) return;
-      setCValue(
-        typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
-      );
-    },
-    [min, disabled, cValue, setCValue],
-  );
+  const handleDecrement = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (disabled) return;
+    setCValue(
+      typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
+    );
+  };
 
-  const handleIncrement = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      if (disabled) return;
-      setCValue(
-        typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
-      );
-    },
-    [max, disabled, cValue, setCValue],
-  );
+  const handleIncrement = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (disabled) return;
+    setCValue(
+      typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
+    );
+  };
 
-  const renderNormalVariant = useCallback(
-    () => (
+  const renderNormalVariant = () => {
+    return (
       <React.Fragment>
         <label
           htmlFor={inputId}
@@ -90,21 +84,11 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
           </button>
         </div>
       </React.Fragment>
-    ),
-    [
-      inputId,
-      variant,
-      size,
-      raised,
-      disabled,
-      cValue,
-      handleDecrement,
-      handleIncrement,
-    ],
-  );
+    );
+  };
 
-  const renderContainedVariant = useCallback(
-    () => (
+  const renderContainedVariant = () => {
+    return (
       <React.Fragment>
         <button
           type="button"
@@ -129,18 +113,8 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
           <Plus className={cn(counterIconCva({ size }))} />
         </button>
       </React.Fragment>
-    ),
-    [
-      inputId,
-      variant,
-      size,
-      raised,
-      disabled,
-      cValue,
-      handleDecrement,
-      handleIncrement,
-    ],
-  );
+    );
+  };
 
   return (
     <div

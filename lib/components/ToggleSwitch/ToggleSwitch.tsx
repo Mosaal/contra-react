@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 import {
   toggleSwitchCva,
@@ -37,12 +37,11 @@ const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(function (
     onChange,
   });
 
-  const renderLabel = useCallback(
-    (label: string) => (
+  const renderLabel = (label: string) => {
+    return (
       <span className={cn(toggleSwitchLabelCva({ disabled }))}>{label}</span>
-    ),
-    [disabled],
-  );
+    );
+  };
 
   return (
     <label

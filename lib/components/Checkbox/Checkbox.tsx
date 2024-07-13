@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 import {
   checkboxCva,
@@ -39,10 +39,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     onChange,
   });
 
-  const renderLabel = useCallback(
-    () => <span className={cn(checkboxLabelCva({ disabled }))}>{label}</span>,
-    [label, disabled],
-  );
+  const renderLabel = () => {
+    return <span className={cn(checkboxLabelCva({ disabled }))}>{label}</span>;
+  };
 
   return (
     <label htmlFor={inputId} className={cn(checkboxWrapperCva({ disabled }))}>

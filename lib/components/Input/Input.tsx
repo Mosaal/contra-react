@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 import { inputCva, inputIconCva } from "./Input.styles";
 import type { InputProps } from "./Input.types";
@@ -23,24 +23,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
 ) {
   const inputId = useInputId("input", id);
 
-  const handleClickIcon = useCallback(
-    (
-      e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-      clickHandler?: () => void,
-    ) => {
-      if (disabled) return;
-      e.preventDefault();
-      clickHandler?.();
-    },
-    [disabled],
-  );
+  const handleClickIcon = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    clickHandler?: () => void,
+  ) => {
+    e.preventDefault();
+    if (disabled) return;
+    clickHandler?.();
+  };
 
-  const renderIcon = useCallback(
-    (
-      icon: React.ReactNode,
-      position: "left" | "right",
-      clickHandler?: () => void,
-    ) => (
+  const renderIcon = (
+    icon: React.ReactNode,
+    position: "left" | "right",
+    clickHandler?: () => void,
+  ) => {
+    return (
       <div
         className={cn(
           inputIconCva({ disabled, position, clickable: !!clickHandler }),
@@ -49,9 +46,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
       >
         {icon}
       </div>
-    ),
-    [disabled, handleClickIcon],
-  );
+    );
+  };
 
   return (
     <label htmlFor={inputId} className="inline-block w-85">

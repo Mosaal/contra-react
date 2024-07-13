@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 import {
   selectCva,
@@ -40,14 +40,11 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
     onChange,
   });
 
-  const handleClickIcon = useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      if (disabled) return;
-      e.preventDefault();
-      onLeftIconClick?.();
-    },
-    [disabled, onLeftIconClick],
-  );
+  const handleClickIcon = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    if (disabled) return;
+    onLeftIconClick?.();
+  };
 
   return (
     <label htmlFor={inputId} className="inline-block w-85">

@@ -23,10 +23,8 @@ export function useInputState<T, E extends HTMLElement>({
     (e: React.ChangeEvent<E>) => {
       if (value === undefined) {
         if (type === "checkbox") {
-          // @ts-ignore
           setControlledValue(e.target.checked as T);
         } else {
-          // @ts-ignore
           setControlledValue(e.target.value as T);
         }
       }

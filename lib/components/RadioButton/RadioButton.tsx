@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 import {
   radioButtonCva,
@@ -40,12 +40,11 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(function (
     onChange,
   });
 
-  const renderLabel = useCallback(
-    () => (
+  const renderLabel = () => {
+    return (
       <span className={cn(radioButtonLabelCva({ disabled }))}>{label}</span>
-    ),
-    [label, disabled],
-  );
+    );
+  };
 
   return (
     <label

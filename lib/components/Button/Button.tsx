@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useState } from "react";
+import { forwardRef, useState } from "react";
 
 import { buttonCva } from "./Button.styles";
 import type { ButtonProps } from "./Button.types";
@@ -23,21 +23,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
 ) {
   const [isRaised, setIsRaised] = useState<boolean>(!!raised);
 
-  const handleMouseUp = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (raised) setIsRaised(true);
-      onMouseUp?.(e);
-    },
-    [raised, onMouseUp],
-  );
+  const handleMouseUp = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (raised) setIsRaised(true);
+    onMouseUp?.(e);
+  };
 
-  const handleMouseDown = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (raised) setIsRaised(false);
-      onMouseDown?.(e);
-    },
-    [raised, onMouseDown],
-  );
+  const handleMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (raised) setIsRaised(false);
+    onMouseDown?.(e);
+  };
 
   return (
     <button

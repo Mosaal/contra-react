@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 import {
   stepperIconCva,
@@ -41,22 +41,19 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     onChange,
   });
 
-  const handleChange = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      if (disabled) return;
-      if (action === "increment") {
-        setCValue(
-          typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
-        );
-      } else if (action === "decrement") {
-        setCValue(
-          typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
-        );
-      }
-    },
-    [min, max, action, disabled, cValue, setCValue],
-  );
+  const handleChange = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (disabled) return;
+    if (action === "increment") {
+      setCValue(
+        typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
+      );
+    } else if (action === "decrement") {
+      setCValue(
+        typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
+      );
+    }
+  };
 
   const Icon = action === "increment" ? Plus : Minus;
   return (

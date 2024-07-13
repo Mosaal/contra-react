@@ -24,6 +24,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
     raised = false,
     size = "normal",
     variant = "normal",
+    disabled = false,
     value,
     defaultValue,
     className,
@@ -42,21 +43,23 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
   const handleDecrement = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
+      if (disabled) return;
       setCValue(
         typeof min !== "undefined" ? Math.max(cValue - 1, min) : cValue - 1,
       );
     },
-    [min, cValue, setCValue],
+    [min, disabled, cValue, setCValue],
   );
 
   const handleIncrement = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
+      if (disabled) return;
       setCValue(
         typeof max !== "undefined" ? Math.min(cValue + 1, max) : cValue + 1,
       );
     },
-    [max, cValue, setCValue],
+    [max, disabled, cValue, setCValue],
   );
 
   const renderNormalVariant = useCallback(
@@ -64,13 +67,14 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
       <React.Fragment>
         <label
           htmlFor={inputId}
-          className={cn(counterLabelCva({ variant, size }))}
+          className={cn(counterLabelCva({ variant, size, disabled }))}
         >
           {cValue}
         </label>
         <div className="flex flex-row flex-nowrap items-center">
           <button
             type="button"
+            disabled={disabled}
             className={cn(counterLeftButtonCva({ variant, size, raised }))}
             onClick={handleDecrement}
           >
@@ -78,6 +82,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
           </button>
           <button
             type="button"
+            disabled={disabled}
             className={cn(counterRightButtonCva({ variant, size, raised }))}
             onClick={handleIncrement}
           >
@@ -86,7 +91,16 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         </div>
       </React.Fragment>
     ),
-    [inputId, variant, size, raised, cValue, handleDecrement, handleIncrement],
+    [
+      inputId,
+      variant,
+      size,
+      raised,
+      disabled,
+      cValue,
+      handleDecrement,
+      handleIncrement,
+    ],
   );
 
   const renderContainedVariant = useCallback(
@@ -94,6 +108,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
       <React.Fragment>
         <button
           type="button"
+          disabled={disabled}
           className={cn(counterLeftButtonCva({ variant, size, raised }))}
           onClick={handleDecrement}
         >
@@ -101,12 +116,13 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         </button>
         <label
           htmlFor={inputId}
-          className={cn(counterLabelCva({ variant, size }))}
+          className={cn(counterLabelCva({ variant, size, disabled }))}
         >
           {cValue}
         </label>
         <button
           type="button"
+          disabled={disabled}
           className={cn(counterRightButtonCva({ variant, size, raised }))}
           onClick={handleIncrement}
         >
@@ -114,12 +130,23 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         </button>
       </React.Fragment>
     ),
-    [inputId, variant, size, raised, cValue, handleDecrement, handleIncrement],
+    [
+      inputId,
+      variant,
+      size,
+      raised,
+      disabled,
+      cValue,
+      handleDecrement,
+      handleIncrement,
+    ],
   );
 
   return (
     <div
-      className={cn(counterContainerCva({ variant, size, raised, className }))}
+      className={cn(
+        counterContainerCva({ variant, size, raised, disabled, className }),
+      )}
     >
       {variant === "normal" ? renderNormalVariant() : renderContainedVariant()}
       <input
@@ -130,6 +157,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         name={name}
         id={inputId}
         value={cValue}
+        disabled={disabled}
       />
     </div>
   );

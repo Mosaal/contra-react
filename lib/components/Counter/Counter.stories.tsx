@@ -28,6 +28,14 @@ export const Normal: Story = {
   },
 };
 
+export const NormalDisabled: Story = {
+  args: {
+    disabled: true,
+    size: "normal",
+    variant: "normal",
+  },
+};
+
 export const SmallNormal: Story = {
   args: {
     size: "small",
@@ -37,6 +45,14 @@ export const SmallNormal: Story = {
 
 export const Contained: Story = {
   args: {
+    size: "normal",
+    variant: "contained",
+  },
+};
+
+export const ContainedDisabled: Story = {
+  args: {
+    disabled: true,
     size: "normal",
     variant: "contained",
   },
@@ -89,6 +105,15 @@ export const NormalRaised: Story = {
   },
 };
 
+export const NormalRaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
+    size: "normal",
+    variant: "normal",
+  },
+};
+
 export const SmallNormalRaised: Story = {
   args: {
     raised: true,
@@ -100,6 +125,15 @@ export const SmallNormalRaised: Story = {
 export const ContainedRaised: Story = {
   args: {
     raised: true,
+    size: "normal",
+    variant: "contained",
+  },
+};
+
+export const ContainedRaisedDisabled: Story = {
+  args: {
+    raised: true,
+    disabled: true,
     size: "normal",
     variant: "contained",
   },

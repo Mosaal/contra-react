@@ -16,3 +16,4 @@ export * from "./Stepper";
 export * from "./Counter";
 export * from "./CreditCard";
 export * from "./Card";
+export * from "./Alert";

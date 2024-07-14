@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
-import type { IndicatorProps } from "./Indicator.types";
 import { indicatorCva, indicatorWrapperCva } from "./Indicator.styles";
+import type { IndicatorProps } from "./Indicator.types";
 
 import { cn } from "@/utils";
 

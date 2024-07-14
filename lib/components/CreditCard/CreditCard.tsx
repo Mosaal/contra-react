@@ -1,21 +1,24 @@
 import { forwardRef } from "react";
 
 import { creditCardCva } from "./CreditCard.styles";
-import { CreditCardProps } from "./CreditCard.types";
+import type { CreditCardProps } from "./CreditCard.types";
 
 import { cn } from "@/utils";
 
+export const CREDIT_CARD_ASTERISK = "\u2731";
+
 const CARD_NUMBER_PLACEHOLDER = [
-  Array(4).fill("\u2731").join(""),
-  Array(4).fill("\u2731").join(""),
-  Array(4).fill("\u2731").join(""),
-  Array(4).fill("\u2731").join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
 ].join(" ");
 
 const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
   {
     cardNumber,
     cardHolder,
+    cardType,
     cardTitle,
     cardHolderTitle,
     raised = false,
@@ -50,7 +53,7 @@ const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
             </span>
           </div>
         )}
-        <div className="mb-2.5 ml-auto h-7.5 w-23.25 bg-contra-black opacity-50"></div>
+        {cardType && <div className="ml-auto">{cardType}</div>}
       </div>
     </div>
   );

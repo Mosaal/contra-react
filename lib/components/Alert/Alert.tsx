@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 import { alertCva, alertIconCva } from "./Alert.styles";
-import { AlertProps } from "./Alert.types";
+import type { AlertProps } from "./Alert.types";
 
 import { AlertTriangle, Check, Info, X } from "@/icons";
 

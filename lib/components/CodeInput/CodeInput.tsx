@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import ReactCodeInput from "react-code-input";
 
 import { codeInputCva } from "./CodeInput.styles";
-import { CodeInputProps } from "./CodeInput.types";
+import type { CodeInputProps } from "./CodeInput.types";
 
 import { cn } from "@/utils";
 

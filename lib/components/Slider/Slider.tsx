@@ -2,7 +2,7 @@ import RCSlider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 import { handleStyle, railStyle, trackStyle } from "./Slider.styles";
-import { SliderProps } from "./Slider.types";
+import type { SliderProps } from "./Slider.types";
 
 export default function Slider({
   raised = false,

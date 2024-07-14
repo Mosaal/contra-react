@@ -110,7 +110,7 @@ export const counterLabelCva = cva("font-extrabold", {
 });
 
 export const counterLeftButtonCva = cva(
-  "flex items-center justify-center disabled:cursor-not-allowed",
+  "z-0 flex items-center justify-center outline-2 outline-offset-4 outline-contra-pink focus:z-[1] focus:outline disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -167,7 +167,7 @@ export const counterLeftButtonCva = cva(
 );
 
 export const counterRightButtonCva = cva(
-  "flex items-center justify-center disabled:cursor-not-allowed",
+  "z-0 flex items-center justify-center outline-2 outline-offset-4 outline-contra-pink focus:z-[1] focus:outline disabled:cursor-not-allowed",
   {
     variants: {
       variant: {

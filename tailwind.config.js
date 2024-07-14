@@ -66,6 +66,9 @@ export default {
       full: "100%",
     },
     extend: {
+      outlineWidth: {
+        3: 3,
+      },
       strokeWidth: {
         3: 3,
         4: 4,

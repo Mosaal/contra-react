@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 import { BUTTON_COLORS } from "../Button";
 
 export const iconButtonCva = cva(
-  "appearance-none rounded-full border-0.5 shadow-contra-black transition disabled:cursor-not-allowed disabled:shadow-contra-black-300",
+  "appearance-none rounded-full border-0.5 shadow-contra-black outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:shadow-contra-black-300",
   {
     variants: {
       variant: BUTTON_COLORS,

@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const radioButtonCva = cva(
-  "h-8 w-8 cursor-pointer appearance-none rounded-full border-0.5 border-contra-black bg-contra-blue-100 transition disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300",
+  "h-8 w-8 cursor-pointer appearance-none rounded-full border-0.5 border-contra-black bg-contra-blue-100 outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300",
   {
     variants: {
       variant: {

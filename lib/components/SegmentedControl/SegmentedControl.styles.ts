@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const segmentedControlCva = cva(
-  "inline-flex flex-row items-center overflow-hidden rounded-6.5 border-0.5 border-contra-black bg-contra-white text-5.25 leading-7",
+  "inline-flex flex-row items-center rounded-6.5 border-0.5 border-contra-black bg-contra-white text-5.25 leading-7",
   {
     variants: {
       block: {
@@ -31,7 +31,7 @@ export const segmentedControlCva = cva(
 );
 
 export const segmentedControlOptionCva = cva(
-  "flex-1 appearance-none rounded-6.5 bg-transparent px-6 py-2.5 font-bold text-contra-black transition disabled:cursor-not-allowed disabled:text-contra-black-300",
+  "flex-1 appearance-none rounded-6.5 bg-transparent px-6 py-2.5 font-bold text-contra-black outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:text-contra-black-300",
   {
     variants: {
       selected: {

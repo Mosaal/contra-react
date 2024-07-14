@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const checkboxCva = cva(
-  "h-8 w-8 cursor-pointer appearance-none rounded-2 border-0.5 border-contra-black bg-contra-blue-100 transition checked:bg-contra-yellow disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300",
+  "h-8 w-8 cursor-pointer appearance-none rounded-2 border-0.5 border-contra-black bg-contra-blue-100 outline-2 outline-offset-4 outline-contra-pink transition checked:bg-contra-yellow focus:outline disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300",
   {
     variants: {
       variant: {

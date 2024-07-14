@@ -57,6 +57,14 @@ export const Small: Story = {
   },
 };
 
+export const SmallRaised: Story = {
+  args: {
+    raised: true,
+    size: "small",
+    children: "Small",
+  },
+};
+
 export const NormalLarge: Story = {
   args: {
     size: "normal",

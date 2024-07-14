@@ -12,7 +12,7 @@ export const BUTTON_COLORS = {
 } as const;
 
 export const buttonCva = cva(
-  "appearance-none border-0.5 font-extrabold shadow-contra-black transition disabled:cursor-not-allowed disabled:shadow-contra-black-300",
+  "appearance-none border-0.5 font-extrabold shadow-contra-black outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:shadow-contra-black-300",
   {
     variants: {
       variant: BUTTON_COLORS,

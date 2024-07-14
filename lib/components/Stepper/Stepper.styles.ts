@@ -6,7 +6,7 @@ export const stepperContainerCva = cva(
     variants: {
       variant: {
         normal: "gap-x-3",
-        contained: "overflow-hidden border-0.5 border-contra-black",
+        contained: "border-0.5 border-contra-black",
       },
       size: {
         small: "rounded-3",
@@ -52,8 +52,8 @@ export const stepperLabelCva = cva("font-extrabold", {
       contained: "bg-contra-yellow",
     },
     size: {
-      small: "",
-      normal: "",
+      small: "rounded-l-2.5",
+      normal: "rounded-l-3.5",
     },
     disabled: {
       true: "cursor-not-allowed",
@@ -94,7 +94,7 @@ export const stepperLabelCva = cva("font-extrabold", {
 });
 
 export const stepperButtonCva = cva(
-  "flex items-center justify-center disabled:cursor-not-allowed",
+  "flex items-center justify-center outline-2 outline-offset-4 outline-contra-pink focus:outline disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -103,8 +103,8 @@ export const stepperButtonCva = cva(
         contained: "bg-contra-white",
       },
       size: {
-        small: "",
-        normal: "",
+        small: "rounded-r-2.5",
+        normal: "rounded-r-3.5",
       },
       raised: {
         true: "",

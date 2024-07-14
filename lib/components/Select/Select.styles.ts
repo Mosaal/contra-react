@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const selectCva = cva(
-  "w-full appearance-none rounded-4 border-0.5 border-contra-black bg-contra-white py-3 pr-13.5 text-5.25 font-medium leading-7 text-contra-black disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:text-contra-black-300 disabled:shadow-contra-black-300",
+  "w-full appearance-none rounded-4 border-0.5 border-contra-black bg-contra-white py-3 pr-13.5 text-5.25 font-medium leading-7 text-contra-black outline-2 outline-offset-4 outline-contra-pink focus:outline disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:text-contra-black-300 disabled:shadow-contra-black-300",
   {
     variants: {
       raised: {

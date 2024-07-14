@@ -5,7 +5,7 @@ export const cardCva = cva(
   {
     variants: {
       raised: {
-        true: "shadow-contra-button-normal",
+        true: "shadow-contra-normal",
         false: "shadow-none",
       },
     },

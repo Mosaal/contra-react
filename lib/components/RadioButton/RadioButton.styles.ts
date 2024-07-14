@@ -10,7 +10,7 @@ export const radioButtonCva = cva(
           "checked:border-contra-yellow checked:bg-contra-yellow checked:disabled:border-contra-yellow-100 checked:disabled:bg-contra-yellow-100",
       },
       raised: {
-        true: "shadow-contra-button-small",
+        true: "shadow-contra-small",
         false: "shadow-none",
       },
     },

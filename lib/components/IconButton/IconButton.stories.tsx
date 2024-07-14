@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import IconButton from "./IconButton";
 
+import { Plus } from "@/icons";
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof IconButton> = {
   title: "IconButton",
@@ -20,71 +22,67 @@ const meta: Meta<typeof IconButton> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const PlusIcon = ({ className }: { className?: string }) => (
-  <span className={className || "text-8"}>+</span>
-);
-
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     variant: "primary",
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: "secondary",
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
 export const Tertiary: Story = {
   args: {
     variant: "tertiary",
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
 export const Quaternary: Story = {
   args: {
     variant: "quaternary",
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
-    children: <PlusIcon className="text-6" />,
+    children: <Plus className="h-4 w-4" />,
   },
 };
 
 export const Normal: Story = {
   args: {
     size: "normal",
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
 export const Large: Story = {
   args: {
     size: "large",
-    children: <PlusIcon className="text-10" />,
+    children: <Plus className="h-10 w-10" />,
   },
 };
 
 export const Raised: Story = {
   args: {
     raised: true,
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };
 
@@ -92,6 +90,6 @@ export const RaisedDisabled: Story = {
   args: {
     raised: true,
     disabled: true,
-    children: <PlusIcon />,
+    children: <Plus />,
   },
 };

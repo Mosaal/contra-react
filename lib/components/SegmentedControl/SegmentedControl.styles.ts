@@ -8,7 +8,7 @@ export const segmentedControlCva = cva(
         true: "w-full",
       },
       raised: {
-        true: "shadow-contra-button-normal",
+        true: "shadow-contra-normal",
         false: "shadow-none",
       },
       disabled: {

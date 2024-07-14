@@ -6,7 +6,7 @@ import {
   stepperButtonCva,
   stepperContainerCva,
 } from "./Stepper.styles";
-import { StepperProps } from "./Stepper.types";
+import type { StepperProps } from "./Stepper.types";
 
 import { Plus, Minus } from "@/icons";
 

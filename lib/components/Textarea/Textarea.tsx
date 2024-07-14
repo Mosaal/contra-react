@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 import { textareaCva, textareaIconCva } from "./Textarea.styles";
-import { TextareaProps } from "./Textarea.types";
+import type { TextareaProps } from "./Textarea.types";
 
 import { useInputId } from "@/hooks";
 

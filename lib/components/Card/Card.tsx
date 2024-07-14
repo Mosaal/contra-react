@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 import { cardCva } from "./Card.styles";
-import { CardProps } from "./Card.types";
+import type { CardProps } from "./Card.types";
 
 import { cn } from "@/utils";
 

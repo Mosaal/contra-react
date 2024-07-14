@@ -7,7 +7,7 @@ import {
   counterLeftButtonCva,
   counterRightButtonCva,
 } from "./Counter.styles";
-import { CounterProps } from "./Counter.types";
+import type { CounterProps } from "./Counter.types";
 
 import { Minus, Plus } from "@/icons";
 

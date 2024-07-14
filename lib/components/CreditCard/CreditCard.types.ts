@@ -11,6 +11,7 @@ export interface CreditCardProps
     CreditCardVariantProps {
   cardNumber?: string;
   cardHolder?: string;
+  cardType?: React.ReactNode;
   cardTitle?: React.ReactNode;
   cardHolderTitle?: React.ReactNode;
 }

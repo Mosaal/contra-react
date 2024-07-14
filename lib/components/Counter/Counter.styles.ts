@@ -33,7 +33,7 @@ export const counterContainerCva = cva(
       {
         variant: "contained",
         raised: true,
-        className: "shadow-contra-button-small",
+        className: "shadow-contra-small",
       },
       {
         variant: "contained",
@@ -150,8 +150,7 @@ export const counterLeftButtonCva = cva(
       {
         variant: "normal",
         raised: true,
-        className:
-          "shadow-contra-button-small disabled:shadow-contra-black-300",
+        className: "shadow-contra-small disabled:shadow-contra-black-300",
       },
       {
         variant: "normal",
@@ -208,8 +207,7 @@ export const counterRightButtonCva = cva(
       {
         variant: "normal",
         raised: true,
-        className:
-          "shadow-contra-button-small disabled:shadow-contra-black-300",
+        className: "shadow-contra-small disabled:shadow-contra-black-300",
       },
       {
         variant: "normal",

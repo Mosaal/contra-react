@@ -5,7 +5,7 @@ export const selectCva = cva(
   {
     variants: {
       raised: {
-        true: "shadow-contra-button-normal",
+        true: "shadow-contra-normal",
         false: "shadow-none",
       },
       placeholder: {

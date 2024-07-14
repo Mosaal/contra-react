@@ -5,7 +5,7 @@ export const progressBarCva = cva(
   {
     variants: {
       raised: {
-        true: "shadow-contra-button-small",
+        true: "shadow-contra-small",
         false: "shadow-none",
       },
       disabled: {

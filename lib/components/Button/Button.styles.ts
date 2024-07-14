@@ -32,12 +32,12 @@ export const buttonCva = cva(
       {
         raised: true,
         size: "small",
-        className: "shadow-contra-button-small",
+        className: "shadow-contra-small",
       },
       {
         raised: true,
         size: ["normal", "large"],
-        className: "shadow-contra-button-normal",
+        className: "shadow-contra-normal",
       },
     ],
     defaultVariants: {

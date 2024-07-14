@@ -71,8 +71,8 @@ export default {
         4: 4,
       },
       boxShadow: {
-        "contra-button-small": "0 0.125rem 0 0 var(--contra-black)",
-        "contra-button-normal": "0 0.25rem 0 0 var(--contra-black)",
+        "contra-small": "0 0.125rem 0 0 var(--contra-black)",
+        "contra-normal": "0 0.25rem 0 0 var(--contra-black)",
       },
     },
   },

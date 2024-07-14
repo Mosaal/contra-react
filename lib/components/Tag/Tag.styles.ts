@@ -9,7 +9,7 @@ export const tagCva = cva(
         false: "bg-contra-white",
       },
       raised: {
-        true: "shadow-contra-button-small",
+        true: "shadow-contra-small",
         false: "shadow-none",
       },
     },

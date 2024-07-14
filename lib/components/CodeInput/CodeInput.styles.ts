@@ -5,7 +5,7 @@ export const codeInputCva = cva(
   {
     variants: {
       raised: {
-        true: "*:shadow-contra-button-normal",
+        true: "*:shadow-contra-normal",
         false: "*:shadow-none",
       },
       disabled: {

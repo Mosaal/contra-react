@@ -2,6 +2,7 @@ import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Button from "./Button";
+import { ChevronDown } from "@/icons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof Button> = {
@@ -19,13 +20,6 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const LeftChevronIcon = ({ className }: { className?: string }) => (
-  <span className={className || "text-4"}>{"<"}</span>
-);
-const RightChevronIcon = ({ className }: { className?: string }) => (
-  <span className={className || "text-4"}>{">"}</span>
-);
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
@@ -90,22 +84,22 @@ export const Raised: Story = {
 export const WithLeftIcon: Story = {
   args: {
     children: "Button",
-    leftIcon: <LeftChevronIcon />,
+    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
   },
 };
 
 export const WithRightIcon: Story = {
   args: {
     children: "Button",
-    rightIcon: <RightChevronIcon />,
+    rightIcon: <ChevronDown className="-rotate-90 stroke-3" />,
   },
 };
 
 export const WithBothIcons: Story = {
   args: {
     children: "Button",
-    leftIcon: <LeftChevronIcon />,
-    rightIcon: <RightChevronIcon />,
+    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
+    rightIcon: <ChevronDown className="-rotate-90 stroke-3" />,
   },
 };
 

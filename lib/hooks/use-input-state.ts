@@ -23,9 +23,13 @@ export function useInputState<T, E extends HTMLElement>({
     (e: React.ChangeEvent<E>) => {
       if (value === undefined) {
         if (type === "checkbox") {
-          setControlledValue(e.target.checked as T);
+          setControlledValue(
+            (e.target as unknown as HTMLInputElement).checked as T,
+          );
         } else {
-          setControlledValue(e.target.value as T);
+          setControlledValue(
+            (e.target as unknown as HTMLInputElement).value as T,
+          );
         }
       }
       onChange?.(e);

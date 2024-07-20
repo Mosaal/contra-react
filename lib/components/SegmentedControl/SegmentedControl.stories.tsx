@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import SegmentedControl from "./SegmentedControl";
+import { SegmentedControl } from "./SegmentedControl";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof SegmentedControl> = {

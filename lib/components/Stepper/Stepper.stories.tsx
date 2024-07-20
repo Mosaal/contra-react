@@ -1,7 +1,7 @@
 import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Stepper from "./Stepper";
+import { Stepper } from "./Stepper";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof Stepper> = {

@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
 import ReactCodeInput from "react-code-input";
 
-import { codeInputCva } from "./CodeInput.styles";
+import { codeInputCva, numberInputStyle } from "./CodeInput.styles";
 import type { CodeInputProps } from "./CodeInput.types";
 
 import { cn } from "@/utils";
 
-const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
+export const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
   { type, inputStyle, raised = false, disabled, className, ...props },
   ref,
 ) {
@@ -22,11 +22,3 @@ const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
     />
   );
 });
-
-const numberInputStyle: React.CSSProperties = {
-  WebkitAppearance: "none",
-  MozAppearance: "textfield",
-  margin: 0,
-};
-
-export default CodeInput;

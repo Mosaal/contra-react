@@ -14,7 +14,7 @@ import { useControlledState, useInputId } from "@/hooks";
 
 import { cn } from "@/utils";
 
-const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
+export const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
   {
     id,
     name,
@@ -25,7 +25,7 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     size = "normal",
     variant = "normal",
     action = "increment",
-    disabled = false,
+    disabled,
     value,
     defaultValue,
     className,
@@ -89,5 +89,3 @@ const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     </div>
   );
 });
-
-export default Stepper;

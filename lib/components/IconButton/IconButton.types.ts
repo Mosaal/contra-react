@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { iconButtonCva } from "./IconButton.styles";
+import type { iconButtonCva } from "./IconButton.styles";
 
 export type IconButtonBaseProps = React.ComponentPropsWithoutRef<"button">;
 

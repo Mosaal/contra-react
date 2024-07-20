@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { counterContainerCva } from "./Counter.styles";
+import type { counterContainerCva } from "./Counter.styles";
 
 export type CounterVariantProps = VariantProps<typeof counterContainerCva>;
 

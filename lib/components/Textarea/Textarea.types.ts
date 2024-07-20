@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { textareaCva } from "./Textarea.styles";
+import type { textareaCva } from "./Textarea.styles";
 
 export type TextareaBaseProps = React.ComponentPropsWithoutRef<"textarea">;
 

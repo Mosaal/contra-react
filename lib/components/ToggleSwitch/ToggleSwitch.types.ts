@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { toggleSwitchCva } from "./ToggleSwitch.styles";
+import type { toggleSwitchCva } from "./ToggleSwitch.styles";
 
 export type ToggleSwitchBaseProps = Omit<
   React.ComponentPropsWithoutRef<"input">,

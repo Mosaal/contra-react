@@ -14,7 +14,7 @@ import { ChevronDown } from "@/icons";
 
 import { cn } from "@/utils";
 
-const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
   {
     id,
     value,
@@ -95,5 +95,3 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
     </label>
   );
 });
-
-export default Select;

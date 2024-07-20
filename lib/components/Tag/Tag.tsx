@@ -7,7 +7,7 @@ import { X } from "@/icons";
 
 import { cn } from "@/utils";
 
-const Tag = forwardRef<HTMLDivElement, TagProps>(function (
+export const Tag = forwardRef<HTMLDivElement, TagProps>(function (
   {
     label,
     active = false,
@@ -19,6 +19,10 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function (
   },
   ref,
 ) {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!active) onClick?.(e);
+  };
+
   return (
     <div
       ref={ref}
@@ -26,20 +30,21 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function (
         tagCva({ active, raised, className }),
         !active && !!onClick && "cursor-pointer",
       )}
-      onClick={onClick}
+      onClick={handleClick}
       {...props}
     >
       <div className="flex flex-row items-center gap-x-1">
         {label}
         {active && (
-          <X
-            className="stroke-4 h-4 w-4 cursor-pointer"
+          <button
+            type="button"
+            className="flex h-4 w-4 cursor-pointer appearance-none items-center justify-center"
             onClick={onDeactivate}
-          />
+          >
+            <X className="stroke-4" />
+          </button>
         )}
       </div>
     </div>
   );
 });
-
-export default Tag;

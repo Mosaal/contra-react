@@ -15,7 +15,7 @@ import { useControlledState, useInputId } from "@/hooks";
 
 import { cn } from "@/utils";
 
-const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
+export const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
   {
     id,
     name,
@@ -24,7 +24,7 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
     raised = false,
     size = "normal",
     variant = "normal",
-    disabled = false,
+    disabled,
     value,
     defaultValue,
     className,
@@ -136,5 +136,3 @@ const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
     </div>
   );
 });
-
-export default Counter;

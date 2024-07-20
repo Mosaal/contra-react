@@ -5,7 +5,7 @@ import type { CardProps } from "./Card.types";
 
 import { cn } from "@/utils";
 
-const Card = forwardRef<HTMLDivElement, CardProps>(function (
+export const Card = forwardRef<HTMLDivElement, CardProps>(function (
   { raised = false, className, children, ...props },
   ref,
 ) {
@@ -15,5 +15,3 @@ const Card = forwardRef<HTMLDivElement, CardProps>(function (
     </div>
   );
 });
-
-export default Card;

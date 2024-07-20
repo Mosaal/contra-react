@@ -14,7 +14,7 @@ import { useInputId, useInputState } from "@/hooks";
 
 import { cn } from "@/utils";
 
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
   {
     id,
     label,
@@ -65,5 +65,3 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     </label>
   );
 });
-
-export default Checkbox;

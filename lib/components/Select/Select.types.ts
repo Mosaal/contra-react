@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { selectCva } from "./Select.styles";
+import type { selectCva } from "./Select.styles";
 
 export type SelectBaseProps = Omit<
   React.ComponentPropsWithoutRef<"select">,

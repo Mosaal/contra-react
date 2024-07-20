@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { stepperContainerCva } from "./Stepper.styles";
+import type { stepperContainerCva } from "./Stepper.styles";
 
 export type StepperVariantProps = VariantProps<typeof stepperContainerCva>;
 

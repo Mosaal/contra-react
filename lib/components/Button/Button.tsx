@@ -5,7 +5,7 @@ import type { ButtonProps } from "./Button.types";
 
 import { cn } from "@/utils";
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
   {
     block = false,
     raised = false,
@@ -57,5 +57,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
     </button>
   );
 });
-
-export default Button;

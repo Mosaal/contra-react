@@ -40,3 +40,29 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@layer components {
+  /* Progress bar */
+  .progress[value]::-moz-progress-bar,
+  .progress[value]::-webkit-progress-value {
+    @apply bg-contra-yellow;
+  }
+  .progress.progress-disabled[value]::-moz-progress-bar,
+  .progress.progress-disabled[value]::-webkit-progress-value {
+    @apply bg-contra-yellow-100;
+  }
+
+  /* Code input */
+  .code-input {
+    @apply !inline-flex flex-row items-center gap-6;
+  }
+  .code-input > input {
+    @apply h-14 w-14 appearance-none rounded-4 border-0.5 border-contra-black bg-contra-white text-center text-6 font-extrabold leading-7 text-contra-black shadow-none outline-2 outline-offset-4 outline-contra-pink placeholder:text-contra-black-700 focus:outline;
+  }
+  .code-input.code-input-raised > input {
+    @apply shadow-contra-normal;
+  }
+  .code-input.code-input-disabled > input:disabled {
+    @apply !cursor-not-allowed !border-contra-black-300 !bg-contra-white !text-contra-black-300 !shadow-contra-black-300 placeholder:!text-contra-black-300;
+  }
+}

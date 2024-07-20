@@ -7,7 +7,7 @@ import type { CodeInputProps } from "./CodeInput.types";
 import { cn } from "@/utils";
 
 const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
-  { type, raised = false, disabled, inputStyle, className, ...props },
+  { type, inputStyle, raised = false, disabled, className, ...props },
   ref,
 ) {
   return (
@@ -16,18 +16,17 @@ const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
       disabled={disabled}
       className={cn(codeInputCva({ raised, disabled, className }))}
       inputStyle={
-        type === "number"
-          ? {
-              ...inputStyle,
-              WebkitAppearance: "none",
-              MozAppearance: "textfield",
-              margin: 0,
-            }
-          : inputStyle
+        type === "number" ? { ...numberInputStyle, ...inputStyle } : inputStyle
       }
       {...props}
     />
   );
 });
+
+const numberInputStyle: React.CSSProperties = {
+  WebkitAppearance: "none",
+  MozAppearance: "textfield",
+  margin: 0,
+};
 
 export default CodeInput;

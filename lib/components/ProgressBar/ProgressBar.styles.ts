@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const progressBarCva = cva(
-  "h-3 w-full overflow-hidden rounded-2.5 border-0.5 bg-transparent",
+  "progress h-3 w-full appearance-none overflow-hidden rounded-2.5 border-0.5 bg-transparent",
   {
     variants: {
       raised: {
@@ -9,7 +9,7 @@ export const progressBarCva = cva(
         false: "shadow-none",
       },
       disabled: {
-        true: "border-contra-black-300",
+        true: "progress-disabled border-contra-black-300",
         false: "border-contra-black",
       },
     },
@@ -26,15 +26,3 @@ export const progressBarCva = cva(
     },
   },
 );
-
-export const progressBarFillerCva = cva("h-full transition-[width]", {
-  variants: {
-    disabled: {
-      true: "bg-contra-yellow-100",
-      false: "bg-contra-yellow",
-    },
-  },
-  defaultVariants: {
-    disabled: false,
-  },
-});

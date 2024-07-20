@@ -1,7 +1,7 @@
 import type { ReactCodeInputProps } from "react-code-input";
 import type { VariantProps } from "class-variance-authority";
 
-import { codeInputCva } from "./CodeInput.styles";
+import type { codeInputCva } from "./CodeInput.styles";
 
 export type CodeInputBaseProps = Omit<ReactCodeInputProps, "disabled">;
 

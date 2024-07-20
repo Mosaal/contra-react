@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { segmentedControlCva } from "./SegmentedControl.styles";
+import type { segmentedControlCva } from "./SegmentedControl.styles";
 
 export type SegmentedControlBaseProps = Omit<
   React.ComponentPropsWithoutRef<"div">,

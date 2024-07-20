@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { creditCardCva } from "./CreditCard.styles";
+import type { creditCardCva } from "./CreditCard.styles";
 
 export type CreditCardBaseProps = React.ComponentProps<"div">;
 

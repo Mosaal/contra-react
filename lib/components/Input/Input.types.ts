@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { inputCva } from "./Input.styles";
+import type { inputCva } from "./Input.styles";
 
 export type InputBaseProps = React.ComponentPropsWithoutRef<"input">;
 

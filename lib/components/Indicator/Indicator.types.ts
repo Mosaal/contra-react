@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { indicatorCva } from "./Indicator.styles";
+import type { indicatorCva } from "./Indicator.styles";
 
 export type IndicatorBaseProps = React.ComponentPropsWithoutRef<"div">;
 

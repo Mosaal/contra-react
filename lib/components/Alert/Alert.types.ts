@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { alertCva, alertIconCva } from "./Alert.styles";
+import type { alertCva, alertIconCva } from "./Alert.styles";
 
 export type AlertBaseProps = Omit<
   React.ComponentPropsWithoutRef<"div">,

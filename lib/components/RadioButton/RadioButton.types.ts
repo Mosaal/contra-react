@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { radioButtonCva } from "./RadioButton.styles";
+import type { radioButtonCva } from "./RadioButton.styles";
 
 export type RadioButtonBaseProps = Omit<
   React.ComponentPropsWithoutRef<"input">,

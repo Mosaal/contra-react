@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { cardCva } from "./Card.styles";
+import type { cardCva } from "./Card.styles";
 
 export type CardBaseProps = React.ComponentPropsWithoutRef<"div">;
 

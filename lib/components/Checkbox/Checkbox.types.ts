@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 
-import { checkboxCva } from "./Checkbox.styles";
+import type { checkboxCva } from "./Checkbox.styles";
 
 export type CheckboxBaseProps = Omit<
   React.ComponentPropsWithoutRef<"input">,

@@ -1,4 +1,4 @@
-import { forwardRef, useMemo, useState } from "react";
+import { forwardRef, useState } from "react";
 
 import type { PasswordInputProps } from "./PasswordInput.types";
 
@@ -8,12 +8,12 @@ import { Eye, EyeOff } from "@/icons";
 
 import { useInputId } from "@/hooks";
 
-const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
+export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   function ({ id, ...props }, ref) {
     const inputId = useInputId("password", id);
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    const EyeIcon = useMemo(() => (isVisible ? EyeOff : Eye), [isVisible]);
+    const EyeIcon = isVisible ? EyeOff : Eye;
     return (
       <Input
         ref={ref}
@@ -26,5 +26,3 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     );
   },
 );
-
-export default PasswordInput;

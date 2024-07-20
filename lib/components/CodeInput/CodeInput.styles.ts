@@ -14,3 +14,9 @@ export const codeInputCva = cva("code-input", {
     disabled: false,
   },
 });
+
+export const numberInputStyle: React.CSSProperties = {
+  WebkitAppearance: "none",
+  MozAppearance: "textfield",
+  margin: 0,
+};

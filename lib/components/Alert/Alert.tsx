@@ -14,7 +14,7 @@ const ICONS: Record<NonNullable<AlertProps["variant"]>, React.ReactNode> = {
   success: <Check className="text-contra-black" />,
 };
 
-const Alert = forwardRef<HTMLDivElement, AlertProps>(function (
+export const Alert = forwardRef<HTMLDivElement, AlertProps>(function (
   { title, message, variant = "info", className, ...props },
   ref,
 ) {
@@ -34,5 +34,3 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(function (
     </div>
   );
 });
-
-export default Alert;

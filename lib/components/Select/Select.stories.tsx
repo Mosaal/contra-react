@@ -1,7 +1,7 @@
 import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Select from "./Select";
+import { Select } from "./Select";
 import { SelectOption } from "./Select.types";
 
 import { ChevronDown } from "@/icons";

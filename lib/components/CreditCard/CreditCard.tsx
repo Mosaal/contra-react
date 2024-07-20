@@ -7,14 +7,14 @@ import { cn } from "@/utils";
 
 export const CREDIT_CARD_ASTERISK = "\u2731";
 
-const CARD_NUMBER_PLACEHOLDER = [
+export const CARD_NUMBER_PLACEHOLDER = [
   Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
   Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
   Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
   Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
 ].join(" ");
 
-const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
+export const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
   {
     cardNumber,
     cardHolder,
@@ -58,5 +58,3 @@ const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
     </div>
   );
 });
-
-export default CreditCard;

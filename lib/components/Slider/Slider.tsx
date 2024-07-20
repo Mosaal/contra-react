@@ -1,16 +1,19 @@
-import RCSlider from "rc-slider";
+import { forwardRef } from "react";
+
+import RCSlider, { SliderRef } from "rc-slider";
 import "rc-slider/assets/index.css";
 
 import { handleStyle, railStyle, trackStyle } from "./Slider.styles";
 import type { SliderProps } from "./Slider.types";
 
-export default function Slider({
-  raised = false,
-  disabled,
-  ...props
-}: SliderProps) {
+// @TODO: redo with class based styles
+export const Slider = forwardRef<SliderRef, SliderProps>(function (
+  { raised = false, disabled, ...props },
+  ref,
+) {
   return (
     <RCSlider
+      ref={ref}
       disabled={disabled}
       dotStyle={{ display: "none" }}
       activeDotStyle={{ display: "none" }}
@@ -23,4 +26,4 @@ export default function Slider({
       {...props}
     />
   );
-}
+});

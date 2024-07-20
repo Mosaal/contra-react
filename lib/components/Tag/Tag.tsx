@@ -7,7 +7,7 @@ import { X } from "@/icons";
 
 import { cn } from "@/utils";
 
-const Tag = forwardRef<HTMLDivElement, TagProps>(function (
+export const Tag = forwardRef<HTMLDivElement, TagProps>(function (
   {
     label,
     active = false,
@@ -33,7 +33,7 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function (
         {label}
         {active && (
           <X
-            className="stroke-4 h-4 w-4 cursor-pointer"
+            className="h-4 w-4 cursor-pointer stroke-4"
             onClick={onDeactivate}
           />
         )}
@@ -41,5 +41,3 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function (
     </div>
   );
 });
-
-export default Tag;

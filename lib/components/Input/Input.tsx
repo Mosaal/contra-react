@@ -7,7 +7,7 @@ import { useInputId } from "@/hooks";
 
 import { cn } from "@/utils";
 
-const Input = forwardRef<HTMLInputElement, InputProps>(function (
+export const Input = forwardRef<HTMLInputElement, InputProps>(function (
   {
     id,
     raised = false,
@@ -70,5 +70,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function (
     </label>
   );
 });
-
-export default Input;

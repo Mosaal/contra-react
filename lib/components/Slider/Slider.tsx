@@ -3,25 +3,25 @@ import { forwardRef } from "react";
 import RCSlider, { SliderRef } from "rc-slider";
 import "rc-slider/assets/index.css";
 
-import { handleStyle, railStyle, trackStyle } from "./Slider.styles";
+import { sliderCva } from "./Slider.styles";
 import type { SliderProps } from "./Slider.types";
 
-// @TODO: redo with class based styles
+import { cn } from "@/utils";
+
 export const Slider = forwardRef<SliderRef, SliderProps>(function (
-  { raised = false, disabled, ...props },
+  { raised = false, disabled, className, classNames, ...props },
   ref,
 ) {
   return (
     <RCSlider
       ref={ref}
       disabled={disabled}
-      dotStyle={{ display: "none" }}
-      activeDotStyle={{ display: "none" }}
-      style={{ backgroundColor: "transparent" }}
-      styles={{
-        track: trackStyle(disabled),
-        rail: railStyle(raised, disabled),
-        handle: handleStyle(disabled),
+      className={cn(sliderCva({ raised, disabled, className }))}
+      classNames={{
+        ...classNames,
+        rail: cn("slider-rail", classNames?.rail || ""),
+        track: cn("slider-track", classNames?.track || ""),
+        handle: cn("slider-handle", classNames?.handle || ""),
       }}
       {...props}
     />

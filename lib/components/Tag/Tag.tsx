@@ -28,20 +28,20 @@ export const Tag = forwardRef<HTMLDivElement, TagProps>(function (
       ref={ref}
       className={cn(
         tagCva({ active, raised, className }),
-        !active && !!onClick && "cursor-pointer",
+        !active && !!onClick && "contra-cursor-pointer",
       )}
       onClick={handleClick}
       {...props}
     >
-      <div className="flex flex-row items-center gap-x-1">
+      <div className="contra-flex contra-flex-row contra-items-center contra-gap-x-1">
         {label}
         {active && (
           <button
             type="button"
-            className="flex h-4 w-4 cursor-pointer appearance-none items-center justify-center"
+            className="contra-flex contra-h-4 contra-w-4 contra-cursor-pointer contra-appearance-none contra-items-center contra-justify-center"
             onClick={onDeactivate}
           >
-            <X className="stroke-4" />
+            <X className="contra-stroke-4" />
           </button>
         )}
       </div>

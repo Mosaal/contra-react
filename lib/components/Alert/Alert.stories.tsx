@@ -48,7 +48,7 @@ export const Success: Story = {
 
 export const WithMessage: Story = {
   args: {
-    className: "w-full",
+    className: "contra-w-full",
     variant: "info",
     title: "You've got mail!",
     message:

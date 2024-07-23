@@ -17,7 +17,7 @@ export const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function (
   ref,
 ) {
   return (
-    <div ref={ref} className="relative inline-block" {...props}>
+    <div ref={ref} className="contra-relative contra-inline-block" {...props}>
       {children}
       <div className={cn(indicatorWrapperCva({ position }))}>
         <div className={cn(indicatorCva({ raised, position, className }))}>

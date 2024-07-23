@@ -46,7 +46,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
   return (
     <label htmlFor={inputId} className={cn(checkboxWrapperCva({ disabled }))}>
       {label && labelPosition === "left" && renderLabel()}
-      <div className="relative inline-flex">
+      <div className="contra-relative contra-inline-flex">
         <input
           type="checkbox"
           ref={ref}

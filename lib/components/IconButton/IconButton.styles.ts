@@ -3,29 +3,29 @@ import { cva } from "class-variance-authority";
 import { BUTTON_COLORS } from "../Button";
 
 export const iconButtonCva = cva(
-  "appearance-none rounded-full border-0.5 shadow-contra-black outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:shadow-contra-black-300",
+  "contra-outline-0.5 contra-appearance-none contra-rounded-full contra-border-0.5 contra-shadow-black contra-outline-offset-1 contra-outline-pink contra-transition focus:contra-outline disabled:contra-cursor-not-allowed disabled:contra-shadow-black-300",
   {
     variants: {
       variant: BUTTON_COLORS,
       size: {
-        small: "h-8 w-8",
-        normal: "h-12 w-12",
-        large: "h-15 w-15",
+        small: "contra-h-8 contra-w-8",
+        normal: "contra-h-12 contra-w-12",
+        large: "contra-h-15 contra-w-15",
       },
       raised: {
-        false: "shadow-none",
+        false: "contra-shadow-none",
       },
     },
     compoundVariants: [
       {
         raised: true,
         size: ["small", "normal"],
-        className: "shadow-contra-small",
+        className: "contra-shadow-small",
       },
       {
         raised: true,
         size: "large",
-        className: "shadow-contra-normal",
+        className: "contra-shadow-normal",
       },
     ],
     defaultVariants: {

@@ -1,6 +1,6 @@
-export type EyeProps = React.ComponentPropsWithoutRef<"svg">;
+import { IconProps } from ".";
 
-export default function Eye(props: EyeProps) {
+export default function Eye(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

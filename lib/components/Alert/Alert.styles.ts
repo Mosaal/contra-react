@@ -1,18 +1,18 @@
 import { cva } from "class-variance-authority";
 
 export const alertCva = cva(
-  "inline-flex w-90 flex-row gap-4 rounded-4 border-0.5 border-contra-black bg-contra-black px-5.5 py-4.25",
+  "contra-inline-flex contra-w-90 contra-flex-row contra-gap-4 contra-rounded-4 contra-border-0.5 contra-border-black contra-bg-black contra-px-5.5 contra-py-4.25",
 );
 
 export const alertIconCva = cva(
-  "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
+  "contra-flex contra-h-10 contra-w-10 contra-shrink-0 contra-items-center contra-justify-center contra-rounded-full",
   {
     variants: {
       variant: {
-        info: "bg-contra-blue",
-        warning: "bg-contra-yellow",
-        error: "bg-contra-red",
-        success: "bg-contra-green",
+        info: "contra-bg-blue",
+        warning: "contra-bg-yellow",
+        error: "contra-bg-red",
+        success: "contra-bg-green",
       },
     },
     defaultVariants: {

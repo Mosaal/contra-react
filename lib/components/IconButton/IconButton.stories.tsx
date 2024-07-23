@@ -54,7 +54,7 @@ export const Quaternary: Story = {
 export const Small: Story = {
   args: {
     size: "small",
-    children: <Plus className="h-4 w-4" />,
+    children: <Plus className="contra-h-4 contra-w-4" />,
   },
 };
 
@@ -68,7 +68,7 @@ export const Normal: Story = {
 export const Large: Story = {
   args: {
     size: "large",
-    children: <Plus className="h-10 w-10" />,
+    children: <Plus className="contra-h-10 contra-w-10" />,
   },
 };
 

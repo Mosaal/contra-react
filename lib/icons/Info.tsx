@@ -1,6 +1,6 @@
-export type InfoProps = React.ComponentPropsWithoutRef<"svg">;
+import { IconProps } from ".";
 
-export default function Info(props: InfoProps) {
+export default function Info(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

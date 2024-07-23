@@ -62,6 +62,14 @@ export const Raised: Story = {
   },
 };
 
+export const SecondaryRaised: Story = {
+  args: {
+    raised: true,
+    variant: "secondary",
+    label: "Secondary Raised",
+  },
+};
+
 export const PimaryChecked: Story = {
   args: {
     checked: true,

@@ -1,39 +1,39 @@
 import { cva } from "class-variance-authority";
 
 export const stepperContainerCva = cva(
-  "flex flex-row items-center text-contra-black",
+  "contra-flex contra-flex-row contra-items-center contra-text-black",
   {
     variants: {
       variant: {
-        normal: "gap-x-3",
-        contained: "border-0.5 border-contra-black",
+        normal: "contra-gap-x-3",
+        contained: "contra-border-0.5 contra-border-black",
       },
       size: {
-        small: "rounded-3",
-        normal: "rounded-4",
+        small: "contra-rounded-3",
+        normal: "contra-rounded-4",
       },
       raised: {
         true: "",
       },
       disabled: {
-        true: "cursor-not-allowed text-contra-black-300",
+        true: "contra-cursor-not-allowed contra-text-black-300",
       },
     },
     compoundVariants: [
       {
         variant: "contained",
         raised: true,
-        className: "shadow-contra-small",
+        className: "contra-shadow-small",
       },
       {
         variant: "contained",
         raised: false,
-        className: "shadow-none",
+        className: "contra-shadow-none",
       },
       {
         variant: "contained",
         disabled: true,
-        className: "border-contra-black-300 shadow-contra-black-300",
+        className: "contra-border-black-300 contra-shadow-black-300",
       },
     ],
     defaultVariants: {
@@ -45,45 +45,47 @@ export const stepperContainerCva = cva(
   },
 );
 
-export const stepperLabelCva = cva("font-extrabold", {
+export const stepperLabelCva = cva("contra-font-extrabold", {
   variants: {
     variant: {
       normal: "",
-      contained: "bg-contra-yellow",
+      contained: "contra-bg-yellow",
     },
     size: {
-      small: "rounded-l-2.5",
-      normal: "rounded-l-3.5",
+      small: "contra-rounded-l-2.5",
+      normal: "contra-rounded-l-3.5",
     },
     disabled: {
-      true: "cursor-not-allowed",
+      true: "contra-cursor-not-allowed",
     },
   },
   compoundVariants: [
     {
       variant: "normal",
       size: "normal",
-      className: "text-9 leading-10",
+      className: "contra-text-9 contra-leading-10",
     },
     {
       variant: "normal",
       size: "small",
-      className: "text-6 leading-7",
+      className: "contra-text-6 contra-leading-7",
     },
     {
       variant: "contained",
       size: "normal",
-      className: "py-2 pl-5.5 pr-3.5 text-6 leading-7",
+      className:
+        "contra-py-2 contra-pl-5.5 contra-pr-3.5 contra-text-6 contra-leading-7",
     },
     {
       variant: "contained",
       size: "small",
-      className: "py-1 pl-3.25 pr-2.25 text-4.25 leading-6",
+      className:
+        "contra-py-1 contra-pl-3.25 contra-pr-2.25 contra-text-4.25 contra-leading-6",
     },
     {
       variant: "contained",
       disabled: true,
-      className: "bg-contra-yellow-800",
+      className: "contra-bg-yellow-800",
     },
   ],
   defaultVariants: {
@@ -94,53 +96,52 @@ export const stepperLabelCva = cva("font-extrabold", {
 });
 
 export const stepperButtonCva = cva(
-  "flex items-center justify-center outline-2 outline-offset-4 outline-contra-pink focus:outline disabled:cursor-not-allowed",
+  "contra-outline-0.5 contra-flex contra-items-center contra-justify-center contra-outline-offset-1 contra-outline-pink focus:contra-outline disabled:contra-cursor-not-allowed",
   {
     variants: {
       variant: {
         normal:
-          "border-0.5 border-contra-black bg-contra-yellow disabled:border-contra-black-300 disabled:bg-contra-yellow-800",
-        contained: "bg-contra-white",
+          "contra-border-0.5 contra-border-black contra-bg-yellow disabled:contra-border-black-300 disabled:contra-bg-yellow-800",
+        contained: "contra-bg-white",
       },
       size: {
-        small: "rounded-r-2.5",
-        normal: "rounded-r-3.5",
+        small: "contra-rounded-r-2.5",
+        normal: "contra-rounded-r-3.5",
       },
       raised: {
         true: "",
-        false: "",
       },
     },
     compoundVariants: [
       {
         variant: "normal",
         size: "normal",
-        className: "h-12 w-12 rounded-4",
+        className: "contra-h-12 contra-w-12 contra-rounded-4",
       },
       {
         variant: "normal",
         size: "small",
-        className: "h-9 w-9 rounded-3",
+        className: "contra-h-9 contra-w-9 contra-rounded-3",
       },
       {
         variant: "contained",
         size: "normal",
-        className: "py-2.5 pl-2 pr-2.5",
+        className: "contra-py-2.5 contra-pl-2 contra-pr-2.5",
       },
       {
         variant: "contained",
         size: "small",
-        className: "py-1.75 pl-1.25 pr-1.75",
+        className: "contra-py-1.75 contra-pl-1.25 contra-pr-1.75",
       },
       {
         variant: "normal",
         raised: true,
-        className: "shadow-contra-small disabled:shadow-contra-black-300",
+        className: "contra-shadow-small disabled:contra-shadow-black-300",
       },
       {
         variant: "normal",
         raised: false,
-        className: "shadow-none",
+        className: "contra-shadow-none",
       },
     ],
     defaultVariants: {
@@ -151,11 +152,11 @@ export const stepperButtonCva = cva(
   },
 );
 
-export const stepperIconCva = cva("stroke-4", {
+export const stepperIconCva = cva("contra-stroke-4", {
   variants: {
     size: {
-      small: "h-4.5 w-4.5",
-      normal: "h-6 w-6",
+      small: "contra-h-4.5 contra-w-4.5",
+      normal: "contra-h-6 contra-w-6",
     },
   },
   defaultVariants: {

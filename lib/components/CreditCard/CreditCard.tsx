@@ -1,18 +1,9 @@
 import { forwardRef } from "react";
 
-import { creditCardCva } from "./CreditCard.styles";
+import { CARD_NUMBER_PLACEHOLDER, creditCardCva } from "./CreditCard.styles";
 import type { CreditCardProps } from "./CreditCard.types";
 
 import { cn } from "@/utils";
-
-export const CREDIT_CARD_ASTERISK = "\u2731";
-
-export const CARD_NUMBER_PLACEHOLDER = [
-  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
-  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
-  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
-  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
-].join(" ");
 
 export const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
   {
@@ -33,27 +24,27 @@ export const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
       className={cn(creditCardCva({ raised, className }))}
       {...props}
     >
-      <span className="mb-12.5 block text-5.25 font-medium leading-7">
+      <span className="contra-mb-12.5 contra-block contra-text-5.25 contra-font-medium contra-leading-7">
         {cardTitle || "Credit Card"}
       </span>
-      <div className="mb-9.5 flex flex-row items-center justify-between gap-x-8.5">
-        <div className="h-11 w-16.5 overflow-hidden rounded-1.5 bg-contra-white" />
-        <span className="text-5.25 font-extrabold leading-7">
+      <div className="contra-mb-9.5 contra-flex contra-flex-row contra-items-center contra-justify-between contra-gap-x-8.5">
+        <div className="contra-h-11 contra-w-16.5 contra-overflow-hidden contra-rounded-1.5 contra-bg-white" />
+        <span className="contra-text-5.25 contra-font-extrabold contra-leading-7">
           {cardNumber || CARD_NUMBER_PLACEHOLDER}
         </span>
       </div>
-      <div className="flex flex-row items-end">
+      <div className="contra-flex contra-flex-row contra-items-end">
         {cardHolder && (
           <div>
-            <span className="block text-3 font-medium uppercase leading-4">
+            <span className="contra-block contra-text-3 contra-font-medium contra-uppercase contra-leading-4">
               {cardHolderTitle || "Card Holder"}
             </span>
-            <span className="block text-5.25 font-extrabold leading-7">
+            <span className="contra-block contra-text-5.25 contra-font-extrabold contra-leading-7">
               {cardHolder}
             </span>
           </div>
         )}
-        {cardType && <div className="ml-auto">{cardType}</div>}
+        {cardType && <div className="contra-ml-auto">{cardType}</div>}
       </div>
     </div>
   );

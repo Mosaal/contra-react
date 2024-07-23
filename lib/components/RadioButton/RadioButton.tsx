@@ -53,7 +53,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
         className={cn(radioButtonWrapperCva({ disabled }))}
       >
         {label && labelPosition === "left" && renderLabel()}
-        <div className="relative inline-flex">
+        <div className="contra-relative contra-inline-flex">
           <input
             type="radio"
             ref={ref}

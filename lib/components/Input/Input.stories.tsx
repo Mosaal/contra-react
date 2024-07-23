@@ -68,29 +68,29 @@ export const DisabledWithValue: Story = {
 export const WithLeftIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
+    leftIcon: <ChevronDown className="contra-rotate-90 contra-stroke-3" />,
   },
 };
 
 export const WithRightIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <ChevronDown className="-rotate-90 stroke-3" />,
+    rightIcon: <ChevronDown className="-contra-rotate-90 contra-stroke-3" />,
   },
 };
 
 export const WithBothIcons: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
-    rightIcon: <ChevronDown className="-rotate-90 stroke-3" />,
+    leftIcon: <ChevronDown className="contra-rotate-90 contra-stroke-3" />,
+    rightIcon: <ChevronDown className="-contra-rotate-90 contra-stroke-3" />,
   },
 };
 
 export const WithClickableIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <ChevronDown className="rotate-90 stroke-3" />,
+    leftIcon: <ChevronDown className="contra-rotate-90 contra-stroke-3" />,
     onLeftIconClick: fn(),
   },
 };

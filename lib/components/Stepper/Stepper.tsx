@@ -79,7 +79,7 @@ export const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
       <input
         hidden
         type="number"
-        className="hidden"
+        className="contra-hidden"
         ref={ref}
         name={name}
         id={inputId}

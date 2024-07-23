@@ -49,7 +49,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
       onMouseDown={handleMouseDown}
       {...props}
     >
-      <div className="flex flex-row items-center justify-center gap-1.5">
+      <div className="contra-flex contra-flex-row contra-items-center contra-justify-center contra-gap-1.5">
         {leftIcon}
         {children}
         {rightIcon}

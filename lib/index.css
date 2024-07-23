@@ -43,67 +43,70 @@
 
 @layer components {
   /* Progress bar */
-  .progress[value]::-moz-progress-bar,
-  .progress[value]::-webkit-progress-value {
-    @apply bg-contra-yellow;
+  .contra-progress[value]::-moz-progress-bar,
+  .contra-progress[value]::-webkit-progress-value {
+    @apply contra-bg-yellow contra-transition-[all];
   }
-  .progress.progress-disabled[value]::-moz-progress-bar,
-  .progress.progress-disabled[value]::-webkit-progress-value {
-    @apply bg-contra-yellow-100;
+  .contra-progress.contra-progress-disabled[value]::-moz-progress-bar,
+  .contra-progress.contra-progress-disabled[value]::-webkit-progress-value {
+    @apply contra-bg-yellow-100;
   }
 
   /* Code input */
-  .code-input {
-    @apply !inline-flex flex-row items-center gap-6;
+  .contra-code-input {
+    @apply !contra-inline-flex contra-flex-row contra-items-center contra-gap-6;
   }
-  .code-input > input {
-    @apply h-14 w-14 appearance-none rounded-4 border-0.5 border-contra-black bg-contra-white text-center text-6 font-extrabold leading-7 text-contra-black shadow-none outline-2 outline-offset-4 outline-contra-pink placeholder:text-contra-black-700 focus:outline;
+  .contra-code-input > input {
+    @apply contra-outline-0.5 contra-h-14 contra-w-14 contra-appearance-none contra-rounded-4 contra-border-0.5 contra-border-black contra-bg-white contra-text-center contra-text-6 contra-font-extrabold contra-leading-7 contra-text-black contra-shadow-none contra-outline-offset-1 contra-outline-pink placeholder:contra-text-black-700 focus:contra-outline;
   }
-  .code-input.code-input-raised > input {
-    @apply shadow-contra-normal;
+  .contra-code-input.contra-code-input-raised > input {
+    @apply contra-shadow-normal;
   }
-  .code-input.code-input-disabled > input:disabled {
-    @apply !cursor-not-allowed !border-contra-black-300 !bg-contra-white !text-contra-black-300 !shadow-contra-black-300 placeholder:!text-contra-black-300;
+  .contra-code-input.contra-code-input-disabled > input:disabled {
+    @apply !contra-cursor-not-allowed !contra-border-black-300 !contra-bg-white !contra-text-black-300 !contra-shadow-black-300 placeholder:!contra-text-black-300;
   }
 
   /* Range input */
-  .slider {
-    @apply !h-3 !rounded-0 !bg-transparent !p-0;
+  .contra-slider {
+    @apply !contra-h-3 !contra-rounded-0 !contra-bg-transparent !contra-p-0;
   }
-  .slider > .slider-rail {
-    @apply h-3 rounded-2.5 border-0.5 border-contra-black bg-contra-white shadow-none;
+  .contra-slider > .contra-slider-rail {
+    @apply contra-h-3 contra-rounded-2.5 contra-border-0.5 contra-border-black contra-bg-white contra-shadow-none;
   }
-  .slider.slider-raised > .slider-rail {
-    @apply shadow-contra-small;
+  .contra-slider.contra-slider-raised > .contra-slider-rail {
+    @apply contra-shadow-small;
   }
-  .slider.slider-disabled > .slider-rail {
-    @apply border-contra-black-300;
+  .contra-slider.contra-slider-disabled > .contra-slider-rail {
+    @apply contra-border-black-300;
   }
-  .slider.slider-raised.slider-disabled > .slider-rail {
-    @apply shadow-contra-black-300;
+  .contra-slider.contra-slider-raised.contra-slider-disabled
+    > .contra-slider-rail {
+    @apply contra-shadow-black-300;
   }
-  .slider > .slider-track {
-    @apply h-3 border-0.5 border-contra-black bg-contra-red-800 opacity-100;
+  .contra-slider > .contra-slider-track {
+    @apply contra-h-3 contra-border-0.5 contra-border-black contra-bg-red-800 contra-opacity-100;
   }
-  .slider.slider-disabled > .slider-track {
-    @apply border-contra-black-300 bg-contra-red-100;
+  .contra-slider.contra-slider-disabled > .contra-slider-track {
+    @apply contra-border-black-300 contra-bg-red-100;
   }
-  .slider > .slider-handle {
-    @apply -mt-1.5 h-6 w-6 rounded-full border-0.5 border-contra-black bg-contra-white opacity-100 shadow-none !outline-2 !outline-offset-4 !outline-contra-pink hover:border-contra-black focus:outline active:border-contra-black active:shadow-none;
+  .contra-slider > .contra-slider-handle {
+    @apply !contra-outline-0.5 -contra-mt-1.5 contra-h-6 contra-w-6 contra-rounded-full contra-border-0.5 contra-border-black contra-bg-white contra-opacity-100 contra-shadow-none !contra-outline-offset-1 !contra-outline-pink hover:contra-border-black focus:contra-outline active:contra-border-black active:contra-shadow-none;
   }
-  .slider > .slider-handle.rc-slider-handle-dragging {
-    @apply !border-contra-black !shadow-none;
+  .contra-slider > .contra-slider-handle.rc-slider-handle-dragging {
+    @apply !contra-border-black !contra-shadow-none;
   }
-  .slider.slider-raised > .slider-handle.rc-slider-handle-dragging {
-    @apply !shadow-contra-small;
+  .contra-slider.contra-slider-raised
+    > .contra-slider-handle.rc-slider-handle-dragging {
+    @apply !contra-shadow-small;
   }
-  .slider.slider-raised > .slider-handle {
-    @apply shadow-contra-small;
+  .contra-slider.contra-slider-raised > .contra-slider-handle {
+    @apply contra-shadow-small;
   }
-  .slider.slider-disabled > .slider-handle {
-    @apply border-contra-black-300;
+  .contra-slider.contra-slider-disabled > .contra-slider-handle {
+    @apply contra-border-black-300;
   }
-  .slider.slider-raised.slider-disabled > .slider-handle {
-    @apply shadow-contra-black-300;
+  .contra-slider.contra-slider-raised.contra-slider-disabled
+    > .contra-slider-handle {
+    @apply contra-shadow-black-300;
   }
 }

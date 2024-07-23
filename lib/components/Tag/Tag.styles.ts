@@ -1,16 +1,16 @@
 import { cva } from "class-variance-authority";
 
 export const tagCva = cva(
-  "rounded-11 border-0.5 border-contra-black px-2.5 py-2 text-3 font-extrabold leading-4",
+  "contra-rounded-11 contra-border-0.5 contra-border-black contra-px-2.5 contra-py-2 contra-text-3 contra-font-extrabold contra-leading-4",
   {
     variants: {
       active: {
-        true: "bg-contra-pink-800",
-        false: "bg-contra-white",
+        true: "contra-bg-pink-800",
+        false: "contra-bg-white",
       },
       raised: {
-        true: "shadow-contra-small",
-        false: "shadow-none",
+        true: "contra-shadow-small",
+        false: "contra-shadow-none",
       },
     },
     defaultVariants: {

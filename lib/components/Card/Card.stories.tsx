@@ -36,30 +36,30 @@ export const Raised: Story = {
 
 export const CustomExample: Story = {
   args: {
-    className: "contra-w-90 contra-bg-red",
+    className: "cr-w-90 cr-bg-red",
     children: (
-      <div className="contra-text-white">
-        <p className="contra-mb-2 contra-mt-4.25 contra-text-center contra-text-6 contra-font-medium contra-uppercase contra-leading-7">
+      <div className="cr-text-white">
+        <p className="cr-mb-2 cr-mt-4.25 cr-text-center cr-text-6 cr-font-medium cr-uppercase cr-leading-7">
           Popular
         </p>
-        <p className="contra-mb-8 contra-text-center contra-text-11 contra-font-extrabold contra-uppercase contra-leading-13.5">
+        <p className="cr-mb-8 cr-text-center cr-text-11 cr-font-extrabold cr-uppercase cr-leading-13.5">
           Free
         </p>
-        <ul className="contra-mb-8 contra-space-y-6 contra-text-6 contra-font-medium contra-leading-7">
-          <li className="contra-flex contra-flex-row contra-items-center contra-gap-4">
+        <ul className="cr-mb-8 cr-space-y-6 cr-text-6 cr-font-medium cr-leading-7">
+          <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>Get 24x7 Support</span>
           </li>
-          <li className="contra-flex contra-flex-row contra-items-center contra-gap-4">
+          <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>120+ Screens</span>
           </li>
-          <li className="contra-flex contra-flex-row contra-items-center contra-gap-4">
+          <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>60+ Components</span>
           </li>
         </ul>
-        <Button block variant="secondary" className="contra-mb-4.25">
+        <Button block variant="secondary" className="cr-mb-4.25">
           Buy
         </Button>
       </div>

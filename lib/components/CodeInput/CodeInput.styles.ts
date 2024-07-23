@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
-export const codeInputCva = cva("contra-code-input", {
+export const codeInputCva = cva("cr-code-input", {
   variants: {
     raised: {
-      true: "contra-code-input-raised",
+      true: "cr-code-input-raised",
     },
     disabled: {
-      true: "contra-code-input-disabled",
+      true: "cr-code-input-disabled",
     },
   },
   defaultVariants: {

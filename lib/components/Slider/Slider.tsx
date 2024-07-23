@@ -19,9 +19,9 @@ export const Slider = forwardRef<SliderRef, SliderProps>(function (
       className={cn(sliderCva({ raised, disabled, className }))}
       classNames={{
         ...classNames,
-        rail: cn("contra-slider-rail", classNames?.rail || ""),
-        track: cn("contra-slider-track", classNames?.track || ""),
-        handle: cn("contra-slider-handle", classNames?.handle || ""),
+        rail: cn("cr-slider-rail", classNames?.rail || ""),
+        track: cn("cr-slider-track", classNames?.track || ""),
+        handle: cn("cr-slider-handle", classNames?.handle || ""),
       }}
       {...props}
     />

@@ -1,25 +1,25 @@
 import { cva } from "class-variance-authority";
 
 export const segmentedControlCva = cva(
-  "contra-inline-flex contra-flex-row contra-items-center contra-rounded-6.5 contra-border-0.5 contra-border-black contra-bg-white contra-text-5.25 contra-leading-7",
+  "cr-inline-flex cr-flex-row cr-items-center cr-rounded-6.5 cr-border-0.5 cr-border-black cr-bg-white cr-text-5.25 cr-leading-7",
   {
     variants: {
       block: {
-        true: "contra-w-full",
+        true: "cr-w-full",
       },
       raised: {
-        true: "contra-shadow-normal",
-        false: "contra-shadow-none",
+        true: "cr-shadow-normal",
+        false: "cr-shadow-none",
       },
       disabled: {
-        true: "contra-cursor-not-allowed contra-border-black-300",
+        true: "cr-cursor-not-allowed cr-border-black-300",
       },
     },
     compoundVariants: [
       {
         raised: true,
         disabled: true,
-        className: "contra-shadow-black-300",
+        className: "cr-shadow-black-300",
       },
     ],
     defaultVariants: {
@@ -31,11 +31,11 @@ export const segmentedControlCva = cva(
 );
 
 export const segmentedControlOptionCva = cva(
-  "contra-outline-0.5 contra-flex-1 contra-appearance-none contra-rounded-6.5 contra-px-6 contra-py-2.5 contra-font-bold contra-text-black contra-outline-offset-1 contra-outline-pink contra-transition focus:contra-outline disabled:contra-cursor-not-allowed disabled:contra-text-black-300",
+  "cr-outline-0.5 cr-flex-1 cr-appearance-none cr-rounded-6.5 cr-px-6 cr-py-2.5 cr-font-bold cr-text-black cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
   {
     variants: {
       selected: {
-        true: "contra-bg-green contra-text-white disabled:contra-bg-green-800 disabled:contra-text-white",
+        true: "cr-bg-green cr-text-white disabled:cr-bg-green-800 disabled:cr-text-white",
       },
     },
     defaultVariants: {

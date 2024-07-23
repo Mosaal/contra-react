@@ -18,7 +18,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Square = () => (
-  <div className="contra-h-20 contra-w-20 contra-rounded-3 contra-bg-green" />
+  <div className="cr-h-20 cr-w-20 cr-rounded-3 cr-bg-green" />
 );
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args

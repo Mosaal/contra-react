@@ -24,27 +24,27 @@ export const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
       className={cn(creditCardCva({ raised, className }))}
       {...props}
     >
-      <span className="contra-mb-12.5 contra-block contra-text-5.25 contra-font-medium contra-leading-7">
+      <span className="cr-mb-12.5 cr-block cr-text-5.25 cr-font-medium cr-leading-7">
         {cardTitle || "Credit Card"}
       </span>
-      <div className="contra-mb-9.5 contra-flex contra-flex-row contra-items-center contra-justify-between contra-gap-x-8.5">
-        <div className="contra-h-11 contra-w-16.5 contra-overflow-hidden contra-rounded-1.5 contra-bg-white" />
-        <span className="contra-text-5.25 contra-font-extrabold contra-leading-7">
+      <div className="cr-mb-9.5 cr-flex cr-flex-row cr-items-center cr-justify-between cr-gap-x-8.5">
+        <div className="cr-h-11 cr-w-16.5 cr-overflow-hidden cr-rounded-1.5 cr-bg-white" />
+        <span className="cr-text-5.25 cr-font-extrabold cr-leading-7">
           {cardNumber || CARD_NUMBER_PLACEHOLDER}
         </span>
       </div>
-      <div className="contra-flex contra-flex-row contra-items-end">
+      <div className="cr-flex cr-flex-row cr-items-end">
         {cardHolder && (
           <div>
-            <span className="contra-block contra-text-3 contra-font-medium contra-uppercase contra-leading-4">
+            <span className="cr-block cr-text-3 cr-font-medium cr-uppercase cr-leading-4">
               {cardHolderTitle || "Card Holder"}
             </span>
-            <span className="contra-block contra-text-5.25 contra-font-extrabold contra-leading-7">
+            <span className="cr-block cr-text-5.25 cr-font-extrabold cr-leading-7">
               {cardHolder}
             </span>
           </div>
         )}
-        {cardType && <div className="contra-ml-auto">{cardType}</div>}
+        {cardType && <div className="cr-ml-auto">{cardType}</div>}
       </div>
     </div>
   );

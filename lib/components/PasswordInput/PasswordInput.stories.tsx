@@ -68,14 +68,14 @@ export const DisabledWithValue: Story = {
 export const WithLeftIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <ChevronDown className="contra-rotate-90 contra-stroke-3" />,
+    leftIcon: <ChevronDown className="cr-rotate-90 cr-stroke-3" />,
   },
 };
 
 export const WithClickableIcon: Story = {
   args: {
     placeholder: "Placeholder",
-    leftIcon: <ChevronDown className="contra-rotate-90 contra-stroke-3" />,
+    leftIcon: <ChevronDown className="cr-rotate-90 cr-stroke-3" />,
     onLeftIconClick: fn(),
   },
 };

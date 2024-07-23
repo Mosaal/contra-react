@@ -50,7 +50,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
         className={cn(toggleSwitchWrapperCva({ disabled }))}
       >
         {leftLabel && renderLabel(leftLabel)}
-        <div className="contra-relative contra-inline-flex">
+        <div className="cr-relative cr-inline-flex">
           <input
             type="checkbox"
             ref={ref}

@@ -1,13 +1,12 @@
 import { cva } from "class-variance-authority";
 
 export const counterContainerCva = cva(
-  "contra-flex contra-flex-row contra-items-center contra-text-black",
+  "cr-flex cr-flex-row cr-items-center cr-text-black",
   {
     variants: {
       variant: {
-        normal: "contra-gap-x-3",
-        contained:
-          "contra-overflow-hidden contra-border-0.5 contra-border-black",
+        normal: "cr-gap-x-3",
+        contained: "cr-overflow-hidden cr-border-0.5 cr-border-black",
       },
       size: {
         small: "",
@@ -17,40 +16,40 @@ export const counterContainerCva = cva(
         true: "",
       },
       disabled: {
-        true: "contra-cursor-not-allowed contra-text-black-300",
+        true: "cr-cursor-not-allowed cr-text-black-300",
       },
     },
     compoundVariants: [
       {
         variant: "contained",
         size: "normal",
-        className: "contra-rounded-4",
+        className: "cr-rounded-4",
       },
       {
         variant: "contained",
         size: "small",
-        className: "contra-rounded-3",
+        className: "cr-rounded-3",
       },
       {
         variant: "contained",
         raised: true,
-        className: "contra-shadow-small",
+        className: "cr-shadow-small",
       },
       {
         variant: "contained",
         raised: false,
-        className: "contra-shadow-none",
+        className: "cr-shadow-none",
       },
       {
         variant: "contained",
         disabled: true,
-        className: "contra-border-black-300",
+        className: "cr-border-black-300",
       },
       {
         variant: "contained",
         raised: true,
         disabled: true,
-        className: "contra-shadow-black-300",
+        className: "cr-shadow-black-300",
       },
     ],
     defaultVariants: {
@@ -61,46 +60,46 @@ export const counterContainerCva = cva(
   },
 );
 
-export const counterLabelCva = cva("contra-font-extrabold", {
+export const counterLabelCva = cva("cr-font-extrabold", {
   variants: {
     variant: {
       normal: "",
       contained:
-        "contra-inline-flex contra-items-center contra-justify-center contra-self-stretch contra-bg-yellow",
+        "cr-inline-flex cr-items-center cr-justify-center cr-self-stretch cr-bg-yellow",
     },
     size: {
       small: "",
       normal: "",
     },
     disabled: {
-      true: "contra-cursor-not-allowed",
+      true: "cr-cursor-not-allowed",
     },
   },
   compoundVariants: [
     {
       variant: "normal",
       size: "normal",
-      className: "contra-text-9 contra-leading-10",
+      className: "cr-text-9 cr-leading-10",
     },
     {
       variant: "normal",
       size: "small",
-      className: "contra-text-6 contra-leading-7",
+      className: "cr-text-6 cr-leading-7",
     },
     {
       variant: "contained",
       size: "normal",
-      className: "contra-min-w-12 contra-text-6 contra-leading-7",
+      className: "cr-min-w-12 cr-text-6 cr-leading-7",
     },
     {
       variant: "contained",
       size: "small",
-      className: "contra-min-w-7.5 contra-text-4.25 contra-leading-6",
+      className: "cr-min-w-7.5 cr-text-4.25 cr-leading-6",
     },
     {
       variant: "contained",
       disabled: true,
-      className: "contra-bg-yellow-800",
+      className: "cr-bg-yellow-800",
     },
   ],
   defaultVariants: {
@@ -111,13 +110,13 @@ export const counterLabelCva = cva("contra-font-extrabold", {
 });
 
 export const counterLeftButtonCva = cva(
-  "contra-outline-0.5 contra-z-0 contra-flex contra-items-center contra-justify-center contra-outline-offset-1 contra-outline-pink focus:contra-z-[1] focus:contra-outline disabled:contra-cursor-not-allowed",
+  "cr-outline-0.5 cr-z-0 cr-flex cr-items-center cr-justify-center cr-outline-offset-1 cr-outline-pink focus:cr-z-[1] focus:cr-outline disabled:cr-cursor-not-allowed",
   {
     variants: {
       variant: {
         normal:
-          "contra-border-y-0.5 contra-border-l-0.5 contra-border-r-0.25 contra-border-black contra-bg-yellow disabled:contra-border-black-300 disabled:contra-bg-yellow-800",
-        contained: "contra-bg-white",
+          "cr-border-y-0.5 cr-border-l-0.5 cr-border-r-0.25 cr-border-black cr-bg-yellow disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
+        contained: "cr-bg-white",
       },
       size: {
         small: "",
@@ -131,32 +130,32 @@ export const counterLeftButtonCva = cva(
       {
         variant: "normal",
         size: "normal",
-        className: "contra-h-12 contra-w-12 contra-rounded-l-4",
+        className: "cr-h-12 cr-w-12 cr-rounded-l-4",
       },
       {
         variant: "normal",
         size: "small",
-        className: "contra-h-9 contra-w-8.5 contra-rounded-l-3",
+        className: "cr-h-9 cr-w-8.5 cr-rounded-l-3",
       },
       {
         variant: "contained",
         size: "normal",
-        className: "contra-py-2.5 contra-pl-2.25 contra-pr-2",
+        className: "cr-py-2.5 cr-pl-2.25 cr-pr-2",
       },
       {
         variant: "contained",
         size: "small",
-        className: "contra-px-1.5 contra-py-1.75",
+        className: "cr-px-1.5 cr-py-1.75",
       },
       {
         variant: "normal",
         raised: true,
-        className: "contra-shadow-small disabled:contra-shadow-black-300",
+        className: "cr-shadow-small disabled:cr-shadow-black-300",
       },
       {
         variant: "normal",
         raised: false,
-        className: "contra-shadow-none",
+        className: "cr-shadow-none",
       },
     ],
     defaultVariants: {
@@ -168,13 +167,13 @@ export const counterLeftButtonCva = cva(
 );
 
 export const counterRightButtonCva = cva(
-  "contra-outline-0.5 contra-z-0 contra-flex contra-items-center contra-justify-center contra-outline-offset-1 contra-outline-pink focus:contra-z-[1] focus:contra-outline disabled:contra-cursor-not-allowed",
+  "cr-outline-0.5 cr-z-0 cr-flex cr-items-center cr-justify-center cr-outline-offset-1 cr-outline-pink focus:cr-z-[1] focus:cr-outline disabled:cr-cursor-not-allowed",
   {
     variants: {
       variant: {
         normal:
-          "contra-border-y-0.5 contra-border-l-0.25 contra-border-r-0.5 contra-border-black contra-bg-yellow disabled:contra-border-black-300 disabled:contra-bg-yellow-800",
-        contained: "contra-bg-white",
+          "cr-border-y-0.5 cr-border-l-0.25 cr-border-r-0.5 cr-border-black cr-bg-yellow disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
+        contained: "cr-bg-white",
       },
       size: {
         small: "",
@@ -188,32 +187,32 @@ export const counterRightButtonCva = cva(
       {
         variant: "normal",
         size: "normal",
-        className: "contra-h-12 contra-w-12 contra-rounded-r-4",
+        className: "cr-h-12 cr-w-12 cr-rounded-r-4",
       },
       {
         variant: "normal",
         size: "small",
-        className: "contra-h-9 contra-w-8.5 contra-rounded-r-3",
+        className: "cr-h-9 cr-w-8.5 cr-rounded-r-3",
       },
       {
         variant: "contained",
         size: "normal",
-        className: "contra-py-2.5 contra-pl-2 contra-pr-2.25",
+        className: "cr-py-2.5 cr-pl-2 cr-pr-2.25",
       },
       {
         variant: "contained",
         size: "small",
-        className: "contra-px-1.5 contra-py-1.75",
+        className: "cr-px-1.5 cr-py-1.75",
       },
       {
         variant: "normal",
         raised: true,
-        className: "contra-shadow-small disabled:contra-shadow-black-300",
+        className: "cr-shadow-small disabled:cr-shadow-black-300",
       },
       {
         variant: "normal",
         raised: false,
-        className: "contra-shadow-none",
+        className: "cr-shadow-none",
       },
     ],
     defaultVariants: {
@@ -224,11 +223,11 @@ export const counterRightButtonCva = cva(
   },
 );
 
-export const counterIconCva = cva("contra-stroke-4", {
+export const counterIconCva = cva("cr-stroke-4", {
   variants: {
     size: {
-      small: "contra-h-4.5 contra-w-4.5",
-      normal: "contra-h-6 contra-w-6",
+      small: "cr-h-4.5 cr-w-4.5",
+      normal: "cr-h-6 cr-w-6",
     },
   },
   defaultVariants: {

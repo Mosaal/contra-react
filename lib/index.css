@@ -43,70 +43,67 @@
 
 @layer components {
   /* Progress bar */
-  .contra-progress[value]::-moz-progress-bar,
-  .contra-progress[value]::-webkit-progress-value {
-    @apply contra-bg-yellow contra-transition-[all];
+  .cr-progress[value]::-moz-progress-bar,
+  .cr-progress[value]::-webkit-progress-value {
+    @apply cr-bg-yellow cr-transition-[all];
   }
-  .contra-progress.contra-progress-disabled[value]::-moz-progress-bar,
-  .contra-progress.contra-progress-disabled[value]::-webkit-progress-value {
-    @apply contra-bg-yellow-100;
+  .cr-progress.cr-progress-disabled[value]::-moz-progress-bar,
+  .cr-progress.cr-progress-disabled[value]::-webkit-progress-value {
+    @apply cr-bg-yellow-100;
   }
 
   /* Code input */
-  .contra-code-input {
-    @apply !contra-inline-flex contra-flex-row contra-items-center contra-gap-6;
+  .cr-code-input {
+    @apply !cr-inline-flex cr-flex-row cr-items-center cr-gap-6;
   }
-  .contra-code-input > input {
-    @apply contra-outline-0.5 contra-h-14 contra-w-14 contra-appearance-none contra-rounded-4 contra-border-0.5 contra-border-black contra-bg-white contra-text-center contra-text-6 contra-font-extrabold contra-leading-7 contra-text-black contra-shadow-none contra-outline-offset-1 contra-outline-pink placeholder:contra-text-black-700 focus:contra-outline;
+  .cr-code-input > input {
+    @apply cr-outline-0.5 cr-h-14 cr-w-14 cr-appearance-none cr-rounded-4 cr-border-0.5 cr-border-black cr-bg-white cr-text-center cr-text-6 cr-font-extrabold cr-leading-7 cr-text-black cr-shadow-none cr-outline-offset-1 cr-outline-pink placeholder:cr-text-black-700 focus:cr-outline;
   }
-  .contra-code-input.contra-code-input-raised > input {
-    @apply contra-shadow-normal;
+  .cr-code-input.cr-code-input-raised > input {
+    @apply cr-shadow-normal;
   }
-  .contra-code-input.contra-code-input-disabled > input:disabled {
-    @apply !contra-cursor-not-allowed !contra-border-black-300 !contra-bg-white !contra-text-black-300 !contra-shadow-black-300 placeholder:!contra-text-black-300;
+  .cr-code-input.cr-code-input-disabled > input:disabled {
+    @apply !cr-cursor-not-allowed !cr-border-black-300 !cr-bg-white !cr-text-black-300 !cr-shadow-black-300 placeholder:!cr-text-black-300;
   }
 
   /* Range input */
-  .contra-slider {
-    @apply !contra-h-3 !contra-rounded-0 !contra-bg-transparent !contra-p-0;
+  .cr-slider {
+    @apply !cr-h-3 !cr-rounded-0 !cr-bg-transparent !cr-p-0;
   }
-  .contra-slider > .contra-slider-rail {
-    @apply contra-h-3 contra-rounded-2.5 contra-border-0.5 contra-border-black contra-bg-white contra-shadow-none;
+  .cr-slider > .cr-slider-rail {
+    @apply cr-h-3 cr-rounded-2.5 cr-border-0.5 cr-border-black cr-bg-white cr-shadow-none;
   }
-  .contra-slider.contra-slider-raised > .contra-slider-rail {
-    @apply contra-shadow-small;
+  .cr-slider.cr-slider-raised > .cr-slider-rail {
+    @apply cr-shadow-small;
   }
-  .contra-slider.contra-slider-disabled > .contra-slider-rail {
-    @apply contra-border-black-300;
+  .cr-slider.cr-slider-disabled > .cr-slider-rail {
+    @apply cr-border-black-300;
   }
-  .contra-slider.contra-slider-raised.contra-slider-disabled
-    > .contra-slider-rail {
-    @apply contra-shadow-black-300;
+  .cr-slider.cr-slider-raised.cr-slider-disabled > .cr-slider-rail {
+    @apply cr-shadow-black-300;
   }
-  .contra-slider > .contra-slider-track {
-    @apply contra-h-3 contra-border-0.5 contra-border-black contra-bg-red-800 contra-opacity-100;
+  .cr-slider > .cr-slider-track {
+    @apply cr-h-3 cr-border-0.5 cr-border-black cr-bg-red-800 cr-opacity-100;
   }
-  .contra-slider.contra-slider-disabled > .contra-slider-track {
-    @apply contra-border-black-300 contra-bg-red-100;
+  .cr-slider.cr-slider-disabled > .cr-slider-track {
+    @apply cr-border-black-300 cr-bg-red-100;
   }
-  .contra-slider > .contra-slider-handle {
-    @apply !contra-outline-0.5 -contra-mt-1.5 contra-h-6 contra-w-6 contra-rounded-full contra-border-0.5 contra-border-black contra-bg-white contra-opacity-100 contra-shadow-none !contra-outline-offset-1 !contra-outline-pink hover:contra-border-black focus:contra-outline active:contra-border-black active:contra-shadow-none;
+  .cr-slider > .cr-slider-handle {
+    @apply !cr-outline-0.5 -cr-mt-1.5 cr-h-6 cr-w-6 cr-rounded-full cr-border-0.5 cr-border-black cr-bg-white cr-opacity-100 cr-shadow-none !cr-outline-offset-1 !cr-outline-pink hover:cr-border-black focus:cr-outline active:cr-border-black active:cr-shadow-none;
   }
-  .contra-slider > .contra-slider-handle.rc-slider-handle-dragging {
-    @apply !contra-border-black !contra-shadow-none;
+  .cr-slider > .cr-slider-handle.rc-slider-handle-dragging {
+    @apply !cr-border-black !cr-shadow-none;
   }
-  .contra-slider.contra-slider-raised
-    > .contra-slider-handle.rc-slider-handle-dragging {
-    @apply !contra-shadow-small;
+  .cr-slider.cr-slider-raised > .cr-slider-handle.rc-slider-handle-dragging {
+    @apply !cr-shadow-small;
   }
-  .contra-slider.contra-slider-raised > .contra-slider-handle {
-    @apply contra-shadow-small;
+  .cr-slider.cr-slider-raised > .cr-slider-handle {
+    @apply cr-shadow-small;
   }
-  .contra-slider.contra-slider-disabled > .contra-slider-handle {
-    @apply contra-border-black-300;
+  .cr-slider.cr-slider-disabled > .cr-slider-handle {
+    @apply cr-border-black-300;
   }
-  .contra-slider.contra-slider-raised.contra-slider-disabled
-    > .contra-slider-handle {
-    @apply contra-shadow-black-300;
+  .cr-slider.cr-slider-raised.cr-slider-disabled > .cr-slider-handle {
+    @apply cr-shadow-black-300;
   }
 }

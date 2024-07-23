@@ -41,7 +41,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         onMouseDown={handleMouseDown}
         {...props}
       >
-        <div className="contra-flex contra-h-full contra-w-full contra-items-center contra-justify-center">
+        <div className="cr-flex cr-h-full cr-w-full cr-items-center cr-justify-center">
           {children}
         </div>
       </button>

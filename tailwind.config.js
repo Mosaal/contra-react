@@ -44,9 +44,7 @@ const colors = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  // @TODO: remove every existing "contra-" first
-  // then add the "contra-" prefix to every TW class
-  prefix: "contra-",
+  prefix: "cr-",
   content: ["./lib/**/*.{js,ts,jsx,tsx}"],
   darkMode: ["class", '[data-mode="dark"]'],
   theme: {

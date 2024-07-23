@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
 export const inputCva = cva(
-  "contra-outline-0.5 contra-w-full contra-appearance-none contra-rounded-4 contra-border-0.5 contra-border-black contra-bg-white contra-py-3 contra-text-5.25 contra-font-medium contra-leading-7 contra-text-black contra-outline-offset-1 contra-outline-pink placeholder:contra-text-black-700 focus:contra-outline disabled:contra-cursor-not-allowed disabled:contra-border-black-300 disabled:contra-text-black-300 disabled:contra-shadow-black-300 disabled:placeholder:contra-text-black-300",
+  "cr-outline-0.5 cr-w-full cr-appearance-none cr-rounded-4 cr-border-0.5 cr-border-black cr-bg-white cr-py-3 cr-text-5.25 cr-font-medium cr-leading-7 cr-text-black cr-outline-offset-1 cr-outline-pink placeholder:cr-text-black-700 focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-text-black-300 disabled:cr-shadow-black-300 disabled:placeholder:cr-text-black-300",
   {
     variants: {
       raised: {
-        true: "contra-shadow-normal",
-        false: "contra-shadow-none",
+        true: "cr-shadow-normal",
+        false: "cr-shadow-none",
       },
     },
     defaultVariants: {
@@ -15,33 +15,30 @@ export const inputCva = cva(
   },
 );
 
-export const inputIconCva = cva(
-  "contra-absolute contra-top-1/2 -contra-translate-y-1/2",
-  {
-    variants: {
-      position: {
-        left: "contra-left-4",
-        right: "contra-right-4",
-      },
-      disabled: {
-        true: "contra-pointer-events-none contra-text-black-300",
-        false: "contra-text-black",
-      },
-      clickable: {
-        false: "contra-pointer-events-none",
-      },
+export const inputIconCva = cva("cr-absolute cr-top-1/2 -cr-translate-y-1/2", {
+  variants: {
+    position: {
+      left: "cr-left-4",
+      right: "cr-right-4",
     },
-    compoundVariants: [
-      {
-        disabled: false,
-        clickable: true,
-        className: "contra-pointer-events-auto contra-cursor-pointer",
-      },
-    ],
-    defaultVariants: {
-      position: "left",
-      disabled: false,
-      clickable: false,
+    disabled: {
+      true: "cr-pointer-events-none cr-text-black-300",
+      false: "cr-text-black",
+    },
+    clickable: {
+      false: "cr-pointer-events-none",
     },
   },
-);
+  compoundVariants: [
+    {
+      disabled: false,
+      clickable: true,
+      className: "cr-pointer-events-auto cr-cursor-pointer",
+    },
+  ],
+  defaultVariants: {
+    position: "left",
+    disabled: false,
+    clickable: false,
+  },
+});

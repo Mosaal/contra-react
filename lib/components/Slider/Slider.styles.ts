@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
-export const sliderCva = cva("contra-slider", {
+export const sliderCva = cva("cr-slider", {
   variants: {
     raised: {
-      true: "contra-slider-raised",
+      true: "cr-slider-raised",
     },
     disabled: {
-      true: "contra-slider-disabled",
+      true: "cr-slider-disabled",
     },
   },
   defaultVariants: {

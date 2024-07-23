@@ -1,23 +1,23 @@
 import { cva } from "class-variance-authority";
 
 export const progressBarCva = cva(
-  "contra-progress contra-h-3 contra-w-full contra-appearance-none contra-overflow-hidden contra-rounded-2.5 contra-border-0.5 contra-bg-transparent",
+  "cr-progress cr-h-3 cr-w-full cr-appearance-none cr-overflow-hidden cr-rounded-2.5 cr-border-0.5 cr-bg-transparent",
   {
     variants: {
       raised: {
-        true: "contra-shadow-small",
-        false: "contra-shadow-none",
+        true: "cr-shadow-small",
+        false: "cr-shadow-none",
       },
       disabled: {
-        true: "contra-progress-disabled contra-border-black-300",
-        false: "contra-border-black",
+        true: "cr-progress-disabled cr-border-black-300",
+        false: "cr-border-black",
       },
     },
     compoundVariants: [
       {
         raised: true,
         disabled: true,
-        className: "contra-shadow-black-300",
+        className: "cr-shadow-black-300",
       },
     ],
     defaultVariants: {

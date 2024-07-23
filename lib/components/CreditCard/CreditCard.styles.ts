@@ -1,12 +1,21 @@
 import { cva } from "class-variance-authority";
 
+export const CREDIT_CARD_ASTERISK = "\u2731";
+
+export const CARD_NUMBER_PLACEHOLDER = [
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+  Array(4).fill(CREDIT_CARD_ASTERISK).join(""),
+].join(" ");
+
 export const creditCardCva = cva(
-  "min-h-65 min-w-106.25 rounded-6 border-0.5 border-contra-black bg-contra-pink px-8.5 pb-6 pt-7 text-contra-white",
+  "cr-min-h-65 cr-min-w-106.25 cr-rounded-6 cr-border-0.5 cr-border-black cr-bg-pink cr-px-8.5 cr-pb-6 cr-pt-7 cr-text-white",
   {
     variants: {
       raised: {
-        true: "shadow-contra-normal",
-        false: "shadow-none",
+        true: "cr-shadow-normal",
+        false: "cr-shadow-none",
       },
     },
     defaultVariants: {

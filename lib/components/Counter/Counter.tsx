@@ -65,7 +65,7 @@ export const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
         >
           {cValue}
         </label>
-        <div className="flex flex-row flex-nowrap items-center">
+        <div className="cr-flex cr-flex-row cr-flex-nowrap cr-items-center">
           <button
             type="button"
             disabled={disabled}
@@ -126,7 +126,7 @@ export const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
       <input
         hidden
         type="number"
-        className="hidden"
+        className="cr-hidden"
         ref={ref}
         name={name}
         id={inputId}

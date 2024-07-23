@@ -36,30 +36,30 @@ export const Raised: Story = {
 
 export const CustomExample: Story = {
   args: {
-    className: "w-90 bg-contra-red",
+    className: "cr-w-90 cr-bg-red",
     children: (
-      <div className="text-contra-white">
-        <p className="mb-2 mt-4.25 text-center text-6 font-medium uppercase leading-7">
+      <div className="cr-text-white">
+        <p className="cr-mb-2 cr-mt-4.25 cr-text-center cr-text-6 cr-font-medium cr-uppercase cr-leading-7">
           Popular
         </p>
-        <p className="mb-8 text-center text-11 font-extrabold uppercase leading-13.5">
+        <p className="cr-mb-8 cr-text-center cr-text-11 cr-font-extrabold cr-uppercase cr-leading-13.5">
           Free
         </p>
-        <ul className="mb-8 space-y-6 text-6 font-medium leading-7">
-          <li className="flex flex-row items-center gap-4">
+        <ul className="cr-mb-8 cr-space-y-6 cr-text-6 cr-font-medium cr-leading-7">
+          <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>Get 24x7 Support</span>
           </li>
-          <li className="flex flex-row items-center gap-4">
+          <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>120+ Screens</span>
           </li>
-          <li className="flex flex-row items-center gap-4">
+          <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>60+ Components</span>
           </li>
         </ul>
-        <Button block variant="secondary" className="mb-4.25">
+        <Button block variant="secondary" className="cr-mb-4.25">
           Buy
         </Button>
       </div>

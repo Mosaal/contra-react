@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
 export const textareaCva = cva(
-  "w-full appearance-none rounded-4 border-0.5 border-contra-black bg-contra-white py-3 text-5.25 font-medium leading-7 text-contra-black outline-2 outline-offset-4 outline-contra-pink placeholder:text-contra-black-700 focus:outline disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:text-contra-black-300 disabled:shadow-contra-black-300 disabled:placeholder:text-contra-black-300",
+  "cr-outline-0.5 cr-w-full cr-appearance-none cr-rounded-4 cr-border-0.5 cr-border-black cr-bg-white cr-py-3 cr-text-5.25 cr-font-medium cr-leading-7 cr-text-black cr-outline-offset-1 cr-outline-pink placeholder:cr-text-black-700 focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-text-black-300 disabled:cr-shadow-black-300 disabled:placeholder:cr-text-black-300",
   {
     variants: {
       raised: {
-        true: "shadow-contra-normal",
-        false: "shadow-none",
+        true: "cr-shadow-normal",
+        false: "cr-shadow-none",
       },
     },
     defaultVariants: {
@@ -15,25 +15,25 @@ export const textareaCva = cva(
   },
 );
 
-export const textareaIconCva = cva("absolute top-4", {
+export const textareaIconCva = cva("cr-absolute cr-top-4", {
   variants: {
     position: {
-      left: "left-4",
-      right: "right-4",
+      left: "cr-left-4",
+      right: "cr-right-4",
     },
     disabled: {
-      true: "pointer-events-none text-contra-black-300",
-      false: "text-contra-black",
+      true: "cr-pointer-events-none cr-text-black-300",
+      false: "cr-text-black",
     },
     clickable: {
-      false: "pointer-events-none",
+      false: "cr-pointer-events-none",
     },
   },
   compoundVariants: [
     {
       disabled: false,
       clickable: true,
-      className: "pointer-events-auto cursor-pointer",
+      className: "cr-pointer-events-auto cr-cursor-pointer",
     },
   ],
   defaultVariants: {

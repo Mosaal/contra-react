@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
 export const toggleSwitchCva = cva(
-  "h-9 w-15 cursor-pointer appearance-none rounded-13 border-0.5 border-contra-black bg-contra-blue-100 outline-2 outline-offset-4 outline-contra-pink transition checked:bg-contra-yellow focus:outline disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300 checked:disabled:bg-contra-yellow-100",
+  "cr-outline-0.5 cr-h-9 cr-w-15 cr-cursor-pointer cr-appearance-none cr-rounded-13 cr-border-0.5 cr-border-black cr-bg-blue-100 cr-outline-offset-1 cr-outline-pink cr-transition checked:cr-bg-yellow focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-bg-black-200 disabled:cr-shadow-black-300 checked:disabled:cr-bg-yellow-100",
   {
     variants: {
       raised: {
-        true: "shadow-contra-small",
-        false: "shadow-none",
+        true: "cr-shadow-small",
+        false: "cr-shadow-none",
       },
     },
     defaultVariants: {
@@ -16,12 +16,12 @@ export const toggleSwitchCva = cva(
 );
 
 export const toggleSwitchWrapperCva = cva(
-  "inline-flex flex-row items-center gap-x-4",
+  "cr-inline-flex cr-flex-row cr-items-center cr-gap-x-4",
   {
     variants: {
       disabled: {
-        true: "cursor-not-allowed",
-        false: "cursor-pointer",
+        true: "cr-cursor-not-allowed",
+        false: "cr-cursor-pointer",
       },
     },
     defaultVariants: {
@@ -30,29 +30,32 @@ export const toggleSwitchWrapperCva = cva(
   },
 );
 
-export const toggleSwitchLabelCva = cva("text-4.25 font-extrabold leading-6", {
-  variants: {
-    disabled: {
-      true: "text-contra-black-300",
-      false: "text-contra-black",
+export const toggleSwitchLabelCva = cva(
+  "cr-text-4.25 cr-font-extrabold cr-leading-6",
+  {
+    variants: {
+      disabled: {
+        true: "cr-text-black-300",
+        false: "cr-text-black",
+      },
+    },
+    defaultVariants: {
+      disabled: false,
     },
   },
-  defaultVariants: {
-    disabled: false,
-  },
-});
+);
 
 export const toggleSwitchToggleCva = cva(
-  "absolute top-0 flex h-9 w-9 items-center justify-center rounded-full border-0.5 bg-contra-white transition-[left]",
+  "cr-absolute cr-top-0 cr-flex cr-h-9 cr-w-9 cr-items-center cr-justify-center cr-rounded-full cr-border-0.5 cr-bg-white cr-transition-[left]",
   {
     variants: {
       checked: {
-        true: "left-6",
-        false: "left-0",
+        true: "cr-left-6",
+        false: "cr-left-0",
       },
       disabled: {
-        true: "border-contra-black-300",
-        false: "border-contra-black",
+        true: "cr-border-black-300",
+        false: "cr-border-black",
       },
     },
     defaultVariants: {
@@ -63,23 +66,23 @@ export const toggleSwitchToggleCva = cva(
 );
 
 export const toggleSwitchToggleDotCva = cva(
-  "h-4 w-4 rounded-full border-0.5 transition",
+  "cr-h-4 cr-w-4 cr-rounded-full cr-border-0.5 cr-transition",
   {
     variants: {
       checked: {
-        true: "bg-contra-yellow",
-        false: "bg-contra-black-200",
+        true: "cr-bg-yellow",
+        false: "cr-bg-black-200",
       },
       disabled: {
-        true: "border-contra-black-300",
-        false: "border-contra-black",
+        true: "cr-border-black-300",
+        false: "cr-border-black",
       },
     },
     compoundVariants: [
       {
         checked: true,
         disabled: true,
-        className: "bg-contra-yellow-100",
+        className: "cr-bg-yellow-100",
       },
     ],
     defaultVariants: {

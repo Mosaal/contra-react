@@ -8,10 +8,10 @@ import { AlertTriangle, Check, Info, X } from "@/icons";
 import { cn } from "@/utils";
 
 const ICONS: Record<NonNullable<AlertProps["variant"]>, React.ReactNode> = {
-  info: <Info className="text-contra-black" />,
-  warning: <AlertTriangle className="-mt-0.75 text-contra-black" />,
-  error: <X className="text-contra-black" />,
-  success: <Check className="text-contra-black" />,
+  info: <Info className="cr-text-black" />,
+  warning: <AlertTriangle className="-cr-mt-0.75 cr-text-black" />,
+  error: <X className="cr-text-black" />,
+  success: <Check className="cr-text-black" />,
 };
 
 export const Alert = forwardRef<HTMLDivElement, AlertProps>(function (
@@ -23,10 +23,12 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(function (
       <div className={cn(alertIconCva({ variant }))}>
         {ICONS[variant || "info"]}
       </div>
-      <div className="mt-2 text-contra-white">
-        <p className="mb-2 text-4.25 font-extrabold leading-6">{title}</p>
+      <div className="cr-mt-2 cr-text-white">
+        <p className="cr-mb-2 cr-text-4.25 cr-font-extrabold cr-leading-6">
+          {title}
+        </p>
         {message && (
-          <span className="block text-3.75 font-medium leading-5.5">
+          <span className="cr-block cr-text-3.75 cr-font-medium cr-leading-5.5">
             {message}
           </span>
         )}

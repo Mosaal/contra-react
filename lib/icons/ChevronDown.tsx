@@ -1,6 +1,6 @@
-export type ChevronDownProps = React.ComponentPropsWithoutRef<"svg">;
+import { IconProps } from ".";
 
-export default function ChevronDownProps(props: ChevronDownProps) {
+export default function ChevronDownProps(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

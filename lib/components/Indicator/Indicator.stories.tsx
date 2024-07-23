@@ -17,7 +17,9 @@ const meta: Meta<typeof Indicator> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Square = () => <div className="h-20 w-20 rounded-3 bg-contra-green" />;
+const Square = () => (
+  <div className="cr-h-20 cr-w-20 cr-rounded-3 cr-bg-green" />
+);
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Unlabeled: Story = {

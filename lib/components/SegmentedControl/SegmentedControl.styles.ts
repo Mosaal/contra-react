@@ -1,25 +1,25 @@
 import { cva } from "class-variance-authority";
 
 export const segmentedControlCva = cva(
-  "inline-flex flex-row items-center rounded-6.5 border-0.5 border-contra-black bg-contra-white text-5.25 leading-7",
+  "cr-inline-flex cr-flex-row cr-items-center cr-rounded-6.5 cr-border-0.5 cr-border-black cr-bg-white cr-text-5.25 cr-leading-7",
   {
     variants: {
       block: {
-        true: "w-full",
+        true: "cr-w-full",
       },
       raised: {
-        true: "shadow-contra-normal",
-        false: "shadow-none",
+        true: "cr-shadow-normal",
+        false: "cr-shadow-none",
       },
       disabled: {
-        true: "cursor-not-allowed border-contra-black-300",
+        true: "cr-cursor-not-allowed cr-border-black-300",
       },
     },
     compoundVariants: [
       {
         raised: true,
         disabled: true,
-        className: "shadow-contra-black-300",
+        className: "cr-shadow-black-300",
       },
     ],
     defaultVariants: {
@@ -31,11 +31,11 @@ export const segmentedControlCva = cva(
 );
 
 export const segmentedControlOptionCva = cva(
-  "flex-1 appearance-none rounded-6.5 bg-transparent px-6 py-2.5 font-bold text-contra-black outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:text-contra-black-300",
+  "cr-outline-0.5 cr-flex-1 cr-appearance-none cr-rounded-6.5 cr-px-6 cr-py-2.5 cr-font-bold cr-text-black cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
   {
     variants: {
       selected: {
-        true: "bg-contra-green text-contra-white disabled:bg-contra-green-800 disabled:text-contra-white",
+        true: "cr-bg-green cr-text-white disabled:cr-bg-green-800 disabled:cr-text-white",
       },
     },
     defaultVariants: {

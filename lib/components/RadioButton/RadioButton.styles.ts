@@ -1,17 +1,17 @@
 import { cva } from "class-variance-authority";
 
 export const radioButtonCva = cva(
-  "h-8 w-8 cursor-pointer appearance-none rounded-full border-0.5 border-contra-black bg-contra-blue-100 outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:border-contra-black-300 disabled:bg-contra-black-200 disabled:shadow-contra-black-300",
+  "cr-outline-0.5 cr-h-8 cr-w-8 cr-cursor-pointer cr-appearance-none cr-rounded-full cr-border-0.5 cr-border-black cr-bg-blue-100 cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-bg-black-200 disabled:cr-shadow-black-300",
   {
     variants: {
       variant: {
-        primary: "checked:bg-contra-white",
+        primary: "checked:cr-bg-white",
         secondary:
-          "checked:border-contra-yellow checked:bg-contra-yellow checked:disabled:border-contra-yellow-100 checked:disabled:bg-contra-yellow-100",
+          "checked:cr-border-yellow checked:cr-bg-yellow checked:disabled:cr-border-yellow-100 checked:disabled:cr-bg-yellow-100",
       },
       raised: {
-        true: "shadow-contra-small",
-        false: "shadow-none",
+        true: "cr-shadow-small",
+        false: "cr-shadow-none",
       },
     },
     defaultVariants: {
@@ -22,12 +22,12 @@ export const radioButtonCva = cva(
 );
 
 export const radioButtonWrapperCva = cva(
-  "inline-flex flex-row items-center gap-x-4",
+  "cr-inline-flex cr-flex-row cr-items-center cr-gap-x-4",
   {
     variants: {
       disabled: {
-        true: "cursor-not-allowed",
-        false: "cursor-pointer",
+        true: "cr-cursor-not-allowed",
+        false: "cr-cursor-pointer",
       },
     },
     defaultVariants: {
@@ -36,25 +36,28 @@ export const radioButtonWrapperCva = cva(
   },
 );
 
-export const radioButtonLabelCva = cva("text-4.25 font-extrabold leading-6", {
-  variants: {
-    disabled: {
-      true: "text-contra-black-300",
-      false: "text-contra-black",
-    },
-  },
-  defaultVariants: {
-    disabled: false,
-  },
-});
-
-export const radioButtonDotCva = cva(
-  "absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-0.5 transition",
+export const radioButtonLabelCva = cva(
+  "cr-text-4.25 cr-font-extrabold cr-leading-6",
   {
     variants: {
       disabled: {
-        true: "border-contra-black-300 bg-contra-yellow-100",
-        false: "border-contra-black bg-contra-yellow",
+        true: "cr-text-black-300",
+        false: "cr-text-black",
+      },
+    },
+    defaultVariants: {
+      disabled: false,
+    },
+  },
+);
+
+export const radioButtonDotCva = cva(
+  "cr-absolute cr-left-1/2 cr-top-1/2 cr-h-4 cr-w-4 -cr-translate-x-1/2 -cr-translate-y-1/2 cr-rounded-full cr-border-0.5 cr-transition",
+  {
+    variants: {
+      disabled: {
+        true: "cr-border-black-300 cr-bg-yellow-100",
+        false: "cr-border-black cr-bg-yellow",
       },
     },
     defaultVariants: {
@@ -64,5 +67,5 @@ export const radioButtonDotCva = cva(
 );
 
 export const radioButtonIconCva = cva(
-  "pointer-events-none absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 stroke-3 text-contra-white transition",
+  "cr-pointer-events-none cr-absolute cr-left-1/2 cr-top-1/2 cr-h-5 cr-w-5 -cr-translate-x-1/2 -cr-translate-y-1/2 cr-stroke-3 cr-text-white cr-transition",
 );

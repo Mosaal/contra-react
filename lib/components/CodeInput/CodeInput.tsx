@@ -13,6 +13,7 @@ export const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
   return (
     <ReactCodeInput
       ref={ref}
+      type={type}
       disabled={disabled}
       className={cn(codeInputCva({ raised, disabled, className }))}
       inputStyle={

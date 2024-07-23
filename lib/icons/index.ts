@@ -1,3 +1,5 @@
+export type IconProps = React.ComponentPropsWithoutRef<"svg">;
+
 export * from "./Check";
 export { default as Check } from "./Check";
 export * from "./Eye";

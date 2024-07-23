@@ -51,8 +51,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     return (
-      <label htmlFor={inputId} className="inline-block w-full">
-        <div className="relative inline-flex w-full">
+      <label htmlFor={inputId} className="cr-inline-block cr-w-full">
+        <div className="cr-relative cr-inline-flex cr-w-full">
           {leftIcon && renderIcon(leftIcon, "left", onLeftIconClick)}
           <textarea
             ref={ref}
@@ -60,8 +60,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             disabled={disabled}
             className={cn(
               textareaCva({ raised, className }),
-              leftIcon ? "pl-12.5" : "pl-3.5",
-              rightIcon ? "pr-12.5" : "pr-3.5",
+              leftIcon ? "cr-pl-12.5" : "cr-pl-3.5",
+              rightIcon ? "cr-pr-12.5" : "cr-pr-3.5",
             )}
             {...props}
           />

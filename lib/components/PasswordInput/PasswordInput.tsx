@@ -19,7 +19,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         ref={ref}
         id={inputId}
         type={isVisible ? "text" : "password"}
-        rightIcon={<EyeIcon className="h-6 w-6" />}
+        rightIcon={<EyeIcon className="cr-h-6 cr-w-6" />}
         onRightIconClick={() => setIsVisible(!isVisible)}
         {...props}
       />

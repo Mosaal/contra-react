@@ -47,8 +47,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
   };
 
   return (
-    <label htmlFor={inputId} className="inline-block w-85">
-      <div className="relative inline-flex w-full">
+    <label htmlFor={inputId} className="cr-inline-block cr-w-85">
+      <div className="cr-relative cr-inline-flex cr-w-full">
         {leftIcon && (
           <div
             className={cn(
@@ -70,7 +70,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
               placeholder: !!placeholder && selectedValue === "",
               className,
             }),
-            leftIcon ? "pl-12.5" : "pl-3.5",
+            leftIcon ? "cr-pl-12.5" : "cr-pl-3.5",
           )}
           onChange={setSelectedValue}
           {...props}

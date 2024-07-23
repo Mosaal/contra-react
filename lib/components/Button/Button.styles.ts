@@ -2,42 +2,42 @@ import { cva } from "class-variance-authority";
 
 export const BUTTON_COLORS = {
   primary:
-    "border-contra-black bg-contra-white text-contra-black disabled:border-contra-black-300 disabled:text-contra-black-300",
+    "cr-border-black cr-bg-white cr-text-black disabled:cr-border-black-300 disabled:cr-text-black-300",
   secondary:
-    "border-contra-black bg-contra-black text-contra-white disabled:border-contra-black-300 disabled:bg-contra-black-300",
+    "cr-border-black cr-bg-black cr-text-white disabled:cr-border-black-300 disabled:cr-bg-black-300",
   tertiary:
-    "border-contra-blue bg-contra-blue text-contra-white disabled:border-contra-blue-800 disabled:bg-contra-blue-800",
+    "cr-border-blue cr-bg-blue cr-text-white disabled:cr-border-blue-800 disabled:cr-bg-blue-800",
   quaternary:
-    "border-contra-black bg-contra-yellow text-contra-black disabled:border-contra-black-300 disabled:bg-contra-yellow-100 disabled:text-contra-black-300",
+    "cr-border-black cr-bg-yellow cr-text-black disabled:cr-border-black-300 disabled:cr-bg-yellow-100 disabled:cr-text-black-300",
 } as const;
 
 export const buttonCva = cva(
-  "appearance-none border-0.5 font-extrabold shadow-contra-black outline-2 outline-offset-4 outline-contra-pink transition focus:outline disabled:cursor-not-allowed disabled:shadow-contra-black-300",
+  "cr-outline-0.5 cr-appearance-none cr-border-0.5 cr-font-extrabold cr-shadow-black cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
   {
     variants: {
       variant: BUTTON_COLORS,
       size: {
-        small: "rounded-3 px-3.5 py-2 text-3 leading-4",
-        normal: "rounded-4 px-3.5 py-3.5 text-5.25 leading-7",
-        large: "rounded-4 px-3.5 py-3.5 text-5.25 leading-7",
+        small: "cr-rounded-3 cr-px-3.5 cr-py-2 cr-text-3 cr-leading-4",
+        normal: "cr-rounded-4 cr-px-3.5 cr-py-3.5 cr-text-5.25 cr-leading-7",
+        large: "cr-rounded-4 cr-px-3.5 cr-py-3.5 cr-text-5.25 cr-leading-7",
       },
       block: {
-        true: "w-full",
+        true: "cr-w-full",
       },
       raised: {
-        false: "shadow-none",
+        false: "cr-shadow-none",
       },
     },
     compoundVariants: [
       {
         raised: true,
         size: "small",
-        className: "shadow-contra-small",
+        className: "cr-shadow-small",
       },
       {
         raised: true,
         size: ["normal", "large"],
-        className: "shadow-contra-normal",
+        className: "cr-shadow-normal",
       },
     ],
     defaultVariants: {

@@ -1,18 +1,18 @@
 import { cva } from "class-variance-authority";
 
 export const indicatorCva = cva(
-  "h-4 min-w-4 rounded-7.5 bg-contra-red px-1 text-3 font-bold leading-4 text-contra-white",
+  "cr-h-4 cr-min-w-4 cr-rounded-7.5 cr-bg-red cr-px-1 cr-text-3 cr-font-bold cr-leading-4 cr-text-white",
   {
     variants: {
       raised: {
-        true: "shadow-contra-small",
-        false: "shadow-none",
+        true: "cr-shadow-small",
+        false: "cr-shadow-none",
       },
       position: {
-        "top-left": "-translate-x-1/2 -translate-y-1/2",
-        "top-right": "-translate-y-1/2 translate-x-1/2",
-        "bottom-left": "-translate-x-1/2 translate-y-1/2",
-        "bottom-right": "translate-x-1/2 translate-y-1/2",
+        "top-left": "-cr-translate-x-1/2 -cr-translate-y-1/2",
+        "top-right": "-cr-translate-y-1/2 cr-translate-x-1/2",
+        "bottom-left": "-cr-translate-x-1/2 cr-translate-y-1/2",
+        "bottom-right": "cr-translate-x-1/2 cr-translate-y-1/2",
       },
     },
     defaultVariants: {
@@ -22,13 +22,13 @@ export const indicatorCva = cva(
   },
 );
 
-export const indicatorWrapperCva = cva("absolute", {
+export const indicatorWrapperCva = cva("cr-absolute", {
   variants: {
     position: {
-      "top-left": "left-0 top-0",
-      "top-right": "right-0 top-0",
-      "bottom-left": "bottom-0 left-0",
-      "bottom-right": "bottom-0 right-0",
+      "top-left": "cr-left-0 cr-top-0",
+      "top-right": "cr-right-0 cr-top-0",
+      "bottom-left": "cr-bottom-0 cr-left-0",
+      "bottom-right": "cr-bottom-0 cr-right-0",
     },
   },
   defaultVariants: {

@@ -22,7 +22,7 @@ export const Basic: Story = {
   args: {
     cardNumber: "8765 7875 6759 4344",
     cardHolder: "diya mehra.",
-    cardType: <div className="h-8 w-24 bg-contra-black opacity-50" />,
+    cardType: <div className="cr-h-8 cr-w-24 cr-bg-black cr-opacity-50" />,
   },
 };
 
@@ -31,7 +31,7 @@ export const Raised: Story = {
     raised: true,
     cardNumber: "8765 7875 6759 4344",
     cardHolder: "diya mehra.",
-    cardType: <div className="h-8 w-24 bg-contra-black opacity-50" />,
+    cardType: <div className="cr-h-8 cr-w-24 cr-bg-black cr-opacity-50" />,
   },
 };
 

@@ -11,7 +11,7 @@ const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
       // This is necessary otherwise "cr-text-3" conflicts with "cr-text-white"
-      // which can't happen because one sets the "cr-font-size" and the other the "color"
+      // which can't happen because one sets the "font-size" and the other the "color"
       "font-size": fontSize,
       shadow: ["cr-shadow-small", "cr-shadow-normal"],
     },

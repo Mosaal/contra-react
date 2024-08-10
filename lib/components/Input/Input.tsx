@@ -50,7 +50,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function (
   };
 
   return (
-    <label htmlFor={inputId} className="cr-inline-block cr-w-85">
+    <label htmlFor={inputId} className="cr-inline-block cr-w-85 cr-max-w-full">
       <div className="cr-relative cr-inline-flex cr-w-full">
         {leftIcon && renderIcon(leftIcon, "left", onLeftIconClick)}
         <input

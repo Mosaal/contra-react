@@ -110,7 +110,10 @@ export const counterLabelCva = cva("cr-font-extrabold", {
 });
 
 export const counterLeftButtonCva = cva(
-  "cr-outline-0.5 cr-z-0 cr-flex cr-items-center cr-justify-center cr-outline-offset-1 cr-outline-pink focus:cr-z-[1] focus:cr-outline disabled:cr-cursor-not-allowed",
+  [
+    "cr-z-0 cr-flex cr-items-center cr-justify-center focus:cr-z-[1] disabled:cr-cursor-not-allowed",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+  ],
   {
     variants: {
       variant: {
@@ -167,7 +170,10 @@ export const counterLeftButtonCva = cva(
 );
 
 export const counterRightButtonCva = cva(
-  "cr-outline-0.5 cr-z-0 cr-flex cr-items-center cr-justify-center cr-outline-offset-1 cr-outline-pink focus:cr-z-[1] focus:cr-outline disabled:cr-cursor-not-allowed",
+  [
+    "cr-z-0 cr-flex cr-items-center cr-justify-center focus:cr-z-[1] disabled:cr-cursor-not-allowed",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+  ],
   {
     variants: {
       variant: {

@@ -8,7 +8,7 @@ const meta: Meta<typeof Indicator> = {
   component: Indicator,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
+    layout: "padded",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
@@ -22,7 +22,7 @@ const Square = () => (
 );
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Unlabeled: Story = {
+export const Default: Story = {
   args: {
     children: <Square />,
   },
@@ -74,6 +74,28 @@ export const BottomLeft: Story = {
 export const BottomRight: Story = {
   args: {
     position: "bottom-right",
+    children: <Square />,
+  },
+};
+
+export const WithOffsetX: Story = {
+  args: {
+    offsetX: "1rem",
+    children: <Square />,
+  },
+};
+
+export const WithOffsetY: Story = {
+  args: {
+    offsetY: "1rem",
+    children: <Square />,
+  },
+};
+
+export const WithOffsetXY: Story = {
+  args: {
+    offsetX: "1rem",
+    offsetY: "1rem",
     children: <Square />,
   },
 };

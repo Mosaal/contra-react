@@ -3,7 +3,10 @@ import { cva } from "class-variance-authority";
 import { BUTTON_COLORS } from "../Button";
 
 export const iconButtonCva = cva(
-  "cr-outline-0.5 cr-appearance-none cr-rounded-full cr-border-0.5 cr-shadow-black cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
+  [
+    "cr-appearance-none cr-rounded-full cr-border-0.5 cr-shadow-black disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+  ],
   {
     variants: {
       variant: BUTTON_COLORS,

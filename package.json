@@ -1,18 +1,26 @@
 {
   "name": "contra-react",
   "version": "0.0.0",
+  "description": "React implementation for the https://contrauikit.com/",
   "repository": "git@github.com:Mosaal/contra-react.git",
   "author": "Alexandre Saraiva Moreira <alexandremoreira1995@gmail.com>",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/vite-lib.umd.cjs",
-  "module": "./dist/vite-lib.js",
+  "main": "./dist/contra-react.umd.cjs",
+  "module": "./dist/contra-react.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vite-lib.js",
-      "require": "./dist/vite-lib.umd.cjs"
-    }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/contra-react.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/contra-react.umd.cjs"
+      }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "files": [
     "dist"
@@ -23,8 +31,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepublishOnly": "yarn build"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",

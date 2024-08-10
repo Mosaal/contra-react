@@ -52,7 +52,14 @@ export const OptionsAsProps: Story = {
 export const WithValue: Story = {
   args: {
     options,
-    defaultValue: "Initial value",
+    value: "option#2",
+  },
+};
+
+export const WithDefaultValue: Story = {
+  args: {
+    options,
+    defaultValue: "option#2",
   },
 };
 
@@ -95,7 +102,7 @@ export const DisabledWithValue: Story = {
   args: {
     options,
     disabled: true,
-    defaultValue: "Initial value",
+    defaultValue: "option#2",
   },
 };
 

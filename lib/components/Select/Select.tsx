@@ -47,7 +47,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
   };
 
   return (
-    <label htmlFor={inputId} className="cr-inline-block cr-w-85">
+    <label htmlFor={inputId} className="cr-inline-block cr-w-85 cr-max-w-full">
       <div className="cr-relative cr-inline-flex cr-w-full">
         {leftIcon && (
           <div

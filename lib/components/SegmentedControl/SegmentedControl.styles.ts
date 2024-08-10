@@ -31,7 +31,10 @@ export const segmentedControlCva = cva(
 );
 
 export const segmentedControlOptionCva = cva(
-  "cr-outline-0.5 cr-flex-1 cr-appearance-none cr-rounded-6.5 cr-px-6 cr-py-2.5 cr-font-bold cr-text-black cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
+  [
+    "cr-flex-1 cr-appearance-none cr-rounded-6.5 cr-px-6 cr-py-2.5 cr-font-bold cr-text-black disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+  ],
   {
     variants: {
       selected: {

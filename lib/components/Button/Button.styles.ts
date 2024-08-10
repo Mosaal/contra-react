@@ -12,7 +12,10 @@ export const BUTTON_COLORS = {
 } as const;
 
 export const buttonCva = cva(
-  "cr-outline-0.5 cr-appearance-none cr-border-0.5 cr-font-extrabold cr-shadow-black cr-outline-offset-1 cr-outline-pink cr-transition focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
+  [
+    "cr-appearance-none cr-border-0.5 cr-font-extrabold cr-shadow-black disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+  ],
   {
     variants: {
       variant: BUTTON_COLORS,

@@ -94,7 +94,10 @@ export const stepperLabelCva = cva("cr-font-extrabold", {
 });
 
 export const stepperButtonCva = cva(
-  "cr-outline-0.5 cr-flex cr-items-center cr-justify-center cr-outline-offset-1 cr-outline-pink focus:cr-outline disabled:cr-cursor-not-allowed",
+  [
+    "cr-flex cr-items-center cr-justify-center disabled:cr-cursor-not-allowed",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+  ],
   {
     variants: {
       variant: {

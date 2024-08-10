@@ -125,6 +125,7 @@ export const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
       {variant === "normal" ? renderNormalVariant() : renderContainedVariant()}
       <input
         hidden
+        readOnly
         type="number"
         className="cr-hidden"
         ref={ref}

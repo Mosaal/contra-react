@@ -2,16 +2,12 @@ import { forwardRef } from "react";
 
 import {
   radioButtonCva,
-  radioButtonDotCva,
-  radioButtonIconCva,
   radioButtonLabelCva,
   radioButtonWrapperCva,
 } from "./RadioButton.styles";
 import type { RadioButtonProps } from "./RadioButton.types";
 
-import { Check } from "@/icons";
-
-import { useInputId, useInputState } from "@/hooks";
+import { useInputId } from "@/hooks";
 
 import { cn } from "@/utils";
 
@@ -23,23 +19,13 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
       raised = false,
       variant = "primary",
       labelPosition = "right",
-      checked,
-      defaultChecked,
       disabled,
       className,
-      onChange,
       ...props
     },
     ref,
   ) {
     const inputId = useInputId("radio", id);
-    const [isChecked, setIsChecked] = useInputState({
-      value: checked,
-      defaultValue: defaultChecked,
-      finalValue: false,
-      type: "checkbox",
-      onChange,
-    });
 
     const renderLabel = () => {
       return (
@@ -53,24 +39,14 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
         className={cn(radioButtonWrapperCva({ disabled }))}
       >
         {label && labelPosition === "left" && renderLabel()}
-        <div className="cr-relative cr-inline-flex">
-          <input
-            type="radio"
-            ref={ref}
-            id={inputId}
-            checked={isChecked}
-            disabled={disabled}
-            className={cn(radioButtonCva({ raised, variant, className }))}
-            onChange={setIsChecked}
-            {...props}
-          />
-          {isChecked && variant === "primary" && (
-            <div className={cn(radioButtonDotCva({ disabled }))} />
-          )}
-          {isChecked && variant === "secondary" && (
-            <Check className={cn(radioButtonIconCva())} />
-          )}
-        </div>
+        <input
+          type="radio"
+          ref={ref}
+          id={inputId}
+          disabled={disabled}
+          className={cn(radioButtonCva({ raised, variant, className }))}
+          {...props}
+        />
         {label && labelPosition === "right" && renderLabel()}
       </label>
     );

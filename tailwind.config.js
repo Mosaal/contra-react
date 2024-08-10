@@ -1,3 +1,6 @@
+// import check from "./lib/assets/images/check-white.svg";
+// console.log("🚀 ~ check:", check);
+
 const spacing = {};
 for (let i = 0; i <= 640; i++) {
   const pixelToRem = i / 16;
@@ -63,6 +66,12 @@ export default {
       ...spacing,
       full: "100%",
     },
+    ringWidth: {
+      ...spacing,
+    },
+    ringOffsetWidth: {
+      ...spacing,
+    },
     outlineWidth: {
       ...spacing,
     },
@@ -70,8 +79,10 @@ export default {
       ...spacing,
     },
     extend: {
-      outlineWidth: {
-        3: 3,
+      content: {
+        "check-white": "var(--check-white)",
+        "check-black": "var(--check-black)",
+        "check-black-300": "var(--check-black-300)",
       },
       strokeWidth: {
         3: 3,

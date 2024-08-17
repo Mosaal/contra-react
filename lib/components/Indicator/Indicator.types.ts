@@ -12,4 +12,5 @@ export interface IndicatorProps
   label?: React.ReactNode;
   offsetX?: number | string;
   offsetY?: number | string;
+  containerClassName?: string;
 }

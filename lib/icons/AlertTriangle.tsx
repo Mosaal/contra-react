@@ -1,6 +1,6 @@
 import { IconProps } from ".";
 
-export default function AlertTriangle(props: IconProps) {
+export function AlertTriangle(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -20,6 +20,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
       rightLabel,
       disabled,
       className,
+      toggleSwitchClassName,
       ...props
     },
     ref,
@@ -35,7 +36,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
     return (
       <label
         htmlFor={inputId}
-        className={cn(toggleSwitchWrapperCva({ disabled }))}
+        className={cn(toggleSwitchWrapperCva({ disabled, className }))}
       >
         {leftLabel && renderLabel(leftLabel)}
         <input
@@ -43,7 +44,9 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           ref={ref}
           id={inputId}
           disabled={disabled}
-          className={cn(toggleSwitchCva({ raised, className }))}
+          className={cn(
+            toggleSwitchCva({ raised, className: toggleSwitchClassName }),
+          )}
           {...props}
         />
         {rightLabel && renderLabel(rightLabel)}

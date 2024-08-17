@@ -21,6 +21,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
       labelPosition = "right",
       disabled,
       className,
+      radioButtonClassName,
       ...props
     },
     ref,
@@ -36,7 +37,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
     return (
       <label
         htmlFor={inputId}
-        className={cn(radioButtonWrapperCva({ disabled }))}
+        className={cn(radioButtonWrapperCva({ disabled, className }))}
       >
         {label && labelPosition === "left" && renderLabel()}
         <input
@@ -44,7 +45,13 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
           ref={ref}
           id={inputId}
           disabled={disabled}
-          className={cn(radioButtonCva({ raised, variant, className }))}
+          className={cn(
+            radioButtonCva({
+              raised,
+              variant,
+              className: radioButtonClassName,
+            }),
+          )}
           {...props}
         />
         {label && labelPosition === "right" && renderLabel()}

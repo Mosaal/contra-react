@@ -20,6 +20,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     labelPosition = "right",
     disabled,
     className,
+    checkboxClassName,
     ...props
   },
   ref,
@@ -31,14 +32,19 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
   };
 
   return (
-    <label htmlFor={inputId} className={cn(checkboxWrapperCva({ disabled }))}>
+    <label
+      htmlFor={inputId}
+      className={cn(checkboxWrapperCva({ disabled, className }))}
+    >
       {label && labelPosition === "left" && renderLabel()}
       <input
         type="checkbox"
         ref={ref}
         id={inputId}
         disabled={disabled}
-        className={cn(checkboxCva({ raised, variant, className }))}
+        className={cn(
+          checkboxCva({ raised, variant, className: checkboxClassName }),
+        )}
         {...props}
       />
       {label && labelPosition === "right" && renderLabel()}

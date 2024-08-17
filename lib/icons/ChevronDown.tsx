@@ -1,6 +1,6 @@
 import { IconProps } from ".";
 
-export function ChevronDownProps(props: IconProps) {
+export function ChevronDown(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

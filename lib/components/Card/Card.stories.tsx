@@ -34,16 +34,16 @@ export const Raised: Story = {
 
 export const CustomExample: Story = {
   args: {
-    className: "cr-w-90 cr-bg-red",
+    className: "cr-w-90 cr-bg-red-000",
     children: (
       <div className="cr-text-white">
-        <p className="cr-mb-2 cr-mt-4.25 cr-text-center cr-text-6 cr-font-medium cr-uppercase cr-leading-7">
+        <p className="cr-text-3xl cr-mb-2 cr-mt-4.25 cr-text-center cr-font-medium cr-uppercase cr-leading-7">
           Popular
         </p>
-        <p className="cr-mb-8 cr-text-center cr-text-11 cr-font-extrabold cr-uppercase cr-leading-13.5">
+        <p className="cr-mb-8 cr-text-center cr-text-[2.75rem] cr-font-extrabold cr-uppercase cr-leading-[3.375rem]">
           Free
         </p>
-        <ul className="cr-mb-8 cr-space-y-6 cr-text-6 cr-font-medium cr-leading-7">
+        <ul className="cr-text-3xl cr-mb-8 cr-space-y-6 cr-font-medium cr-leading-7">
           <li className="cr-flex cr-flex-row cr-items-center cr-gap-4">
             <Check />
             <span>Get 24x7 Support</span>

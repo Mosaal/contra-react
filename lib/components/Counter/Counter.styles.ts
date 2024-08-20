@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
 export const counterContainerCva = cva(
-  "cr-flex cr-flex-row cr-items-center cr-text-black",
+  "cr-text-black-000 cr-flex cr-flex-row cr-items-center",
   {
     variants: {
       variant: {
         normal: "cr-gap-x-3",
-        contained: "cr-overflow-hidden cr-border-0.5 cr-border-black",
+        contained: "cr-border-black-000 cr-overflow-hidden cr-border-0.5",
       },
       size: {
         small: "",
@@ -23,12 +23,12 @@ export const counterContainerCva = cva(
       {
         variant: "contained",
         size: "normal",
-        className: "cr-rounded-4",
+        className: "cr-rounded-md",
       },
       {
         variant: "contained",
         size: "small",
-        className: "cr-rounded-3",
+        className: "cr-rounded-xs",
       },
       {
         variant: "contained",
@@ -65,7 +65,7 @@ export const counterLabelCva = cva("cr-font-extrabold", {
     variant: {
       normal: "",
       contained:
-        "cr-inline-flex cr-items-center cr-justify-center cr-self-stretch cr-bg-yellow",
+        "cr-bg-yellow-000 cr-inline-flex cr-items-center cr-justify-center cr-self-stretch",
     },
     size: {
       small: "",
@@ -79,22 +79,22 @@ export const counterLabelCva = cva("cr-font-extrabold", {
     {
       variant: "normal",
       size: "normal",
-      className: "cr-text-9 cr-leading-10",
+      className: "cr-text-5xl cr-leading-10",
     },
     {
       variant: "normal",
       size: "small",
-      className: "cr-text-6 cr-leading-7",
+      className: "cr-text-3xl cr-leading-7",
     },
     {
       variant: "contained",
       size: "normal",
-      className: "cr-min-w-12 cr-text-6 cr-leading-7",
+      className: "cr-text-3xl cr-min-w-12 cr-leading-7",
     },
     {
       variant: "contained",
       size: "small",
-      className: "cr-min-w-7.5 cr-text-4.25 cr-leading-6",
+      className: "cr-text-lg cr-min-w-7.5 cr-leading-6",
     },
     {
       variant: "contained",
@@ -112,13 +112,13 @@ export const counterLabelCva = cva("cr-font-extrabold", {
 export const counterLeftButtonCva = cva(
   [
     "cr-z-0 cr-flex cr-items-center cr-justify-center focus:cr-z-[1] disabled:cr-cursor-not-allowed",
-    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
   ],
   {
     variants: {
       variant: {
         normal:
-          "cr-border-y-0.5 cr-border-l-0.5 cr-border-r-0.25 cr-border-black cr-bg-yellow disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
+          "cr-border-black-000 cr-bg-yellow-000 cr-border-y-0.5 cr-border-l-0.5 cr-border-r-0.25 disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
         contained: "cr-bg-white",
       },
       size: {
@@ -172,13 +172,13 @@ export const counterLeftButtonCva = cva(
 export const counterRightButtonCva = cva(
   [
     "cr-z-0 cr-flex cr-items-center cr-justify-center focus:cr-z-[1] disabled:cr-cursor-not-allowed",
-    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
   ],
   {
     variants: {
       variant: {
         normal:
-          "cr-border-y-0.5 cr-border-l-0.25 cr-border-r-0.5 cr-border-black cr-bg-yellow disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
+          "cr-border-black-000 cr-bg-yellow-000 cr-border-y-0.5 cr-border-l-0.25 cr-border-r-0.5 disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
         contained: "cr-bg-white",
       },
       size: {

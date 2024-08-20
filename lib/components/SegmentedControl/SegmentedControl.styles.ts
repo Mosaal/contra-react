@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const segmentedControlCva = cva(
-  "cr-inline-flex cr-flex-row cr-items-center cr-rounded-6.5 cr-border-0.5 cr-border-black cr-bg-white cr-text-5.25 cr-leading-7",
+  "cr-border-black-000 cr-text-xl cr-rounded-xl cr-inline-flex cr-flex-row cr-items-center cr-border-0.5 cr-bg-white cr-leading-7",
   {
     variants: {
       block: {
@@ -32,13 +32,13 @@ export const segmentedControlCva = cva(
 
 export const segmentedControlOptionCva = cva(
   [
-    "cr-flex-1 cr-appearance-none cr-rounded-6.5 cr-px-6 cr-py-2.5 cr-font-bold cr-text-black disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
-    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+    "cr-text-black-000 cr-rounded-xl cr-flex-1 cr-appearance-none cr-px-6 cr-py-2.5 cr-font-bold disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
+    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
   ],
   {
     variants: {
       selected: {
-        true: "cr-bg-green cr-text-white disabled:cr-bg-green-800 disabled:cr-text-white",
+        true: "cr-bg-green-000 cr-text-white disabled:cr-bg-green-800 disabled:cr-text-white",
       },
     },
     defaultVariants: {

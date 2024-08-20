@@ -2,8 +2,8 @@ import { cva } from "class-variance-authority";
 
 export const inputCva = cva(
   [
-    "cr-w-full cr-appearance-none cr-rounded-4 cr-border-0.5 cr-border-black cr-bg-white cr-py-3 cr-text-5.25 cr-font-medium cr-leading-7 cr-text-black placeholder:cr-text-black-700 disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-text-black-300 disabled:cr-shadow-black-300 disabled:placeholder:cr-text-black-300",
-    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink focus-visible:cr-outline-pink",
+    "cr-border-black-000 cr-text-black-000 cr-text-xl cr-rounded-md cr-w-full cr-appearance-none cr-border-0.5 cr-bg-white cr-py-3 cr-font-medium cr-leading-7 placeholder:cr-text-black-700 disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-text-black-300 disabled:cr-shadow-black-300 disabled:placeholder:cr-text-black-300",
+    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
   ],
   {
     variants: {
@@ -26,7 +26,7 @@ export const inputIconCva = cva("cr-absolute cr-top-1/2 -cr-translate-y-1/2", {
     },
     disabled: {
       true: "cr-pointer-events-none cr-text-black-300",
-      false: "cr-text-black",
+      false: "cr-text-black-000",
     },
     clickable: {
       false: "cr-pointer-events-none",

@@ -41,3 +41,19 @@ export const Full: Story = {
     size: "normal",
   },
 };
+
+export const NoLabel: Story = {
+  args: {
+    value: 3,
+    label: false,
+    size: "normal",
+  },
+};
+
+export const LeftLabel: Story = {
+  args: {
+    value: 3,
+    size: "normal",
+    labelPosition: "left",
+  },
+};

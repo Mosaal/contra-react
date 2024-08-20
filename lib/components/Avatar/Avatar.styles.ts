@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const avatarCva = cva(
-  "cr-relative cr-overflow-hidden cr-rounded-full cr-border-0.5 cr-border-black cr-bg-red",
+  "cr-bg-red-000 cr-border-black-000 cr-relative cr-overflow-hidden cr-rounded-full cr-border-0.5",
   {
     variants: {
       size: {
@@ -36,9 +36,9 @@ export const avatarPlaceholderCva = cva(
   {
     variants: {
       size: {
-        small: "cr-text-2.75",
+        small: "cr-text-xs",
         normal: "",
-        large: "cr-text-5.5",
+        large: "cr-text-2xl",
       },
     },
     defaultVariants: {

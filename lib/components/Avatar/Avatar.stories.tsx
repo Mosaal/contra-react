@@ -51,3 +51,10 @@ export const Large: Story = {
     placeholder: "CR",
   },
 };
+
+export const CustomExample: Story = {
+  args: {
+    src: "https://placehold.co/120",
+    className: "cr-rounded-lg cr-bg-green-000 cr-w-[120px] cr-h-[120px]",
+  },
+};

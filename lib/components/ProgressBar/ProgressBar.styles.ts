@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const progressBarCva = cva(
-  "cr-h-3 cr-w-full cr-overflow-hidden cr-rounded-2.5 cr-border-0.5",
+  "cr-rounded-2xs cr-h-3 cr-w-full cr-overflow-hidden cr-border-0.5",
   {
     variants: {
       raised: {
@@ -10,7 +10,7 @@ export const progressBarCva = cva(
       },
       disabled: {
         true: "cr-border-black-300",
-        false: "cr-border-black",
+        false: "cr-border-black-000",
       },
     },
     compoundVariants: [
@@ -33,7 +33,7 @@ export const progressBarValueCva = cva(
     variants: {
       disabled: {
         true: "cr-bg-yellow-100",
-        false: "cr-bg-yellow",
+        false: "cr-bg-yellow-000",
       },
     },
     defaultVariants: {

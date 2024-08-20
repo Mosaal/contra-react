@@ -15,8 +15,8 @@ export const ratingCva = cva("cr-flex cr-flex-row cr-items-center", {
 export const ratingLabelCva = cva("cr-font-extrabold", {
   variants: {
     size: {
-      small: "cr-text-4.25 cr-leading-6",
-      normal: "cr-text-6.75 cr-leading-8",
+      small: "cr-text-lg cr-leading-6",
+      normal: "cr-text-4xl cr-leading-8",
     },
   },
   defaultVariants: {
@@ -31,7 +31,7 @@ export const ratingStarCva = cva("cr-transition-colors", {
       normal: "cr-h-8 cr-w-8",
     },
     active: {
-      true: "cr-fill-yellow",
+      true: "cr-fill-yellow-000",
       false: "cr-fill-transparent",
     },
   },

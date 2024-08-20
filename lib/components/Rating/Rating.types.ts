@@ -9,4 +9,6 @@ export type RatingVariantProps = VariantProps<typeof ratingCva>;
 export interface RatingProps extends RatingBaseProps, RatingVariantProps {
   max?: number;
   value?: number;
+  label?: boolean;
+  labelPosition?: "left" | "right";
 }

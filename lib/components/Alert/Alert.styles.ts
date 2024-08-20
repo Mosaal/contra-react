@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const alertCva = cva(
-  "cr-border-black-000 cr-bg-black-000 cr-rounded-md cr-inline-flex cr-w-90 cr-max-w-full cr-flex-row cr-gap-4 cr-border-0.5 cr-px-5.5 cr-py-4.25",
+  "cr-inline-flex cr-w-90 cr-max-w-full cr-flex-row cr-gap-4 cr-rounded-md cr-border-0.5 cr-border-black-000 cr-bg-black-000 cr-px-5.5 cr-py-4.25",
 );
 
 export const alertIconCva = cva(

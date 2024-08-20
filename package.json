@@ -28,6 +28,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "format": "prettier --config .prettierrc --write ./lib",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

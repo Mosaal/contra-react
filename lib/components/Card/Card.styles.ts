@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const cardCva = cva(
-  "cr-border-black-000 cr-rounded-md cr-overflow-hidden cr-border-0.5 cr-bg-white cr-p-5.5",
+  "cr-overflow-hidden cr-rounded-md cr-border-0.5 cr-border-black-000 cr-bg-white cr-p-5.5",
   {
     variants: {
       raised: {

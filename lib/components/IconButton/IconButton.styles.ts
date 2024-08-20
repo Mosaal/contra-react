@@ -4,8 +4,8 @@ import { BUTTON_COLORS } from "../Button";
 
 export const iconButtonCva = cva(
   [
-    "cr-shadow-black-000 cr-appearance-none cr-rounded-full cr-border-0.5 disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
-    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
+    "cr-appearance-none cr-rounded-full cr-border-0.5 cr-shadow-black-000 disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000",
   ],
   {
     variants: {

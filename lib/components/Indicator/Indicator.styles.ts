@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const indicatorCva = cva(
-  "cr-bg-red-000 cr-text-sm cr-rounded-2xl cr-h-4 cr-min-w-4 cr-px-1 cr-font-bold cr-leading-4 cr-text-white",
+  "cr-h-4 cr-min-w-4 cr-rounded-2xl cr-bg-red-000 cr-px-1 cr-text-sm cr-font-bold cr-leading-4 cr-text-white",
   {
     variants: {
       raised: {

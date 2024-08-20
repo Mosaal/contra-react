@@ -13,16 +13,16 @@ export const BUTTON_COLORS = {
 
 export const buttonCva = cva(
   [
-    "cr-shadow-black-000 cr-appearance-none cr-border-0.5 cr-font-extrabold disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
-    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
+    "cr-appearance-none cr-border-0.5 cr-font-extrabold cr-shadow-black-000 disabled:cr-cursor-not-allowed disabled:cr-shadow-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000",
   ],
   {
     variants: {
       variant: BUTTON_COLORS,
       size: {
-        small: "cr-text-sm cr-rounded-xs cr-px-3.5 cr-py-2 cr-leading-4",
-        normal: "cr-text-xl cr-rounded-md cr-p-3.5 cr-leading-7",
-        large: "cr-text-xl cr-rounded-md cr-p-3.5 cr-leading-7",
+        small: "cr-rounded-xs cr-px-3.5 cr-py-2 cr-text-sm cr-leading-4",
+        normal: "cr-rounded-md cr-p-3.5 cr-text-xl cr-leading-7",
+        large: "cr-rounded-md cr-p-3.5 cr-text-xl cr-leading-7",
       },
       block: {
         true: "cr-w-full",

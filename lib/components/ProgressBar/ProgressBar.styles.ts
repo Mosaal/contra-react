@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const progressBarCva = cva(
-  "cr-rounded-2xs cr-h-3 cr-w-full cr-overflow-hidden cr-border-0.5",
+  "cr-h-3 cr-w-full cr-overflow-hidden cr-rounded-2xs cr-border-0.5",
   {
     variants: {
       raised: {

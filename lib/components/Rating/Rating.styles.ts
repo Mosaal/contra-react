@@ -32,7 +32,7 @@ export const ratingStarCva = cva("cr-transition-colors", {
     },
     active: {
       true: "cr-fill-yellow-000",
-      false: "cr-fill-transparent",
+      false: "cr-fill-white",
     },
   },
   defaultVariants: {

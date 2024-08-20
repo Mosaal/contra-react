@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const segmentedControlCva = cva(
-  "cr-border-black-000 cr-text-xl cr-rounded-xl cr-inline-flex cr-flex-row cr-items-center cr-border-0.5 cr-bg-white cr-leading-7",
+  "cr-inline-flex cr-flex-row cr-items-center cr-rounded-xl cr-border-0.5 cr-border-black-000 cr-bg-white cr-text-xl cr-leading-7",
   {
     variants: {
       block: {
@@ -32,8 +32,8 @@ export const segmentedControlCva = cva(
 
 export const segmentedControlOptionCva = cva(
   [
-    "cr-text-black-000 cr-rounded-xl cr-flex-1 cr-appearance-none cr-px-6 cr-py-2.5 cr-font-bold disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
-    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
+    "cr-flex-1 cr-appearance-none cr-rounded-xl cr-px-6 cr-py-2.5 cr-font-bold cr-text-black-000 disabled:cr-cursor-not-allowed disabled:cr-text-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000",
   ],
   {
     variants: {

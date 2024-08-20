@@ -2,8 +2,8 @@ import { cva } from "class-variance-authority";
 
 export const checkboxCva = cva(
   [
-    "cr-border-black-000 checked:cr-bg-yellow-000 cr-rounded-3xs cr-relative cr-inline-flex cr-h-8 cr-w-8 cr-cursor-pointer cr-appearance-none cr-border-0.5 cr-bg-blue-100 disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-bg-black-200 disabled:cr-shadow-black-300",
-    "focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all",
+    "cr-relative cr-inline-flex cr-h-8 cr-w-8 cr-cursor-pointer cr-appearance-none cr-rounded-3xs cr-border-0.5 cr-border-black-000 cr-bg-blue-100 checked:cr-bg-yellow-000 disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-bg-black-200 disabled:cr-shadow-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000",
     "before:cr-absolute before:cr-left-1/2 before:cr-top-1/2 before:cr-h-5 before:cr-w-5 before:-cr-translate-x-1/2 before:-cr-translate-y-1/2",
   ],
   {

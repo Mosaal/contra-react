@@ -51,7 +51,7 @@
     @apply !cr-inline-flex cr-flex-row cr-items-center cr-gap-6;
   }
   .cr-code-input > input {
-    @apply cr-border-black-000 cr-text-black-000 focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000 cr-text-3xl cr-rounded-md cr-h-14 cr-w-14 cr-appearance-none cr-border-0.5 cr-bg-white cr-text-center cr-font-extrabold cr-leading-7 cr-shadow-none cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all placeholder:cr-text-black-700;
+    @apply cr-h-14 cr-w-14 cr-appearance-none cr-rounded-md cr-border-0.5 cr-border-black-000 cr-bg-white cr-text-center cr-text-3xl cr-font-extrabold cr-leading-7 cr-text-black-000 cr-shadow-none cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all placeholder:cr-text-black-700 focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000;
   }
   .cr-code-input.cr-code-input-raised > input {
     @apply cr-shadow-normal;
@@ -62,10 +62,10 @@
 
   /* Range input */
   .cr-slider {
-    @apply !cr-rounded-none !cr-h-3 !cr-bg-transparent !cr-p-0;
+    @apply !cr-h-3 !cr-rounded-none !cr-bg-transparent !cr-p-0;
   }
   .cr-slider > .cr-slider-rail {
-    @apply cr-border-black-000 cr-rounded-2xs cr-h-3 cr-border-0.5 cr-bg-white cr-shadow-none;
+    @apply cr-h-3 cr-rounded-2xs cr-border-0.5 cr-border-black-000 cr-bg-white cr-shadow-none;
   }
   .cr-slider.cr-slider-raised > .cr-slider-rail {
     @apply cr-shadow-small;
@@ -77,27 +77,28 @@
     @apply cr-shadow-black-300;
   }
   .cr-slider > .cr-slider-track {
-    @apply cr-border-black-000 cr-h-3 cr-border-0.5 cr-bg-red-800 cr-opacity-100;
+    @apply cr-h-3 cr-border-0.5 cr-border-black-000 cr-bg-red-800 cr-opacity-100;
   }
   .cr-slider.cr-slider-disabled > .cr-slider-track {
     @apply cr-border-black-300 cr-bg-red-100;
   }
-  .cr-slider > .cr-slider-handle {
-    @apply cr-border-black-000 hover:cr-border-black-000 focus:!cr-border-black-000 focus:!cr-outline-pink-000 focus-visible:!cr-outline-pink-000 active:cr-border-black-000 -cr-mt-1.5 cr-h-6 cr-w-6 cr-rounded-full cr-border-0.5 cr-bg-white cr-opacity-100 cr-shadow-none !cr-outline !cr-outline-0.5 !cr-outline-offset-1 !cr-outline-transparent !cr-transition-[outline] active:cr-shadow-none;
+  .cr-slider > .cr-slider-handle.rc-slider-handle {
+    @apply -cr-mt-1.5 cr-h-6 cr-w-6 cr-rounded-full cr-border-0.5 cr-border-black-000 cr-bg-white cr-opacity-100 cr-shadow-none !cr-outline !cr-outline-0.5 !cr-outline-offset-1 !cr-outline-transparent !cr-transition-[outline] hover:cr-border-black-000 focus:!cr-border-black-000 focus:!cr-outline-pink-000 focus-visible:!cr-outline-pink-000 active:cr-border-black-000 active:cr-shadow-none;
   }
-  .cr-slider > .cr-slider-handle.rc-slider-handle-dragging {
+  .cr-slider > .cr-slider-handle.rc-slider-handle.rc-slider-handle-dragging {
     @apply !cr-border-black-000 !cr-shadow-none;
   }
   .cr-slider.cr-slider-raised > .cr-slider-handle.rc-slider-handle-dragging {
     @apply !cr-shadow-small;
   }
-  .cr-slider.cr-slider-raised > .cr-slider-handle {
+  .cr-slider.cr-slider-raised > .cr-slider-handle.rc-slider-handle {
     @apply cr-shadow-small;
   }
-  .cr-slider.cr-slider-disabled > .cr-slider-handle {
+  .cr-slider.cr-slider-disabled > .cr-slider-handle.rc-slider-handle {
     @apply cr-border-black-300;
   }
-  .cr-slider.cr-slider-raised.cr-slider-disabled > .cr-slider-handle {
+  .cr-slider.cr-slider-raised.cr-slider-disabled
+    > .cr-slider-handle.rc-slider-handle {
     @apply cr-shadow-black-300;
   }
 }

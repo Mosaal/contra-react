@@ -10,7 +10,7 @@ export const CARD_NUMBER_PLACEHOLDER = [
 ].join(" ");
 
 export const creditCardCva = cva(
-  "cr-min-h-65 cr-min-w-106.25 cr-rounded-6 cr-border-0.5 cr-border-black cr-bg-pink cr-px-8.5 cr-pb-6 cr-pt-7 cr-text-white",
+  "cr-min-h-65 cr-min-w-106.25 cr-max-w-full cr-rounded-lg cr-border-0.5 cr-border-black-000 cr-bg-pink-000 cr-px-8.5 cr-pb-6 cr-pt-7 cr-text-white",
   {
     variants: {
       raised: {

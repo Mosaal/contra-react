@@ -12,4 +12,5 @@ export type CheckboxVariantProps = VariantProps<typeof checkboxCva>;
 export interface CheckboxProps extends CheckboxBaseProps, CheckboxVariantProps {
   label?: string;
   labelPosition?: "left" | "right";
+  checkboxClassName?: string;
 }

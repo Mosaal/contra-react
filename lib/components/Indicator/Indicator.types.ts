@@ -9,5 +9,8 @@ export type IndicatorVariantProps = VariantProps<typeof indicatorCva>;
 export interface IndicatorProps
   extends IndicatorBaseProps,
     IndicatorVariantProps {
-  label?: string;
+  label?: React.ReactNode;
+  offsetX?: number | string;
+  offsetY?: number | string;
+  containerClassName?: string;
 }

@@ -1,7 +1,10 @@
 import { cva } from "class-variance-authority";
 
 export const selectCva = cva(
-  "cr-outline-0.5 cr-w-full cr-appearance-none cr-rounded-4 cr-border-0.5 cr-border-black cr-bg-white cr-py-3 cr-pr-13.5 cr-text-5.25 cr-font-medium cr-leading-7 cr-text-black cr-outline-offset-1 cr-outline-pink focus:cr-outline disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-text-black-300 disabled:cr-shadow-black-300",
+  [
+    "cr-w-full cr-appearance-none cr-rounded-md cr-border-0.5 cr-border-black-000 cr-bg-white cr-py-3 cr-pr-13.5 cr-text-xl cr-font-medium cr-leading-7 cr-text-black-000 disabled:cr-cursor-not-allowed disabled:cr-border-black-300 disabled:cr-text-black-300 disabled:cr-shadow-black-300",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000",
+  ],
   {
     variants: {
       raised: {
@@ -25,7 +28,7 @@ export const selectIconCva = cva(
     variants: {
       disabled: {
         true: "cr-text-black-300",
-        false: "cr-text-black",
+        false: "cr-text-black-000",
       },
       clickable: {
         false: "cr-pointer-events-none",
@@ -46,12 +49,12 @@ export const selectIconCva = cva(
 );
 
 export const selectChevronWrapperCva = cva(
-  "cr-pointer-events-none cr-absolute cr-bottom-0 cr-right-0.5 cr-top-0.5 cr-flex cr-h-13 cr-w-10.5 cr-items-center cr-justify-center cr-rounded-r-3.5",
+  "cr-pointer-events-none cr-absolute cr-bottom-0 cr-right-0.5 cr-top-0.5 cr-flex cr-h-13 cr-w-10.5 cr-items-center cr-justify-center cr-rounded-r-sm",
   {
     variants: {
       disabled: {
         true: "cr-bg-yellow-100",
-        false: "cr-bg-yellow",
+        false: "cr-bg-yellow-000",
       },
     },
     defaultVariants: {
@@ -64,7 +67,7 @@ export const selectChevronIconCva = cva("cr-stroke-3", {
   variants: {
     disabled: {
       true: "cr-text-black-300",
-      false: "cr-text-black",
+      false: "cr-text-black-000",
     },
   },
   defaultVariants: {

@@ -78,6 +78,7 @@ export const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
       </button>
       <input
         hidden
+        readOnly
         type="number"
         className="cr-hidden"
         ref={ref}

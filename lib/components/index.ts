@@ -18,3 +18,5 @@ export * from "./Counter";
 export * from "./CreditCard";
 export * from "./Card";
 export * from "./Alert";
+export * from "./Rating";
+export * from "./Avatar";

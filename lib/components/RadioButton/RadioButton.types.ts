@@ -14,4 +14,5 @@ export interface RadioButtonProps
     RadioButtonVariantProps {
   label?: string;
   labelPosition?: "left" | "right";
+  radioButtonClassName?: string;
 }

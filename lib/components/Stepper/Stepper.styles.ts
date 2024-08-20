@@ -1,16 +1,16 @@
 import { cva } from "class-variance-authority";
 
 export const stepperContainerCva = cva(
-  "cr-flex cr-flex-row cr-items-center cr-text-black",
+  "cr-flex cr-flex-row cr-items-center cr-text-black-000",
   {
     variants: {
       variant: {
         normal: "cr-gap-x-3",
-        contained: "cr-border-0.5 cr-border-black",
+        contained: "cr-border-0.5 cr-border-black-000",
       },
       size: {
-        small: "cr-rounded-3",
-        normal: "cr-rounded-4",
+        small: "cr-rounded-xs",
+        normal: "cr-rounded-md",
       },
       raised: {
         true: "",
@@ -49,11 +49,11 @@ export const stepperLabelCva = cva("cr-font-extrabold", {
   variants: {
     variant: {
       normal: "",
-      contained: "cr-bg-yellow",
+      contained: "cr-bg-yellow-000",
     },
     size: {
-      small: "cr-rounded-l-2.5",
-      normal: "cr-rounded-l-3.5",
+      small: "cr-rounded-l-2xs",
+      normal: "cr-rounded-l-sm",
     },
     disabled: {
       true: "cr-cursor-not-allowed",
@@ -63,22 +63,22 @@ export const stepperLabelCva = cva("cr-font-extrabold", {
     {
       variant: "normal",
       size: "normal",
-      className: "cr-text-9 cr-leading-10",
+      className: "cr-text-5xl cr-leading-10",
     },
     {
       variant: "normal",
       size: "small",
-      className: "cr-text-6 cr-leading-7",
+      className: "cr-text-3xl cr-leading-7",
     },
     {
       variant: "contained",
       size: "normal",
-      className: "cr-py-2 cr-pl-5.5 cr-pr-3.5 cr-text-6 cr-leading-7",
+      className: "cr-py-2 cr-pl-5.5 cr-pr-3.5 cr-text-3xl cr-leading-7",
     },
     {
       variant: "contained",
       size: "small",
-      className: "cr-py-1 cr-pl-3.25 cr-pr-2.25 cr-text-4.25 cr-leading-6",
+      className: "cr-py-1 cr-pl-3.25 cr-pr-2.25 cr-text-lg cr-leading-6",
     },
     {
       variant: "contained",
@@ -94,17 +94,20 @@ export const stepperLabelCva = cva("cr-font-extrabold", {
 });
 
 export const stepperButtonCva = cva(
-  "cr-outline-0.5 cr-flex cr-items-center cr-justify-center cr-outline-offset-1 cr-outline-pink focus:cr-outline disabled:cr-cursor-not-allowed",
+  [
+    "cr-flex cr-items-center cr-justify-center disabled:cr-cursor-not-allowed",
+    "cr-outline cr-outline-0.5 cr-outline-offset-1 cr-outline-transparent cr-transition-all focus:cr-outline-pink-000 focus-visible:cr-outline-pink-000",
+  ],
   {
     variants: {
       variant: {
         normal:
-          "cr-border-0.5 cr-border-black cr-bg-yellow disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
+          "cr-border-0.5 cr-border-black-000 cr-bg-yellow-000 disabled:cr-border-black-300 disabled:cr-bg-yellow-800",
         contained: "cr-bg-white",
       },
       size: {
-        small: "cr-rounded-r-2.5",
-        normal: "cr-rounded-r-3.5",
+        small: "cr-rounded-r-2xs",
+        normal: "cr-rounded-r-sm",
       },
       raised: {
         true: "",
@@ -114,12 +117,12 @@ export const stepperButtonCva = cva(
       {
         variant: "normal",
         size: "normal",
-        className: "cr-h-12 cr-w-12 cr-rounded-4",
+        className: "cr-h-12 cr-w-12 cr-rounded-md",
       },
       {
         variant: "normal",
         size: "small",
-        className: "cr-h-9 cr-w-9 cr-rounded-3",
+        className: "cr-h-9 cr-w-9 cr-rounded-xs",
       },
       {
         variant: "contained",

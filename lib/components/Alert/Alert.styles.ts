@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const alertCva = cva(
-  "cr-inline-flex cr-w-90 cr-flex-row cr-gap-4 cr-rounded-4 cr-border-0.5 cr-border-black cr-bg-black cr-px-5.5 cr-py-4.25",
+  "cr-inline-flex cr-w-90 cr-max-w-full cr-flex-row cr-gap-4 cr-rounded-md cr-border-0.5 cr-border-black-000 cr-bg-black-000 cr-px-5.5 cr-py-4.25",
 );
 
 export const alertIconCva = cva(
@@ -9,10 +9,10 @@ export const alertIconCva = cva(
   {
     variants: {
       variant: {
-        info: "cr-bg-blue",
-        warning: "cr-bg-yellow",
-        error: "cr-bg-red",
-        success: "cr-bg-green",
+        info: "cr-bg-blue-000",
+        warning: "cr-bg-yellow-000",
+        error: "cr-bg-red-000",
+        success: "cr-bg-green-000",
       },
     },
     defaultVariants: {

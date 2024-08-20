@@ -1,6 +1,6 @@
 import { IconProps } from ".";
 
-export default function Minus(props: IconProps) {
+export function Minus(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

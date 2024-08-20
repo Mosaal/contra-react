@@ -19,6 +19,7 @@ export interface SelectOption extends React.ComponentPropsWithoutRef<"option"> {
 
 export interface SelectProps extends SelectBaseProps, SelectVariantProps {
   placeholder?: string;
+  selectClassName?: string;
   options?: SelectOption[];
   leftIcon?: React.ReactNode;
   onLeftIconClick?: () => void;

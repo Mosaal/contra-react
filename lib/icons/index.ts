@@ -1,20 +1,12 @@
 export type IconProps = React.ComponentPropsWithoutRef<"svg">;
 
 export * from "./Check";
-export { default as Check } from "./Check";
 export * from "./Eye";
-export { default as Eye } from "./Eye";
 export * from "./EyeOff";
-export { default as EyeOff } from "./EyeOff";
 export * from "./X";
-export { default as X } from "./X";
 export * from "./Plus";
-export { default as Plus } from "./Plus";
 export * from "./Minus";
-export { default as Minus } from "./Minus";
 export * from "./ChevronDown";
-export { default as ChevronDown } from "./ChevronDown";
 export * from "./Info";
-export { default as Info } from "./Info";
 export * from "./AlertTriangle";
-export { default as AlertTriangle } from "./AlertTriangle";
+export * from "./Star";

@@ -14,4 +14,5 @@ export interface ToggleSwitchProps
     ToggleSwitchVariantProps {
   leftLabel?: string;
   rightLabel?: string;
+  toggleSwitchClassName?: string;
 }

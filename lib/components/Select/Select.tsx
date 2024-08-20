@@ -25,6 +25,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
     disabled,
     leftIcon,
     className,
+    selectClassName,
     children,
     onLeftIconClick,
     onChange,
@@ -47,7 +48,10 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
   };
 
   return (
-    <label htmlFor={inputId} className="cr-inline-block cr-w-85">
+    <label
+      htmlFor={inputId}
+      className={cn("cr-inline-block cr-w-85 cr-max-w-full", className)}
+    >
       <div className="cr-relative cr-inline-flex cr-w-full">
         {leftIcon && (
           <div
@@ -68,7 +72,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
             selectCva({
               raised,
               placeholder: !!placeholder && selectedValue === "",
-              className,
+              className: selectClassName,
             }),
             leftIcon ? "cr-pl-12.5" : "cr-pl-3.5",
           )}

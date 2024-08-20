@@ -8,6 +8,12 @@ import {
 } from "@storybook/addon-themes";
 
 const preview: Preview = {
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      toc: true,
+    },
+  },
   decorators: [
     withThemeByClassName({
       defaultTheme: "light",

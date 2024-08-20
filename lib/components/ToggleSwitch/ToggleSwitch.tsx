@@ -3,13 +3,11 @@ import { forwardRef } from "react";
 import {
   toggleSwitchCva,
   toggleSwitchLabelCva,
-  toggleSwitchToggleCva,
   toggleSwitchWrapperCva,
-  toggleSwitchToggleDotCva,
 } from "./ToggleSwitch.styles";
 import type { ToggleSwitchProps } from "./ToggleSwitch.types";
 
-import { useInputId, useInputState } from "@/hooks";
+import { useInputId } from "@/hooks";
 
 import { cn } from "@/utils";
 
@@ -20,23 +18,14 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
       raised = false,
       leftLabel,
       rightLabel,
-      checked,
-      defaultChecked,
       disabled,
       className,
-      onChange,
+      toggleSwitchClassName,
       ...props
     },
     ref,
   ) {
     const inputId = useInputId("toggle", id);
-    const [isChecked, setIsChecked] = useInputState({
-      value: checked,
-      defaultValue: defaultChecked,
-      finalValue: false,
-      type: "checkbox",
-      onChange,
-    });
 
     const renderLabel = (label: string) => {
       return (
@@ -47,32 +36,19 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
     return (
       <label
         htmlFor={inputId}
-        className={cn(toggleSwitchWrapperCva({ disabled }))}
+        className={cn(toggleSwitchWrapperCva({ disabled, className }))}
       >
         {leftLabel && renderLabel(leftLabel)}
-        <div className="cr-relative cr-inline-flex">
-          <input
-            type="checkbox"
-            ref={ref}
-            id={inputId}
-            checked={isChecked}
-            disabled={disabled}
-            className={cn(toggleSwitchCva({ raised, className }))}
-            onChange={setIsChecked}
-            {...props}
-          />
-          <div
-            className={cn(
-              toggleSwitchToggleCva({ checked: isChecked, disabled }),
-            )}
-          >
-            <div
-              className={cn(
-                toggleSwitchToggleDotCva({ checked: isChecked, disabled }),
-              )}
-            />
-          </div>
-        </div>
+        <input
+          type="checkbox"
+          ref={ref}
+          id={inputId}
+          disabled={disabled}
+          className={cn(
+            toggleSwitchCva({ raised, className: toggleSwitchClassName }),
+          )}
+          {...props}
+        />
         {rightLabel && renderLabel(rightLabel)}
       </label>
     );

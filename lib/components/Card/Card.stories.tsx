@@ -32,10 +32,16 @@ export const Raised: Story = {
   },
 };
 
-export const CustomExample: Story = {
+export const CustomElement: Story = {
   args: {
-    className: "cr-w-90 cr-bg-red-000",
-    children: (
+    as: "section",
+    children: "Basic raised card",
+  },
+};
+
+export const CustomExample: Story = {
+  render: (args) => (
+    <Card className="cr-w-90 cr-bg-red-000" {...args}>
       <div className="cr-text-white">
         <p className="cr-mb-2 cr-mt-4.25 cr-text-center cr-text-3xl cr-font-medium cr-uppercase cr-leading-7">
           Popular
@@ -61,6 +67,6 @@ export const CustomExample: Story = {
           Buy
         </Button>
       </div>
-    ),
-  },
+    </Card>
+  ),
 };

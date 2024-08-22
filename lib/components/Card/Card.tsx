@@ -1,17 +1,26 @@
 import { forwardRef } from "react";
 
 import { cardCva } from "./Card.styles";
-import type { CardProps } from "./Card.types";
+import type { CardComponent, CardProps } from "./Card.types";
+
+import type { PolymorphicRef } from "@/types";
 
 import { cn } from "@/utils";
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(function (
-  { raised = false, className, children, ...props },
-  ref,
+export const Card: CardComponent = forwardRef(function <
+  C extends React.ElementType = "div",
+>(
+  { as, raised = false, className, children, ...props }: CardProps<C>,
+  ref?: PolymorphicRef<C>,
 ) {
+  const Component = as || "div";
   return (
-    <div ref={ref} className={cn(cardCva({ raised, className }))} {...props}>
+    <Component
+      ref={ref}
+      className={cn(cardCva({ raised, className }))}
+      {...props}
+    >
       {children}
-    </div>
+    </Component>
   );
 });

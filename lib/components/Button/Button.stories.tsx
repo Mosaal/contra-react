@@ -123,3 +123,12 @@ export const RaisedDisabled: Story = {
     children: "Raised & Disabled",
   },
 };
+
+export const CustomElement: Story = {
+  args: {
+    as: "a",
+    variant: "primary",
+    children: "Link",
+    href: "javascript:void(0)",
+  },
+};

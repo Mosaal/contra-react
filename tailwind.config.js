@@ -109,6 +109,9 @@ export default {
         small: "0 0.125rem 0 0 var(--contra-black)",
         normal: "0 0.25rem 0 0 var(--contra-black)",
       },
+      aspectRatio: {
+        "credit-card": "1.586",
+      },
     },
   },
   plugins: [],

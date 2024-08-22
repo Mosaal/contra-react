@@ -1,12 +1,17 @@
 import { forwardRef, useState } from "react";
 
 import { buttonCva } from "./Button.styles";
-import type { ButtonProps } from "./Button.types";
+import type { ButtonComponent, ButtonProps } from "./Button.types";
+
+import type { PolymorphicRef } from "@/types";
 
 import { cn } from "@/utils";
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
+export const Button: ButtonComponent = forwardRef(function <
+  C extends React.ElementType = "button",
+>(
   {
+    as,
     block = false,
     raised = false,
     size = "normal",
@@ -18,8 +23,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
     onMouseDown,
     children,
     ...props
-  },
-  ref,
+  }: ButtonProps<C>,
+  ref?: PolymorphicRef<C>,
 ) {
   const [isRaised, setIsRaised] = useState<boolean>(!!raised);
 
@@ -33,8 +38,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
     onMouseDown?.(e);
   };
 
+  const Component = as || "button";
   return (
-    <button
+    <Component
       ref={ref}
       className={cn(
         buttonCva({
@@ -54,6 +60,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function (
         {children}
         {rightIcon}
       </div>
-    </button>
+    </Component>
   );
 });

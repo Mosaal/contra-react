@@ -2,14 +2,13 @@ import type { VariantProps } from "class-variance-authority";
 
 import type { iconButtonCva } from "./IconButton.styles";
 
-export type IconButtonBaseProps = React.ComponentPropsWithoutRef<"button">;
+import type { PolymorphicComponentProps } from "@/types";
 
 export type IconButtonVariantProps = VariantProps<typeof iconButtonCva>;
 
-export type IconButtonSize = NonNullable<IconButtonVariantProps["size"]>;
+export type IconButtonProps<C extends React.ElementType> =
+  PolymorphicComponentProps<C, IconButtonVariantProps>;
 
-export type IconButtonVariant = NonNullable<IconButtonVariantProps["variant"]>;
-
-export interface IconButtonProps
-  extends IconButtonBaseProps,
-    IconButtonVariantProps {}
+export type IconButtonComponent = <C extends React.ElementType = "button">(
+  props: IconButtonProps<C>,
+) => React.ReactNode;

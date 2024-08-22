@@ -28,8 +28,8 @@ export const CreditCard = forwardRef<HTMLDivElement, CreditCardProps>(function (
         {cardTitle || "Credit Card"}
       </span>
       <div className="cr-mb-9.5 cr-flex cr-flex-row cr-items-center cr-justify-between cr-gap-x-8.5">
-        <div className="cr-h-11 cr-w-16.5 cr-overflow-hidden cr-rounded-4xs cr-bg-white" />
-        <span className="cr-whitespace-nowrap cr-text-xl cr-font-extrabold cr-leading-7">
+        <div className="cr-h-11 cr-w-16.5 cr-shrink-0 cr-overflow-hidden cr-rounded-4xs cr-bg-white" />
+        <span className="cr-text-xl cr-font-extrabold cr-leading-7">
           {cardNumber || CARD_NUMBER_PLACEHOLDER}
         </span>
       </div>

@@ -91,3 +91,12 @@ export const RaisedDisabled: Story = {
     children: <Plus />,
   },
 };
+
+export const CustomElement: Story = {
+  args: {
+    as: "a",
+    variant: "primary",
+    children: <Plus />,
+    href: "javascript:void(0)",
+  },
+};

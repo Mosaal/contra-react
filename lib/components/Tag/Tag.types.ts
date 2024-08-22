@@ -2,11 +2,18 @@ import type { VariantProps } from "class-variance-authority";
 
 import type { tagCva } from "./Tag.styles";
 
-export type TagBaseProps = React.ComponentPropsWithoutRef<"div">;
+import type { PolymorphicComponentProps } from "@/types";
 
 export type TagVariantProps = VariantProps<typeof tagCva>;
 
-export interface TagProps extends TagBaseProps, TagVariantProps {
-  label: string;
-  onDeactivate?: React.MouseEventHandler<HTMLButtonElement>;
-}
+export type TagProps<C extends React.ElementType> = PolymorphicComponentProps<
+  C,
+  TagVariantProps & {
+    label: string;
+    onDeactivate?: React.MouseEventHandler<HTMLButtonElement>;
+  }
+>;
+
+export type TagComponent = <C extends React.ElementType = "div">(
+  props: TagProps<C>,
+) => React.ReactNode;

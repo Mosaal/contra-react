@@ -1,30 +1,36 @@
 import { forwardRef } from "react";
 
 import { tagCva } from "./Tag.styles";
-import type { TagProps } from "./Tag.types";
+import type { TagComponent, TagProps } from "./Tag.types";
 
 import { X } from "@/icons";
 
+import { PolymorphicRef } from "@/types";
+
 import { cn } from "@/utils";
 
-export const Tag = forwardRef<HTMLDivElement, TagProps>(function (
+export const Tag: TagComponent = forwardRef(function <
+  C extends React.ElementType = "div",
+>(
   {
-    label,
+    as,
     active = false,
     raised = false,
     className,
+    children,
     onClick,
     onDeactivate,
     ...props
-  },
-  ref,
+  }: TagProps<C>,
+  ref?: PolymorphicRef<C>,
 ) {
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!active) onClick?.(e);
   };
 
+  const Component = as || "div";
   return (
-    <div
+    <Component
       ref={ref}
       className={cn(
         tagCva({ active, raised, className }),
@@ -34,7 +40,7 @@ export const Tag = forwardRef<HTMLDivElement, TagProps>(function (
       {...props}
     >
       <div className="cr-flex cr-flex-row cr-items-center cr-gap-x-1">
-        {label}
+        {children}
         {active && (
           <button
             type="button"
@@ -45,6 +51,6 @@ export const Tag = forwardRef<HTMLDivElement, TagProps>(function (
           </button>
         )}
       </div>
-    </div>
+    </Component>
   );
 });

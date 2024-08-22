@@ -21,14 +21,14 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Inactive: Story = {
   args: {
-    label: "Inactive",
+    children: "Inactive",
   },
 };
 
 export const Active: Story = {
   args: {
     active: true,
-    label: "Active",
+    children: "Active",
     onDeactivate: fn(),
   },
 };
@@ -36,7 +36,7 @@ export const Active: Story = {
 export const Raised: Story = {
   args: {
     raised: true,
-    label: "Raised",
+    children: "Raised",
   },
 };
 
@@ -44,7 +44,15 @@ export const RaisedActive: Story = {
   args: {
     active: true,
     raised: true,
-    label: "Raised & Active",
+    children: "Raised & Active",
     onDeactivate: fn(),
+  },
+};
+
+export const CustomElement: Story = {
+  args: {
+    as: "a",
+    children: "Inactive",
+    href: "javascript:void(0)",
   },
 };

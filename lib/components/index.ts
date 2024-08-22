@@ -15,7 +15,6 @@ export * from "./Slider";
 export * from "./SegmentedControl";
 export * from "./Stepper";
 export * from "./Counter";
-export * from "./CreditCard";
 export * from "./Card";
 export * from "./Alert";
 export * from "./Rating";

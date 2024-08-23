@@ -40,7 +40,9 @@
     --check-black-300: url("./assets/images/check-black-300.svg");
   }
 
-  * {
+  *,
+  *::after,
+  *::before {
     font-family: "Montserrat", sans-serif;
   }
 }

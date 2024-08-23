@@ -1,5 +1,6 @@
 {
   "name": "contra-react",
+  "private": false,
   "version": "0.0.0",
   "description": "React implementation for the https://contrauikit.com/",
   "repository": "git@github.com:Mosaal/contra-react.git",

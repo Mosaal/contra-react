@@ -7,6 +7,7 @@ export * from "./Input";
 export * from "./Select";
 export * from "./CodeInput";
 export * from "./PasswordInput";
+export * from "./FileInput";
 export * from "./Textarea";
 export * from "./Indicator";
 export * from "./Tag";

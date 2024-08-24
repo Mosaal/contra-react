@@ -3,7 +3,7 @@ name: Lint, Build and Deploy to NPM
 on:
   push:
     tags:
-      - 'v*.*.*'  # Triggers on version tags like v1.0.0
+      - "v*.*.*" # Triggers on version tags like v1.0.0
 
 jobs:
   lint-build-deploy:
@@ -19,11 +19,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }} # Use the version from the .nvmrc file
-          cache: 'yarn'
+          node-version: $NODE_VERSION # Use the version from the .nvmrc file
+          cache: "yarn"
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Lint code
         run: yarn lint

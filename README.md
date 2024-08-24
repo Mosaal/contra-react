@@ -6,7 +6,6 @@ React implementation for the [Contra UI kit](https://contrauikit.com/).
 
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-  - [Installation](#installation)
   - [Usage](#usage)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)

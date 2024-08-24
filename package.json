@@ -1,9 +1,9 @@
 {
   "name": "contra-react",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React implementation for the https://contrauikit.com/",
-  "repository": "git@github.com:Mosaal/contra-react.git",
+  "repository": "https://github.com/Mosaal/contra-react",
   "author": "Alexandre Saraiva Moreira <alexandremoreira1995@gmail.com>",
   "license": "MIT",
   "type": "module",
@@ -26,6 +26,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

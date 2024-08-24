@@ -1,7 +1,7 @@
 {
   "name": "contra-react",
   "private": false,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "React implementation for the https://contrauikit.com/",
   "repository": "git@github.com:Mosaal/contra-react.git",
   "author": "Alexandre Saraiva Moreira <alexandremoreira1995@gmail.com>",

@@ -9,7 +9,6 @@ export type TagVariantProps = VariantProps<typeof tagCva>;
 export type TagProps<C extends React.ElementType> = PolymorphicComponentProps<
   C,
   TagVariantProps & {
-    label: string;
     onDeactivate?: React.MouseEventHandler<HTMLButtonElement>;
   }
 >;

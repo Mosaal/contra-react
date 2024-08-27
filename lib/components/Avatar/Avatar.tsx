@@ -28,3 +28,4 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function (
     </div>
   );
 });
+Avatar.displayName = "Avatar";

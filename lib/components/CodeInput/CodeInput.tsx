@@ -23,3 +23,4 @@ export const CodeInput = forwardRef<ReactCodeInput, CodeInputProps>(function (
     />
   );
 });
+CodeInput.displayName = "CodeInput";

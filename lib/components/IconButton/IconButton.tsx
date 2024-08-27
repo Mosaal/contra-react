@@ -52,3 +52,5 @@ export const IconButton: IconButtonComponent = forwardRef(function <
     </Component>
   );
 });
+// @ts-expect-error Custom interface does not account for displayName but it still exists
+IconButton.displayName = "IconButton";

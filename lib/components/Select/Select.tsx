@@ -99,3 +99,4 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function (
     </label>
   );
 });
+Select.displayName = "Select";

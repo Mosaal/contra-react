@@ -51,3 +51,4 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function (
     </label>
   );
 });
+Checkbox.displayName = "Checkbox";

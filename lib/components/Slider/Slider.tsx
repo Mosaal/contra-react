@@ -27,3 +27,4 @@ export const Slider = forwardRef<SliderRef, SliderProps>(function (
     />
   );
 });
+Slider.displayName = "Slider";

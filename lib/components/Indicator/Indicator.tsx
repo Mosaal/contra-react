@@ -37,3 +37,4 @@ export const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function (
     </div>
   );
 });
+Indicator.displayName = "Indicator";

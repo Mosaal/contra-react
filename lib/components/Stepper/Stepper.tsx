@@ -90,3 +90,4 @@ export const Stepper = forwardRef<HTMLInputElement, StepperProps>(function (
     </div>
   );
 });
+Stepper.displayName = "Stepper";

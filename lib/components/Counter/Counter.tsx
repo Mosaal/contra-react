@@ -137,3 +137,4 @@ export const Counter = forwardRef<HTMLInputElement, CounterProps>(function (
     </div>
   );
 });
+Counter.displayName = "Counter";

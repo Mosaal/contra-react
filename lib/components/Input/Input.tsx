@@ -74,3 +74,4 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function (
     </label>
   );
 });
+Input.displayName = "Input";

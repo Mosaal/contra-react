@@ -54,3 +54,4 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
     );
   },
 );
+ToggleSwitch.displayName = "ToggleSwitch";

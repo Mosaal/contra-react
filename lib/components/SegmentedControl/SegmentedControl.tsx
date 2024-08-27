@@ -59,3 +59,4 @@ export const SegmentedControl = forwardRef<
     </div>
   );
 });
+SegmentedControl.displayName = "SegmentedControl";

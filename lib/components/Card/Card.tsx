@@ -24,3 +24,5 @@ export const Card: CardComponent = forwardRef(function <
     </Component>
   );
 });
+// @ts-expect-error Custom interface does not account for displayName but it still exists
+Card.displayName = "Card";

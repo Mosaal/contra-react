@@ -43,3 +43,4 @@ export const Rating = forwardRef<HTMLDivElement, RatingProps>(function (
     </div>
   );
 });
+Rating.displayName = "Rating";

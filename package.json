@@ -26,6 +26,18 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "vite",
+    "vitejs",
+    "react",
+    "reactjs",
+    "typescript",
+    "tailwind",
+    "tailwindcss",
+    "ui-library",
+    "contra-ui",
+    "contra-ui-library"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
